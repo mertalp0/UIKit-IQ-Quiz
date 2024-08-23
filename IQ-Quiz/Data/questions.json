@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "type": "textWithOptions",
+        "questionText": "What is the capital of France?",
+        "questionImage": null,
+        "options": ["Paris", "London", "Berlin", "Madrid"],
+        "correctAnswer": "Paris"
+    },
+    {
+        "id": "2",
+        "type": "imageWithOptions",
+        "questionText": null,
+        "questionImage": "image_france_flag.jpg",
+        "options": ["France", "Germany", "Italy", "Spain"],
+        "correctAnswer": "France"
+    },
+    {
+        "id": "3",
+        "type": "textWithImages",
+        "questionText": "Which of these images depicts the Eiffel Tower?",
+        "questionImage": null,
+        "options": ["eiffel_tower.jpg", "statue_of_liberty.jpg", "big_ben.jpg", "colosseum.jpg"],
+        "correctAnswer": "eiffel_tower.jpg"
+    },
+    {
+        "id": "4",
+        "type": "imageWithImages",
+        "questionText": null,
+        "questionImage": "image_landmarks.jpg",
+        "options": ["eiffel_tower.jpg", "statue_of_liberty.jpg", "big_ben.jpg", "colosseum.jpg"],
+        "correctAnswer": "eiffel_tower.jpg"
+    },
+    {
+        "id": "5",
+        "type": "textWithOptions",
+        "questionText": "Which planet is known as the Red Planet?",
+        "questionImage": null,
+        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
+        "correctAnswer": "Mars"
+    },
+    {
+        "id": "6",
+        "type": "imageWithOptions",
+        "questionText": null,
+        "questionImage": "image_planet_mars.jpg",
+        "options": ["Mars", "Earth", "Jupiter", "Saturn"],
+        "correctAnswer": "Mars"
+    },
+    {
+        "id": "7",
+        "type": "textWithImages",
+        "questionText": "Identify the country by its flag:",
+        "questionImage": null,
+        "options": ["flag_usa.jpg", "flag_uk.jpg", "flag_canada.jpg", "flag_aus.jpg"],
+        "correctAnswer": "flag_usa.jpg"
+    },
+    {
+        "id": "8",
+        "type": "imageWithImages",
+        "questionText": null,
+        "questionImage": "image_flags.jpg",
+        "options": ["flag_usa.jpg", "flag_uk.jpg", "flag_canada.jpg", "flag_aus.jpg"],
+        "correctAnswer": "flag_usa.jpg"
+    },
+    {
+        "id": "9",
+        "type": "textWithOptions",
+        "questionText": "What is the largest ocean on Earth?",
+        "questionImage": null,
+        "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+        "correctAnswer": "Pacific Ocean"
+    },
+    {
+        "id": "10",
+        "type": "imageWithOptions",
+        "questionText": null,
+        "questionImage": "image_ocean.jpg",
+        "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
+        "correctAnswer": "Pacific Ocean"
+    }
+]
