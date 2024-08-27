@@ -9,7 +9,6 @@ import Foundation
 
 class StartCoordinator : BaseCoordinator {
     override func start() {
-        addChild(self)
          let startViewModel = StartViewModel()
          let startViewController = StartViewController(viewModel: startViewModel)
          startViewController.coordinator = self

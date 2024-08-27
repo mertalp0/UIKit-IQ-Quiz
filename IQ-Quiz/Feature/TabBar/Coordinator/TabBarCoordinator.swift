@@ -10,13 +10,13 @@ import UIKit
 class TabBarCoordinator: BaseCoordinator {
     
     private let startCoordinator = StartCoordinator(navigationController: UINavigationController())
-    private let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())
+  //private let profileCoordinator = ProfileCoordinator(navigationController: UINavigationController())
     private let latestTestCoordinator = LatestTestsCoordinator(navigationController: UINavigationController())
     override func start() {
         let tabBarController = TabBarControllerFactory.createTabBarController(
             latestTestCoordinator : latestTestCoordinator,
-            startCoordinator: startCoordinator,
-            profileCoordinator: profileCoordinator
+            startCoordinator: startCoordinator
+           // profileCoordinator: profileCoordinator
         )
         navigationController.setViewControllers([tabBarController], animated: true)
     }

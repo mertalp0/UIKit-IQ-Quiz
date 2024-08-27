@@ -1,82 +1,139 @@
 [
     {
         "id": "1",
-        "type": "textWithOptions",
-        "questionText": "What is the capital of France?",
-        "questionImage": null,
-        "options": ["Paris", "London", "Berlin", "Madrid"],
-        "correctAnswer": "Paris"
+        "type": "imageAnswer",
+        "questionText": "Bu desenin kapanmış hali hangisidir?",
+        "questionImage": "1",
+        "options": ["1a", "1b", "1c", "1d"],
+        "correctAnswer": "1d"
     },
     {
         "id": "2",
-        "type": "imageWithOptions",
-        "questionText": null,
-        "questionImage": "image_france_flag.jpg",
-        "options": ["France", "Germany", "Italy", "Spain"],
-        "correctAnswer": "France"
+        "type": "textAnswer",
+        "questionText": "Bir çocuğun bir dizi sayısı var: 2, 5, 10, 17, ... Bu dizinin bir sonraki sayısı nedir?",
+        "options": ["24", "26", "30", "34"],
+        "correctAnswer": "26"
     },
     {
         "id": "3",
-        "type": "textWithImages",
-        "questionText": "Which of these images depicts the Eiffel Tower?",
-        "questionImage": null,
-        "options": ["eiffel_tower.jpg", "statue_of_liberty.jpg", "big_ben.jpg", "colosseum.jpg"],
-        "correctAnswer": "eiffel_tower.jpg"
+        "type": "imageAnswer",
+        "questionText": "Görüntüdeki eksik parça hangisidir?",
+        "questionImage": "3-question",
+        "options": ["3a", "3b", "3c", "3d"],
+        "correctAnswer": "3a"
     },
     {
         "id": "4",
-        "type": "imageWithImages",
-        "questionText": null,
-        "questionImage": "image_landmarks.jpg",
-        "options": ["eiffel_tower.jpg", "statue_of_liberty.jpg", "big_ben.jpg", "colosseum.jpg"],
-        "correctAnswer": "eiffel_tower.jpg"
+        "type": "textAnswer",
+        "questionText": "Bir saatin akrep ve yelkovanı, gece yarısı tam 12'de üst üste gelmektedir. Akrep ve yelkovan, sabah 6'ya kadar kaç kez üst üste gelir?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": "1"
     },
     {
         "id": "5",
-        "type": "textWithOptions",
-        "questionText": "Which planet is known as the Red Planet?",
-        "questionImage": null,
-        "options": ["Mars", "Venus", "Jupiter", "Saturn"],
-        "correctAnswer": "Mars"
+        "type": "imageAnswer",
+        "questionText": "Hangi Şekil eksik?",
+        "questionImage": "5-question",
+        "options": ["5a", "5b", "5c", "5d"],
+        "correctAnswer": "5a"
     },
     {
         "id": "6",
-        "type": "imageWithOptions",
-        "questionText": null,
-        "questionImage": "image_planet_mars.jpg",
-        "options": ["Mars", "Earth", "Jupiter", "Saturn"],
-        "correctAnswer": "Mars"
+        "type": "textAnswer",
+        "questionText": "Bir çiftlikte tavuklar ve koyunlar var. Çiftlikte toplam 30 baş (kafa) ve 100 ayak var. Çiftlikte kaç koyun vardır?",
+        "options": ["10", "15", "20", "25"],
+        "correctAnswer": "20"
     },
     {
         "id": "7",
-        "type": "textWithImages",
-        "questionText": "Identify the country by its flag:",
-        "questionImage": null,
-        "options": ["flag_usa.jpg", "flag_uk.jpg", "flag_canada.jpg", "flag_aus.jpg"],
-        "correctAnswer": "flag_usa.jpg"
+        "type": "imageAnswer",
+        "questionText": "Soru işareti yerine ne gelmelidir?",
+        "questionImage": "7-question",
+        "options": ["7a", "7b", "7c", "7d"],
+        "correctAnswer": "7d"
     },
     {
         "id": "8",
-        "type": "imageWithImages",
-        "questionText": null,
-        "questionImage": "image_flags.jpg",
-        "options": ["flag_usa.jpg", "flag_uk.jpg", "flag_canada.jpg", "flag_aus.jpg"],
-        "correctAnswer": "flag_usa.jpg"
+        "type": "textAnswer",
+        "questionText": "Bir adam bir dizi sayısı oluşturuyor: 2, 6, 12, 20, ... Bu dizinin bir sonraki sayısı nedir?",
+        "options": ["30", "32", "34", "36"],
+        "correctAnswer": "30"
     },
     {
         "id": "9",
-        "type": "textWithOptions",
-        "questionText": "What is the largest ocean on Earth?",
-        "questionImage": null,
-        "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
-        "correctAnswer": "Pacific Ocean"
+        "type": "imageAnswer",
+        "questionText": "Resimde toplam kaç kare vardır?",
+        "questionImage": "9-question",
+        "options": ["9a", "9b", "9c", "9d"],
+        "correctAnswer": "9a"
     },
     {
         "id": "10",
-        "type": "imageWithOptions",
-        "questionText": null,
-        "questionImage": "image_ocean.jpg",
-        "options": ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"],
-        "correctAnswer": "Pacific Ocean"
-    }
+        "type": "textAnswer",
+        "questionText": "Bir toplantı sonunda, 10 tane insan birbiriyle el sıkışmıştır. Toplamda kaç kez el sıkışma yaşanmıştır?",
+        "options": [
+            "35",
+            "40",
+            "45",
+            "50"
+        ],
+        "correctAnswer": "45"
+    },
+    
+    {
+        "id": "11",
+        "type": "textAnswer",
+        "questionText": "Bir şişe ve kapak birlikte 1.10 TL'dir. Şişe, kapaktan 1 TL daha pahalıdır. Kapak kaç TL'dir?",
+        "options": [
+            "0.05 TL",
+            "0.10 TL",
+            "0.15 TL",
+            "0.20 TL"
+        ],
+        "correctAnswer": "0.05 TL"
+    },
+    {
+        "id": "12",
+        "type": "textAnswer",
+        "questionText": "Bir adamın 5 kız çocuğu var ve her kızın 1 erkek kardeşi var. Adamın toplam kaç çocuğu var?",
+        "options": [
+            "5",
+            "6",
+            "10",
+            "11"
+        ],
+        "correctAnswer": "6"
+    },
+    {
+        "id": "13",
+        "type": "textAnswer",
+        "questionText": "Bir köyde 5 farklı renkli ev var. Her evin arkasında bir bahçe var. Kırmızı ev mavi evin solunda, yeşil ev sarı evin sağında ve beyaz ev, kırmızı evin solunda. Beyaz ev hangi rengin arkasında bulunur?",
+        "options": [
+            "Yeşil",
+            "Mavi",
+            "Kırmızı",
+            "Sarı"
+        ],
+        "correctAnswer": "Mavi"
+    },
+    {
+        "id": "14",
+        "type": "imageAnswer",
+        "questionText": "Resimde kaç tane üçgen vardır? ",
+        "questionImage": "14-question",
+        "options": ["14a", "14b", "14c", "14d"],
+        "correctAnswer": "14d"
+    },
+    {
+           "id": "15",
+           "type": "textAnswer",
+           "questionText": "Bir otobüs, 30 km/s hızla gidiyor ve yolun tamamını 2 saatte alıyor. Otobüs, yolun yarısını geçtikten sonra hızını 40 km/s'ye çıkarırsa, toplam yolculuk süresi ne kadar olur?",
+           "options": [
+               "1 saat 45 dakika",
+               "1 saat 30 dakika",
+               "2 saat",
+               "2 saat 15 dakika"
+           ],
+           "correctAnswer": "1 saat 30 dakika"
+       }
 ]

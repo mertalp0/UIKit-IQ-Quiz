@@ -69,14 +69,33 @@ extension BaseViewController {
      func setupGradientLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.colors = [
-            UIColor(hex: "#E1DFE2").cgColor,
+            UIColor(hex: "#5A189A").cgColor,
             UIColor(hex: "#48BFE3").cgColor  
         ]
         gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
         gradientLayer.frame = view.bounds
         view.layer.insertSublayer(gradientLayer, at: 0)
+         setupCircles()
     }
+    private func setupCircles() {
+        let numberOfCircles = 3 // Eklemek istediğin daire sayısı
+        let circleDiameters: [CGFloat] = [130, 320, 580] // Dairelerin çapları, en küçükten en büyüğe
+        let borderWidth: CGFloat = 4 // Dairelerin kenar kalınlığı
+
+        for diameter in circleDiameters {
+            let circleView = UIView()
+            circleView.backgroundColor = .clear // Arka planı temizle
+            circleView.layer.cornerRadius = diameter / 2
+            circleView.layer.borderColor = UIColor.white.withAlphaComponent(0.1).cgColor // Kenar rengini opak yap
+            circleView.layer.borderWidth = borderWidth // Kenar kalınlığı
+            circleView.frame.size = CGSize(width: diameter, height: diameter)
+            circleView.center = view.center // Ekranın ortasına yerleştir
+
+            view.addSubview(circleView)
+        }
+    }
+
     
 }
 //MARK: -  Loading

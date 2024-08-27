@@ -8,7 +8,6 @@
 import Foundation
 class QuizCoordinator : BaseCoordinator {
     override func start() {
-        addChild(self)
         let quizViewModel = QuizViewModel()
         let quizViewController = QuizViewController(viewModel: quizViewModel)
         quizViewController.coordinator = self
@@ -16,4 +15,10 @@ class QuizCoordinator : BaseCoordinator {
         quizViewController.hidesBottomBarWhenPushed = true
         navigationController.pushViewController(quizViewController, animated: true)
      }
+    func showResult(correctAnswers:Int){
+        let resultCoordinator = ResultCoordinator(navigationController: navigationController)
+        resultCoordinator.correctAnswers = correctAnswers
+        resultCoordinator.start()
+    }
+
 }

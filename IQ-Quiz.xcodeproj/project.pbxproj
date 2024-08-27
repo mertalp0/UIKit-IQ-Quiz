@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9476C7AE2C78B467002648A0 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7AD2C78B467002648A0 /* ResultController.swift */; };
+		9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */; };
+		9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */; };
 		94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873BA32C738FE600620B4A /* AppDelegate.swift */; };
 		94873BA62C738FE600620B4A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873BA52C738FE600620B4A /* SceneDelegate.swift */; };
 		94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94873BAC2C738FE800620B4A /* Assets.xcassets */; };
@@ -39,6 +42,11 @@
 		94873C352C73B65200620B4A /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C342C73B65200620B4A /* QuizViewModel.swift */; };
 		94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C362C73B66B00620B4A /* QuizViewModelProtocol.swift */; };
 		94873C3B2C746CE900620B4A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C3A2C746CE900620B4A /* UIColor+Hex.swift */; };
+		94BB3B702C7A12300016CF33 /* questions.json in Resources */ = {isa = PBXBuildFile; fileRef = 94873C262C73AEC700620B4A /* questions.json */; };
+		94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */; };
+		94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */; };
+		94BB3B7A2C7A52560016CF33 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B792C7A52560016CF33 /* CoreDataService.swift */; };
+		94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B7E2C7B52240016CF33 /* IQCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +67,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9476C7AD2C78B467002648A0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
+		9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
+		9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
 		94873BA02C738FE600620B4A /* IQ-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IQ-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94873BA32C738FE600620B4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94873BA52C738FE600620B4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +106,10 @@
 		94873C342C73B65200620B4A /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		94873C362C73B66B00620B4A /* QuizViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelProtocol.swift; sourceTree = "<group>"; };
 		94873C3A2C746CE900620B4A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Result.xcdatamodel; sourceTree = "<group>"; };
+		94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatetsTestCell.swift; sourceTree = "<group>"; };
+		94BB3B792C7A52560016CF33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		94BB3B7E2C7B52240016CF33 /* IQCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9476C7A92C78B40C002648A0 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				9476C7AC2C78B452002648A0 /* ViewModel */,
+				9476C7AB2C78B432002648A0 /* Coordinator */,
+				9476C7AA2C78B42B002648A0 /* Controller */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		9476C7AA2C78B42B002648A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9476C7AD2C78B467002648A0 /* ResultController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9476C7AB2C78B432002648A0 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		9476C7AC2C78B452002648A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		94873B972C738FE600620B4A = {
 			isa = PBXGroup;
 			children = (
@@ -145,8 +194,9 @@
 		94873BA22C738FE600620B4A /* IQ-Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				94873C392C746CCB00620B4A /* Helpers */,
+				94BB3B772C7A52380016CF33 /* Service */,
 				94873C252C73AD2F00620B4A /* Data */,
+				94873C392C746CCB00620B4A /* Helpers */,
 				94873C222C73A89A00620B4A /* Model */,
 				94873BEE2C73999100620B4A /* SupportingFiles */,
 				94873BE12C73922400620B4A /* Feature */,
@@ -204,6 +254,7 @@
 		94873BE12C73922400620B4A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				9476C7A92C78B40C002648A0 /* Result */,
 				94873C282C73B5C700620B4A /* Quiz */,
 				94873C092C739F5E00620B4A /* LatestTests  */,
 				94873C042C739F3500620B4A /* Profile */,
@@ -348,6 +399,7 @@
 		94873C0A2C739F8600620B4A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -389,6 +441,7 @@
 			isa = PBXGroup;
 			children = (
 				94873C262C73AEC700620B4A /* questions.json */,
+				94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -447,9 +500,26 @@
 		94873C392C746CCB00620B4A /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				94BB3B7D2C7B51FD0016CF33 /* IQCalculator */,
 				94873C382C746CBD00620B4A /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		94BB3B772C7A52380016CF33 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				94BB3B792C7A52560016CF33 /* CoreDataService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		94BB3B7D2C7B51FD0016CF33 /* IQCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				94BB3B7E2C7B52240016CF33 /* IQCalculator.swift */,
+			);
+			path = IQCalculator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -556,6 +626,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94BB3B702C7A12300016CF33 /* questions.json in Resources */,
 				94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */,
 				94873BB02C738FE800620B4A /* Base in Resources */,
 			);
@@ -591,21 +662,28 @@
 				94873BED2C7398A700620B4A /* BaseController.swift in Sources */,
 				94873C0F2C739FD600620B4A /* ProfileCoordinator.swift in Sources */,
 				94873C112C739FE400620B4A /* ProfileController.swift in Sources */,
+				94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */,
 				94873C212C73A1D400620B4A /* LatestTestsViewModelProtocol.swift in Sources */,
 				94873C1D2C73A1A200620B4A /* LatestTestsCoordinator.swift in Sources */,
 				94873C132C73A00A00620B4A /* ProfileViewModel.swift in Sources */,
+				9476C7AE2C78B467002648A0 /* ResultController.swift in Sources */,
 				94873C032C739E7000620B4A /* TabBarFactory.swift in Sources */,
 				94873BEA2C73988500620B4A /* BaseCoordinator.swift in Sources */,
 				94873C1B2C73A14C00620B4A /* LatestTestsController.swift in Sources */,
 				94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */,
 				94873C152C73A01500620B4A /* ProfileViewModelProtocol.swift in Sources */,
+				9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */,
+				94BB3B7A2C7A52560016CF33 /* CoreDataService.swift in Sources */,
 				94873C3B2C746CE900620B4A /* UIColor+Hex.swift in Sources */,
 				94873C1F2C73A1AD00620B4A /* LatestTestsViewModel.swift in Sources */,
+				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,
 				94873BA62C738FE600620B4A /* SceneDelegate.swift in Sources */,
 				94873BF82C739B1500620B4A /* StartCoordinator.swift in Sources */,
+				94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */,
 				94873C242C73A8B900620B4A /* Question.swift in Sources */,
 				94873C332C73B64600620B4A /* QuizViewController.swift in Sources */,
 				94873C012C739E5600620B4A /* TabBarCoordinator.swift in Sources */,
+				94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */,
 				94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */,
 				94873BF62C739AA200620B4A /* BaseViewModel.swift in Sources */,
 				94873C272C73AEC700620B4A /* questions.json in Sources */,
@@ -708,7 +786,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -765,7 +843,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -790,6 +868,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -821,6 +900,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -949,6 +1029,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */,
+			);
+			currentVersion = 94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */;
+			path = QuizResult.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 94873B982C738FE600620B4A /* Project object */;
 }

@@ -8,19 +8,16 @@
 import Foundation
 
 
-enum QuestionType {
-    case textWithOptions
-    case imageWithOptions
-    case textWithImages
-    case imageWithImages
+struct Question: Codable, Identifiable {
+    let id: String
+    let type: QuestionType
+    let questionText: String?
+    let questionImage: String?
+    let options: [String]
+    let correctAnswer: String
 }
 
-struct Question {
-    let id: String
-    var type: QuestionType
-    var questionText: String?
-    var questionImage: String?
-    var options: [String]
-    var correctAnswer: String?
-    
+enum QuestionType: String, Codable {
+    case textAnswer
+    case imageAnswer
 }

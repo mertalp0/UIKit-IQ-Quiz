@@ -6,4 +6,29 @@
 //
 
 import Foundation
-class QuizViewModel : BaseViewModel, QuizViewModelProtocol   {}
+class QuizViewModel : BaseViewModel, QuizViewModelProtocol   {
+    @Published var questions : [Question] = []
+    
+    override init() {
+        super.init()
+        fetchQuestions()
+    }
+    private func fetchQuestions(){
+        startLoading()
+        if let url = Bundle.main.url(forResource: "questions", withExtension: "json")  {
+              do {
+                  let data = try Data(contentsOf: url)
+                  let decoder = JSONDecoder()
+                  questions = try decoder.decode([Question].self, from: data)
+              } catch {
+                  print("Error decoding JSON: \(error)")
+              }
+          } else {
+              print("JSON file not found")
+          }
+          
+          print(questions)
+        stopLoading()
+    }
+    
+}
