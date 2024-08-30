@@ -24,6 +24,7 @@ class ProfileViewController : BaseViewController<ProfileCoordinator, ProfileView
         layout()
     }
 }
+//MARK: - Helpers
 extension ProfileViewController{
     func style(){
         self.setupGradientLayer()

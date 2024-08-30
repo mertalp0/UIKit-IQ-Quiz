@@ -53,10 +53,12 @@ class LatestTestCell: UITableViewCell {
         super.init(coder: coder)
         setupCell()
     }
-    
-    // MARK: - Setup Cell
+}
+
+//MARK: - Setup Cell
+extension LatestTestCell{
     private func setupCell() {
-        backgroundColor = .clear // Hücre arka plan rengini şeffaf yapıyoruz
+        backgroundColor = .clear
         contentView.addSubview(containerView)
         
         containerView.addSubview(iqLabel)
@@ -83,8 +85,10 @@ class LatestTestCell: UITableViewCell {
             dateLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10)
         ])
     }
-    
-    // MARK: - Configure Cell
+}
+
+//MARK: - Configure Cell
+extension LatestTestCell{
     func configure(with quizResult: QuizResult) {
         iqLabel.text = "IQ: \(quizResult.iqScore)"
         correctAnswersLabel.text = "Doğru Cevaplar: \(quizResult.correctAnswers)"

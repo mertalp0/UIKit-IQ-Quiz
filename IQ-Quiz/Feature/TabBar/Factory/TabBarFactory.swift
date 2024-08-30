@@ -15,7 +15,6 @@ struct TabBarControllerFactory {
      //   profileCoordinator: ProfileCoordinator
         
     ) -> UITabBarController {
-        
         // Setup Profile Coordinator
         latestTestCoordinator.start()
         let latestTestNavigationController = latestTestCoordinator.navigationController
@@ -37,8 +36,8 @@ struct TabBarControllerFactory {
         tabBarController.viewControllers = [startNavigationController,latestTestNavigationController /*profileNavigationControlle*/]
         tabBarController.selectedIndex = 0
         
-        tabBarController.tabBar.tintColor = UIColor(hex: "5A189A")
-        tabBarController.tabBar.backgroundColor = UIColor(hex: "48BFE3").withAlphaComponent(0.9)
+        tabBarController.tabBar.tintColor = .primaryColor
+        tabBarController.tabBar.backgroundColor = .secondaryColor.withAlphaComponent(0.9)
         tabBarController.tabBar.isTranslucent = false
         
         return tabBarController
