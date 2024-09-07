@@ -5,6 +5,7 @@
 //  Created by mert alp on 19.08.2024.
 //
 import UIKit
+import FirebaseAnalytics
 
 class StartViewController: BaseViewController<StartCoordinator, StartViewModel>, CustomButtonDelegate {
     //MARK: - Properties
@@ -66,5 +67,9 @@ extension StartViewController{
 extension StartViewController {
     func buttonTapped(_ button: CustomButton) {
         coordinator?.showQuiz()
+        Analytics.logEvent("button_cliked", parameters: [
+                   "name": "Start Button",
+                   "action": "button_clicked"
+               ])
     }
 }
