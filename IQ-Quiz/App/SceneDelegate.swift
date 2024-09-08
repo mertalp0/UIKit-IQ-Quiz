@@ -61,15 +61,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let component = urlString.components(separatedBy: "//")
             if component.count > 1 , let product = component.last {
                 print(product)
-                navigateToLastTestsVC()
+                navigateToQuizVC()
             }
         }
     }
     
-    func navigateToLastTestsVC(){
+    func navigateToQuizVC(){
 
         appCoordinator = AppCoordinator(navigationController: navigationController)
-        appCoordinator?.startUrl()
+        appCoordinator?.startQuiz()
         
 
         
