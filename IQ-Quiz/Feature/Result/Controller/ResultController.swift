@@ -40,11 +40,7 @@ class ResultViewController: BaseViewController<ResultCoordinator, ResultViewMode
         return button
     }()
     
-    private let animatedLogoView: AnimatedLogoView = {
-        let view = AnimatedLogoView()
-        return view
-    }()
-    
+  
     var correctAnswers: Int = 0
     var iqScore: Int!
     
@@ -71,9 +67,9 @@ extension ResultViewController{
         view.addSubview(titleLabel)
         view.addSubview(iqLabel)
         view.addSubview(homeButton)
-        view.addSubview(animatedLogoView)
+       
         
-        animatedLogoView.translatesAutoresizingMaskIntoConstraints = false
+      
         iqLabel.translatesAutoresizingMaskIntoConstraints = false
         resultLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -89,11 +85,6 @@ extension ResultViewController{
             resultLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             resultLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             resultLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            animatedLogoView.widthAnchor.constraint(equalToConstant: 350),
-            animatedLogoView.heightAnchor.constraint(equalToConstant: 350) ,
-            animatedLogoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animatedLogoView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
             iqLabel.heightAnchor.constraint(equalToConstant: 80),
             iqLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
