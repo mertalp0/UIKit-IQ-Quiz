@@ -8,6 +8,12 @@
 import UIKit
 
 extension UIColor {
+    static let primaryColor = UIColor(hex: "#5A189A")
+    static let secondaryColor = UIColor(hex: "#48BFE3")
+    
+}
+
+extension UIColor {
     convenience init(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")

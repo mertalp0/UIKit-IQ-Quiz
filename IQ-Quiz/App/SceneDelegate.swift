@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
+    let navigationController = UINavigationController()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -19,10 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
                 let window = UIWindow(windowScene: windowScene)
-                let navigationController = UINavigationController()
                 appCoordinator = AppCoordinator(navigationController: navigationController)
                 appCoordinator?.start()
-                
                 window.rootViewController = navigationController
                 self.window = window
                 window.makeKeyAndVisible()
@@ -55,6 +54,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url  = URLContexts.first?.url{
+            print(url)
+            let urlString = url.absoluteString
+            let component = urlString.components(separatedBy: "//")
+            if component.count > 1 , let product = component.last {
+                print(product)
+                navigateToQuizVC()
+            }
+        }
+    }
+    
+    func navigateToQuizVC(){
 
+        appCoordinator = AppCoordinator(navigationController: navigationController)
+        appCoordinator?.startQuiz()
+        
+
+        
+
+    }
 }
 

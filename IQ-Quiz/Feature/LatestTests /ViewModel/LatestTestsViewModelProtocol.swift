@@ -6,4 +6,8 @@
 //
 
 import Foundation
-protocol LatestTestsViewModelProtocol {}
+
+protocol LatestTestsViewModelProtocol: AnyObject {
+    var latestTests: [QuizResult] { get }
+    func fetchLatestTests()
+}

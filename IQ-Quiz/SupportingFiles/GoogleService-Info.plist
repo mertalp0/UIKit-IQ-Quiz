@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyAX5riwVr79cJxpaai3g-ltlk5L9SYVbuM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>253422561868</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mertalp.IQ-Quiz</string>
+	<key>PROJECT_ID</key>
+	<string>iqtest-f0e8f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>iqtest-f0e8f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:253422561868:ios:5999b352c97cd81ea922e9</string>
+</dict>
+</plist>

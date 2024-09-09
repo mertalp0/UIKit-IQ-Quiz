@@ -36,10 +36,7 @@ class BaseViewController <CoordinatorType: BaseCoordinator, ViewModelType: BaseV
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // Handle view appearance if needed
-        print("******")
-        print(coordinator?.childCoordinators ?? "dont find coordinator")
-        print("******")
+        // Handle view WillAppear if needed
     }
     
     override func viewDidAppear(_ animated: Bool) {

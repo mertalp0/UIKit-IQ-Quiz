@@ -6,6 +6,8 @@
 //
 
 import Foundation
-protocol QuizViewModelProtocol {
-    
+
+protocol QuizViewModelProtocol: AnyObject {
+    var questions: [Question] { get }
+    func fetchQuestions()
 }

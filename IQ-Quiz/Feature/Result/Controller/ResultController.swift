@@ -6,93 +6,79 @@
 //
 import UIKit
 
-class ResultViewController: BaseViewController<ResultCoordinator, ResultViewModel> {
+class ResultViewController: BaseViewController<ResultCoordinator, ResultViewModel>, CustomButtonDelegate  {
     // MARK: - Properties
-  
-    private var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "IQTest"
-        label.textColor = UIColor(hex: "#48BFE3")
-        label.font = .systemFont(ofSize: 24, weight: .bold)
-        label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+    private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     private var resultLabel: UILabel = {
         let label = UILabel()
         label.text = "Result"
-        label.backgroundColor = .systemIndigo
+        label.backgroundColor = .primaryColor
         label.font = .systemFont(ofSize: 24, weight: .medium)
         label.textAlignment = .center
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
         label.textColor = .white
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private var iqLabel: UILabel = {
         let label = UILabel()
-        label.text = "iq"
-        label.backgroundColor = UIColor(hex: "#48BFE3")
+        label.text = "iq label"
+        label.backgroundColor = .secondaryColor
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
         label.layer.cornerRadius = 20
         label.layer.masksToBounds = true
         label.textColor = .black
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private var backButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Ana Sayfa", for: .normal)
-        button.backgroundColor = .systemIndigo
-        button.tintColor = .white
-        button.layer.cornerRadius = 12
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
+    private var homeButton: CustomButton = {
+        let button = CustomButton(title: "Ana Sayfa")
         return button
     }()
     
-    private var logo: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo") // Burada logo resminizin adını belirtin
-        imageView.contentMode = .scaleAspectFit // Resmi orantılı olarak ölçeklendirir
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
-    
+  
     var correctAnswers: Int = 0
     var iqScore: Int!
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         iqScore = IQCalculator.calculateIQ(fromCorrectAnswers: correctAnswers)
         setupUI()
+        layout()
+        homeButton.delegate = self
+        configureUI()
         viewModel.saveResult(correctAnswers: correctAnswers, iqScore: iqScore)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        animateLogo()
-    }
+}
+
+//MARK: - Helpers
+extension ResultViewController{
     private func setupUI() {
         self.setupGradientLayer()
+    }
+    
+    private func layout(){
         view.addSubview(resultLabel)
         view.addSubview(titleLabel)
         view.addSubview(iqLabel)
-        view.addSubview(backButton)
-        view.addSubview(logo)
-        logo.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(homeButton)
+       
+        
+      
+        iqLabel.translatesAutoresizingMaskIntoConstraints = false
+        resultLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        homeButton.translatesAutoresizingMaskIntoConstraints = false
+
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 60),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.05),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
       
             resultLabel.heightAnchor.constraint(equalToConstant: 100),
             resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -100,52 +86,34 @@ class ResultViewController: BaseViewController<ResultCoordinator, ResultViewMode
             resultLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             resultLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            logo.widthAnchor.constraint(equalToConstant: 350), // Genişlik
-            logo.heightAnchor.constraint(equalToConstant: 350) , // Yükseklik
-            
-            
             iqLabel.heightAnchor.constraint(equalToConstant: 80),
             iqLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            iqLabel.bottomAnchor.constraint(equalTo: backButton.topAnchor, constant: -40),
+            iqLabel.bottomAnchor.constraint(equalTo: homeButton.topAnchor, constant: -40),
             iqLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             iqLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
             
-            backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            backButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            backButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            backButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            backButton.heightAnchor.constraint(equalToConstant: 50),
+            homeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
+            homeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            homeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            homeButton.heightAnchor.constraint(equalToConstant: 50),
         ])
-        
-        configureUI()
     }
-    
+}
+
+//MARK: - ConfigureUI
+extension ResultViewController {
     private func configureUI() {
         let scoreText = "Tebrikler!!\n15 Sorudan \(correctAnswers) doğru yaptınız.."
         let iqScoreText = "IQ Test Sonucunuz: \(iqScore ?? 0) IQ"
         iqLabel.text = iqScoreText
         resultLabel.text = scoreText
     }
-    
-    @objc private func handleBackButton() {
-        coordinator?.backToRoot()
-    }
 }
 
-//MARK: - Animation
+// MARK: - CustomButtonDelegate
 extension ResultViewController {
-    private func animateLogo() {
-        let animation = CABasicAnimation(keyPath: "position")
-        animation.duration = 3.0
-        animation.repeatCount = .infinity
-        animation.autoreverses = true
-       
-        let startPosition = CGPoint(x: view.center.x, y: view.center.y + -25 )
-        let endPosition = CGPoint(x: view.center.x, y: view.center.y + 20)
-       
-        animation.fromValue = NSValue(cgPoint: startPosition)
-        animation.toValue = NSValue(cgPoint: endPosition)
-        
-        logo.layer.add(animation, forKey: "positionAnimation")
+    func buttonTapped(_ button: CustomButton) {
+        coordinator?.backToRoot()
     }
 }

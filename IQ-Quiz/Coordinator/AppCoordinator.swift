@@ -11,5 +11,9 @@ class AppCoordinator : BaseCoordinator {
         let startCoordinator = TabBarCoordinator(navigationController : navigationController)
             startCoordinator.start()
     }
+     func startQuiz() {
+        let quizCoordinator = QuizCoordinator(navigationController : navigationController)
+         quizCoordinator.start()
+    }
   
 }
