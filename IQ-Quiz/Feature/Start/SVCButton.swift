@@ -19,7 +19,7 @@ enum SVCButtonType {
     case start
     case share
     case lastTest
-    case storeApps
+    case feedBack
     case noAds
     
     var icon: UIImage? {
@@ -30,7 +30,7 @@ enum SVCButtonType {
             return UIImage(systemName: "square.and.arrow.up.fill")
         case .lastTest:
             return UIImage(systemName: "list.bullet.clipboard.fill")
-        case .storeApps:
+        case .feedBack:
             return UIImage(systemName: "apple.logo")
         case .noAds:
             return UIImage(systemName: "video.slash.fill")

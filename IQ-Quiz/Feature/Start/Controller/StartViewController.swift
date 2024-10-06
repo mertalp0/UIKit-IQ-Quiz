@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import MessageUI
 
 final class StartViewController: BaseViewController<StartCoordinator, StartViewModel> {
     
@@ -36,8 +37,8 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
         return button
     }()
     
-    private let storeApps : SVCButton = {
-        let button = SVCButton(type: .storeApps)
+    private let feedBackButton : SVCButton = {
+        let button = SVCButton(type: .feedBack)
         return button
     }()
     
@@ -69,19 +70,19 @@ extension StartViewController {
         view.addSubview(playButton)
         view.addSubview(lastTestButton)
         view.addSubview(shareButton)
-        view.addSubview(storeApps)
+        view.addSubview(feedBackButton)
         view.addSubview(noAds)
-
+        
         playButton.delegate = self
         lastTestButton.delegate = self
         shareButton.delegate = self
-        storeApps.delegate = self
+        feedBackButton.delegate = self
         noAds.delegate = self
     }
     
     //Setup Layout
     private func setupLayout() {
-    
+        
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
             make.centerX.equalToSuperview()
@@ -110,7 +111,7 @@ extension StartViewController {
             make.width.height.equalTo(80)
         }
         
-        storeApps.snp.makeConstraints { make in
+        feedBackButton.snp.makeConstraints { make in
             make.top.equalTo(playButton.snp.bottom).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-50)
             make.width.height.equalTo(80)
@@ -121,23 +122,54 @@ extension StartViewController {
             make.leading.equalTo(view.snp.leading).offset(50)
             make.width.height.equalTo(80)
         }
-
+        
     }
 }
 
-//MARK: - SVCButtonDelegate
+// MARK: - MFMailComposeViewControllerDelegate
+extension StartViewController: MFMailComposeViewControllerDelegate {
+    
+    @objc func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mailComposeVC = MFMailComposeViewController()
+            mailComposeVC.mailComposeDelegate = self
+            
+            mailComposeVC.setToRecipients(["mertalp010@gmail.com"])
+            
+            mailComposeVC.setSubject("İletişim")
+    
+            present(mailComposeVC, animated: true, completion: nil)
+        } else {
+            print("Mail gönderilemez, mail servisine erişilemiyor.")
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+// MARK: - SVCButtonDelegate
 extension StartViewController: SVCButtonDelegate {
+    
     func didTapButton(_ senderType: SVCButtonType) {
         if senderType == .start {
             coordinator?.showQuiz()
-        }else if senderType == .share {
-            print("Share Button tapped")
-        }else if senderType == .lastTest {
+        }
+        else if senderType == .share {
+            let appStoreLink = Constants.appStoreLink
+            let activityVC = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
+            present(activityVC, animated: true, completion: nil)
+            
+        }
+        else if senderType == .lastTest {
             coordinator?.showLastTests()
-        }else if senderType == .storeApps {
-            print("Go to store ")
-        }else if senderType == .noAds {
-            print("Go to payment ")
+        }
+        else if senderType == .feedBack {
+            sendEmail()
+        }
+        else if senderType == .noAds {
+            print("Go to payment")
         }
     }
 }
