@@ -12,6 +12,7 @@ class LatestTestsCoordinator : BaseCoordinator {
         let latestTestsViewModel = LatestTestsViewModel()
         let latestTestsViewController = LatestTestsController(viewModel : latestTestsViewModel)
         latestTestsViewController.coordinator = self
+        hideBackButton(for: latestTestsViewController)
         navigationController.pushViewController( latestTestsViewController, animated: true)
     }
     

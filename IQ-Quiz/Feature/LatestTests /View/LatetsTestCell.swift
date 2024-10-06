@@ -5,9 +5,11 @@
 //  Created by mert alp on 24.08.2024.
 //
 import UIKit
+import SnapKit
 
 class LatestTestCell: UITableViewCell {
-    // MARK: - Properties
+    
+    // MARK: - UI Elements
     private let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -15,7 +17,6 @@ class LatestTestCell: UITableViewCell {
         view.layer.masksToBounds = true
         view.layer.borderWidth = 1
         view.layer.borderColor = UIColor.lightGray.cgColor
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
@@ -23,7 +24,6 @@ class LatestTestCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.textColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -31,7 +31,6 @@ class LatestTestCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -39,11 +38,10 @@ class LatestTestCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // Custom initializer
+    //MARK: - Initializer
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCell()
@@ -56,7 +54,7 @@ class LatestTestCell: UITableViewCell {
 }
 
 //MARK: - Setup Cell
-extension LatestTestCell{
+extension LatestTestCell {
     private func setupCell() {
         backgroundColor = .clear
         contentView.addSubview(containerView)
@@ -65,30 +63,37 @@ extension LatestTestCell{
         containerView.addSubview(dateLabel)
         containerView.addSubview(correctAnswersLabel)
         
-        NSLayoutConstraint.activate([
-            containerView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
-            containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            
-            iqLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 10),
-            iqLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 16),
-            iqLabel.trailingAnchor.constraint(equalTo: containerView.trailingAnchor, constant: -16),
-            
-            correctAnswersLabel.topAnchor.constraint(equalTo: iqLabel.bottomAnchor, constant: 4),
-            correctAnswersLabel.leadingAnchor.constraint(equalTo: iqLabel.leadingAnchor),
-            correctAnswersLabel.trailingAnchor.constraint(equalTo: iqLabel.trailingAnchor),
-            
-            dateLabel.topAnchor.constraint(equalTo: correctAnswersLabel.bottomAnchor, constant: 4),
-            dateLabel.leadingAnchor.constraint(equalTo: iqLabel.leadingAnchor),
-            dateLabel.trailingAnchor.constraint(equalTo: iqLabel.trailingAnchor),
-            dateLabel.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -10)
-        ])
+        // SnapKit ile constraint'ler
+        containerView.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(8)
+            make.leading.equalTo(contentView.snp.leading).offset(10)
+            make.trailing.equalTo(contentView.snp.trailing).inset(10)
+            make.bottom.equalTo(contentView.snp.bottom).inset(8)
+        }
+        
+        iqLabel.snp.makeConstraints { make in
+            make.top.equalTo(containerView.snp.top).offset(10)
+            make.leading.equalTo(containerView.snp.leading).offset(16)
+            make.trailing.equalTo(containerView.snp.trailing).inset(16)
+        }
+        
+        correctAnswersLabel.snp.makeConstraints { make in
+            make.top.equalTo(iqLabel.snp.bottom).offset(4)
+            make.leading.equalTo(iqLabel.snp.leading)
+            make.trailing.equalTo(iqLabel.snp.trailing)
+        }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(correctAnswersLabel.snp.bottom).offset(4)
+            make.leading.equalTo(iqLabel.snp.leading)
+            make.trailing.equalTo(iqLabel.snp.trailing)
+            make.bottom.equalTo(containerView.snp.bottom).inset(10)
+        }
     }
 }
 
 //MARK: - Configure Cell
-extension LatestTestCell{
+extension LatestTestCell {
     func configure(with quizResult: QuizResult) {
         iqLabel.text = "IQ: \(quizResult.iqScore)"
         correctAnswersLabel.text = "Doğru Cevaplar: \(quizResult.correctAnswers)"

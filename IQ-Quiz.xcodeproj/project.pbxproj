@@ -10,6 +10,8 @@
 		9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */; };
 		9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EAD32C7E01BA003D7295 /* CustomButton.swift */; };
 		9463EADC2C7E0ED5003D7295 /* AnimateLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */; };
+		946AEAE32CB0430A00B16F05 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 946AEAE22CB0430A00B16F05 /* SnapKit */; };
+		9474F3482CB08CB200D5540A /* SVCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9474F3472CB08CB200D5540A /* SVCButton.swift */; };
 		9476C7AE2C78B467002648A0 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7AD2C78B467002648A0 /* ResultController.swift */; };
 		9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */; };
 		9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */; };
@@ -79,6 +81,7 @@
 		9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelProtocol.swift; sourceTree = "<group>"; };
 		9463EAD32C7E01BA003D7295 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLogo.swift; sourceTree = "<group>"; };
+		9474F3472CB08CB200D5540A /* SVCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SVCButton.swift; path = "IQ-Quiz/Feature/Start/SVCButton.swift"; sourceTree = SOURCE_ROOT; };
 		9476C7AD2C78B467002648A0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
@@ -133,6 +136,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F7681C2C8CD6CE000E9180 /* FirebaseAnalytics in Frameworks */,
+				946AEAE32CB0430A00B16F05 /* SnapKit in Frameworks */,
 				94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */,
 				94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */,
 			);
@@ -299,8 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
-				94873BB12C738FE800620B4A /* Info.plist */,
 				94873BAC2C738FE800620B4A /* Assets.xcassets */,
+				94873BB12C738FE800620B4A /* Info.plist */,
 				94873BAE2C738FE800620B4A /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
@@ -551,6 +555,7 @@
 		94D209552C7E40CD00855278 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9474F3472CB08CB200D5540A /* SVCButton.swift */,
 			);
 			name = View;
 			path = "VİEW";
@@ -591,6 +596,7 @@
 				94F7681B2C8CD6CE000E9180 /* FirebaseAnalytics */,
 				94F7681D2C8CD6CE000E9180 /* FirebaseCrashlytics */,
 				94F7681F2C8CD6CE000E9180 /* FirebaseFirestore */,
+				946AEAE22CB0430A00B16F05 /* SnapKit */,
 			);
 			productName = "IQ-Quiz";
 			productReference = 94873BA02C738FE600620B4A /* IQ-Quiz.app */;
@@ -666,6 +672,7 @@
 			mainGroup = 94873B972C738FE600620B4A;
 			packageReferences = (
 				94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 94873BA12C738FE600620B4A /* Products */;
 			projectDirPath = "";
@@ -721,6 +728,7 @@
 				94873C192C73A05D00620B4A /* StartViewModelProtocol.swift in Sources */,
 				94873BED2C7398A700620B4A /* BaseController.swift in Sources */,
 				94873C0F2C739FD600620B4A /* ProfileCoordinator.swift in Sources */,
+				9474F3482CB08CB200D5540A /* SVCButton.swift in Sources */,
 				94873C112C739FE400620B4A /* ProfileController.swift in Sources */,
 				94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */,
 				94873C212C73A1D400620B4A /* LatestTestsViewModelProtocol.swift in Sources */,
@@ -1102,6 +1110,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 		94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -1113,6 +1129,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		946AEAE22CB0430A00B16F05 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		94F7681B2C8CD6CE000E9180 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

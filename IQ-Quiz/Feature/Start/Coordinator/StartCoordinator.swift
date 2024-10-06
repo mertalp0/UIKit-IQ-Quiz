@@ -12,10 +12,14 @@ class StartCoordinator : BaseCoordinator {
          let startViewModel = StartViewModel()
          let startViewController = StartViewController(viewModel: startViewModel)
          startViewController.coordinator = self
-         navigationController.pushViewController(startViewController, animated: true)
+         navigationController.setViewControllers([startViewController], animated: true)
      }
     func showQuiz(){
         let quizCoordinator = QuizCoordinator(navigationController: navigationController)
         quizCoordinator.start()
+    }
+    func showLastTests(){
+        let coordinator = LatestTestsCoordinator(navigationController: navigationController)
+        coordinator.start()
     }
 }

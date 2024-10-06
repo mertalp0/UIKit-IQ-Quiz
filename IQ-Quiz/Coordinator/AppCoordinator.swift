@@ -8,9 +8,10 @@
 import UIKit
 class AppCoordinator : BaseCoordinator {
     override func start() {
-        let startCoordinator = TabBarCoordinator(navigationController : navigationController)
+        let startCoordinator = StartCoordinator(navigationController: self.navigationController)
             startCoordinator.start()
     }
+    
      func startQuiz() {
         let quizCoordinator = QuizCoordinator(navigationController : navigationController)
          quizCoordinator.start()

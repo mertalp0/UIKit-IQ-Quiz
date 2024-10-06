@@ -4,72 +4,140 @@
 //
 //  Created by mert alp on 19.08.2024.
 //
+
 import UIKit
-import FirebaseAnalytics
+import SnapKit
 
-class StartViewController: BaseViewController<StartCoordinator, StartViewModel>, CustomButtonDelegate {
-    //MARK: - Properties
+final class StartViewController: BaseViewController<StartCoordinator, StartViewModel> {
+    
+    //MARK: - UI Elements
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
-
-    private let animatedLogoView: AnimatedLogoView = {
-        let view = AnimatedLogoView()
-        return view
+    
+    private var logo: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "logo")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        return imageView
     }()
     
-    private lazy var startButton: CustomButton = {
-        let button = CustomButton(title: "Başla")
-        button.delegate = self
+    private let playButton: SVCButton = {
+        let button = SVCButton(type: .start)
+        return button
+    }()
+    
+    private let lastTestButton: SVCButton = {
+        let button = SVCButton(type: .lastTest)
+        return button
+    }()
+    
+    private let shareButton: SVCButton = {
+        let button = SVCButton(type: .share)
+        return button
+    }()
+    
+    private let storeApps : SVCButton = {
+        let button = SVCButton(type: .storeApps)
+        return button
+    }()
+    
+    private let noAds : SVCButton = {
+        let button = SVCButton(type: .noAds)
         return button
     }()
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
-        layout()
+        setupUI()
+        setupLayout()
+        
     }
 }
 
-//MARK: - Helpers
-extension StartViewController{
-    func style() {
+//MARK: - UI Setup and Layout
+extension StartViewController {
+    
+    //Setup UI
+    private func setupUI() {
         self.setupGradientLayer()
+        
+        view.addSubview(titleLabel)
+        
+        view.addSubview(logo)
+        
+        view.addSubview(playButton)
+        view.addSubview(lastTestButton)
+        view.addSubview(shareButton)
+        view.addSubview(storeApps)
+        view.addSubview(noAds)
+
+        playButton.delegate = self
+        lastTestButton.delegate = self
+        shareButton.delegate = self
+        storeApps.delegate = self
+        noAds.delegate = self
     }
     
-    func layout() {
-        view.addSubview(titleLabel)
-        view.addSubview(animatedLogoView)
-        view.addSubview(startButton)
+    //Setup Layout
+    private func setupLayout() {
+    
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.centerX.equalToSuperview()
+        }
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        animatedLogoView.translatesAutoresizingMaskIntoConstraints = false
-        startButton.translatesAutoresizingMaskIntoConstraints = false
+        logo.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom)
+            make.width.height.equalTo(70)
+            make.centerX.equalTo(view.snp.centerX)
+        }
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.05),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            animatedLogoView.widthAnchor.constraint(equalToConstant: 350),
-            animatedLogoView.heightAnchor.constraint(equalToConstant: 350) ,
-            animatedLogoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animatedLogoView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            startButton.heightAnchor.constraint(equalToConstant: 50),
-            startButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            startButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
-            startButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
-        ])
+        playButton.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+        
+        lastTestButton.snp.makeConstraints { make in
+            make.bottom.equalTo(playButton.snp.top).offset(-20)
+            make.leading.equalTo(view.snp.leading).offset(50)
+            make.width.height.equalTo(80)
+        }
+        
+        shareButton.snp.makeConstraints { make in
+            make.bottom.equalTo(playButton.snp.top).offset(-30)
+            make.trailing.equalTo(view.snp.trailing).offset(-50)
+            make.width.height.equalTo(80)
+        }
+        
+        storeApps.snp.makeConstraints { make in
+            make.top.equalTo(playButton.snp.bottom).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-50)
+            make.width.height.equalTo(80)
+        }
+        
+        noAds.snp.makeConstraints { make in
+            make.top.equalTo(playButton.snp.bottom).offset(30)
+            make.leading.equalTo(view.snp.leading).offset(50)
+            make.width.height.equalTo(80)
+        }
+
     }
 }
 
-//MARK: - CustomButtonDelegate
-extension StartViewController {
-    func buttonTapped(_ button: CustomButton) {
-        coordinator?.showQuiz()
-        Analytics.logEvent("button_cliked", parameters: [
-                   "name": "Start Button",
-                   "action": "button_clicked"
-               ])
+//MARK: - SVCButtonDelegate
+extension StartViewController: SVCButtonDelegate {
+    func didTapButton(_ senderType: SVCButtonType) {
+        if senderType == .start {
+            coordinator?.showQuiz()
+        }else if senderType == .share {
+            print("Share Button tapped")
+        }else if senderType == .lastTest {
+            coordinator?.showLastTests()
+        }else if senderType == .storeApps {
+            print("Go to store ")
+        }else if senderType == .noAds {
+            print("Go to payment ")
+        }
     }
 }

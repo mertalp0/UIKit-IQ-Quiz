@@ -5,17 +5,34 @@
 //  Created by mert alp on 19.08.2024.
 //
 import UIKit
+import SnapKit
 
 class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTestsViewModel> {
-    // MARK: - Properties
-    private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
-    private var tableView: UITableView = {
+    // MARK: - UI Elements
+    private let titleLabel: UILabel = {
+        let label = UILabel.makeAppBarLabel()
+        return label
+    }()
+    
+    private let backButton: UIButton = {
+        let button = UIButton()
+        let icon = UIImage(systemName: "chevron.backward")
+        button.setImage(icon, for: .normal)
+        button.tintColor = .white
+        button.backgroundColor = .red
+        return button
+    }()
+    
+    private let tableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .clear
+        tableView.showsVerticalScrollIndicator = false
+        tableView.separatorStyle = .none
         return tableView
     }()
     
-    private var latestTestLabel: UILabel = {
+    private let latestTestLabel: UILabel = {
         let label = UILabel()
         label.text = "Son Testler"
         label.textColor = .white
@@ -26,54 +43,66 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        style()
-        layout()
+        setupUI()
+        setupLayout()
         setupTableView()
+        setupActions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.fetchLatestTests()
-        tableView.reloadData()
+    }
+    
+    // MARK: - Setup Actions
+    private func setupActions() {
+        backButton.addTarget(self, action: #selector(handleBackButton), for: .touchUpInside)
     }
 }
 
-//MARK: - Helpers
-extension LatestTestsController{
-    private func style() {
-        self.setupGradientLayer()
+// MARK: - Setup UI and Setup Layout
+extension LatestTestsController {
+    
+    // Setup UI
+    private func setupUI() {
+        setupGradientLayer()
     }
     
-    private func layout() {
+    // Setup Layout
+    private func setupLayout() {
         view.addSubview(titleLabel)
         view.addSubview(latestTestLabel)
         view.addSubview(tableView)
+        view.addSubview(backButton)
         
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        latestTestLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.leading.equalToSuperview().offset(30)
+            make.trailing.equalToSuperview().inset(16)
+        }
         
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.05),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            latestTestLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            latestTestLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            
-            tableView.topAnchor.constraint(equalTo: latestTestLabel.bottomAnchor, constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
+        backButton.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.leading.equalToSuperview().offset(16)
+            make.size.equalTo(CGSize(width: 30, height: 30))
+        }
+        
+        latestTestLabel.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview().offset(20)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(latestTestLabel.snp.bottom).offset(20)
+            make.leading.trailing.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview()
+        }
     }
 }
 
-//MARK: - Setup Table View
-extension LatestTestsController{
+// MARK: - Setup Table View
+extension LatestTestsController {
     private func setupTableView() {
-        tableView.backgroundColor = .clear
-        tableView.showsVerticalScrollIndicator = false
-        tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(LatestTestCell.self, forCellReuseIdentifier: "LatestTestCell")
@@ -82,7 +111,7 @@ extension LatestTestsController{
     }
 }
 
-//MARK: - UITableViewDelegate , UITableViewDataSource
+// MARK: - UITableViewDelegate , UITableViewDataSource
 extension LatestTestsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.latestTests.count
@@ -95,5 +124,13 @@ extension LatestTestsController: UITableViewDelegate, UITableViewDataSource {
         cell.configure(with: viewModel.latestTests[indexPath.row])
         cell.selectionStyle = .none
         return cell
+    }
+}
+
+// MARK: - Selectors
+extension LatestTestsController {
+    
+    @objc private func handleBackButton() {
+        coordinator?.dismiss()
     }
 }

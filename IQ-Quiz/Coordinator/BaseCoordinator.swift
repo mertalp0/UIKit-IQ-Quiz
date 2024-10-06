@@ -39,5 +39,9 @@ class BaseCoordinator: Coordinator {
         viewController.navigationItem.hidesBackButton = true
     }
     
+    func dismiss(){
+        navigationController.popViewController(animated: true)
+    }
+    
 
 }
