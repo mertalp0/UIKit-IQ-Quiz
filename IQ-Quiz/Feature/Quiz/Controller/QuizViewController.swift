@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,CustomButtonDelegate {
     
@@ -17,6 +18,9 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     var totalQuizTime = 300
     var remainingTime: Int = 0
     
+    //MARK: - UI Elements
+    var bannerView: GADBannerView!
+
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
     private lazy var nextButton: CustomButton = {
@@ -63,11 +67,6 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
         return label
     }()
     
-    private var bannerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .gray
-        return view
-    }()
     
     private var timerLabel: UILabel = {
         let label = UILabel()
@@ -80,6 +79,14 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let viewWidth = view.frame.inset(by: view.safeAreaInsets).width
+        let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+        bannerView = GADBannerView(adSize: adaptiveSize)
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+        addBannerViewToView(bannerView)
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
         style()
         layout()
         configureUI()
@@ -88,7 +95,7 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        timer?.invalidate() // Zamanlayıcıyı iptal edin
+        timer?.invalidate()
     }
 
 
@@ -139,7 +146,9 @@ extension QuizViewController {
         }
         self.selectedOptionButton = nil
     }
+    
     private func showResult() {
+        
         coordinator?.showResult(correctAnswers:correctAnswers)
     }
 }
@@ -308,4 +317,55 @@ extension QuizViewController {
         let seconds = remainingTime % 60
         timerLabel.text = String(format: "%02d:%02d", minutes, seconds)
     }
+}
+
+//MARK: - Setup Banner , GADBannerViewDelegate
+extension QuizViewController : GADBannerViewDelegate {
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(bannerView)
+        view.addConstraints(
+            [NSLayoutConstraint(item: bannerView,
+                                attribute: .bottom,
+                                relatedBy: .equal,
+                                toItem: view.safeAreaLayoutGuide,
+                                attribute: .bottom,
+                                multiplier: 1,
+                                constant: 0),
+             NSLayoutConstraint(item: bannerView,
+                                attribute: .centerX,
+                                relatedBy: .equal,
+                                toItem: view,
+                                attribute: .centerX,
+                                multiplier: 1,
+                                constant: 0)
+            ])
+    }
+    
+    
+    func bannerViewDidReceiveAd(_ bannerView: GADBannerView) {
+      print("bannerViewDidReceiveAd")
+    }
+
+    func bannerView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: Error) {
+      print("bannerView:didFailToReceiveAdWithError: \(error.localizedDescription)")
+    }
+
+    func bannerViewDidRecordImpression(_ bannerView: GADBannerView) {
+      print("bannerViewDidRecordImpression")
+    }
+
+    func bannerViewWillPresentScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillPresentScreen")
+    }
+
+    func bannerViewWillDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewWillDIsmissScreen")
+    }
+
+    func bannerViewDidDismissScreen(_ bannerView: GADBannerView) {
+      print("bannerViewDidDismissScreen")
+    }
+    
 }

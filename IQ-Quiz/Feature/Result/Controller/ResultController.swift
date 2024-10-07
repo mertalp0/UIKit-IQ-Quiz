@@ -4,11 +4,20 @@
 //
 //  Created by mert alp on 19.08.2024.
 //
-import UIKit
 
-class ResultViewController: BaseViewController<ResultCoordinator, ResultViewModel>, CustomButtonDelegate  {
+import UIKit
+import GoogleMobileAds
+
+final class ResultViewController: BaseViewController<ResultCoordinator, ResultViewModel>  {
+    
     // MARK: - Properties
+    var interstitial: GADInterstitialAd!
+    var correctAnswers: Int = 0
+    var iqScore: Int!
+    
+    // MARK: - UI Elements
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
+    
     private var resultLabel: UILabel = {
         let label = UILabel()
         label.text = "Result"
@@ -40,64 +49,75 @@ class ResultViewController: BaseViewController<ResultCoordinator, ResultViewMode
         return button
     }()
     
-  
-    var correctAnswers: Int = 0
-    var iqScore: Int!
+    private let applauseIcon: UIImageView = {
+        let imageView = UIImageView()
+        let image = UIImage(named: "applause")
+        imageView.image = image
+        return imageView
+    }()
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadInterstitialAd()
         iqScore = IQCalculator.calculateIQ(fromCorrectAnswers: correctAnswers)
+        
         setupUI()
         layout()
-        homeButton.delegate = self
+        
         configureUI()
         viewModel.saveResult(correctAnswers: correctAnswers, iqScore: iqScore)
     }
 }
 
-//MARK: - Helpers
-extension ResultViewController{
+// MARK: - Setup IU , Setup Layout
+extension ResultViewController {
     private func setupUI() {
         self.setupGradientLayer()
+        homeButton.delegate = self
     }
     
-    private func layout(){
+    private func layout() {
         view.addSubview(resultLabel)
         view.addSubview(titleLabel)
         view.addSubview(iqLabel)
         view.addSubview(homeButton)
-       
+        view.addSubview(applauseIcon)
         
-      
-        iqLabel.translatesAutoresizingMaskIntoConstraints = false
-        resultLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        homeButton.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.07),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-      
-            resultLabel.heightAnchor.constraint(equalToConstant: 100),
-            resultLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            resultLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            resultLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            resultLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            iqLabel.heightAnchor.constraint(equalToConstant: 80),
-            iqLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            iqLabel.bottomAnchor.constraint(equalTo: homeButton.topAnchor, constant: -40),
-            iqLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
-            iqLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
-            
-            homeButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            homeButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
-            homeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            homeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            homeButton.heightAnchor.constraint(equalToConstant: 50),
-        ])
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.leading.equalTo(view.snp.leading).offset(16)
+            make.trailing.equalTo(view.snp.trailing).offset(-16)
+        }
+        
+        resultLabel.snp.makeConstraints { make in
+            make.height.equalTo(100)
+            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(titleLabel.snp.bottom).offset(20)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-20)
+        }
+        
+        applauseIcon.snp.makeConstraints { make in
+            make.height.width.equalTo(350)
+            make.center.equalToSuperview()
+        }
+        
+        iqLabel.snp.makeConstraints { make in
+            make.height.equalTo(80)
+            make.centerX.equalTo(view.snp.centerX)
+            make.bottom.equalTo(homeButton.snp.top).offset(-40)
+            make.leading.equalTo(view.snp.leading).offset(30)
+            make.trailing.equalTo(view.snp.trailing).offset(-30)
+        }
+        
+        homeButton.snp.makeConstraints { make in
+            make.centerX.equalTo(view.snp.centerX)
+            make.bottom.equalTo(view.snp.bottom).offset(-70)
+            make.leading.equalTo(view.snp.leading).offset(20)
+            make.trailing.equalTo(view.snp.trailing).offset(-20)
+            make.height.equalTo(50)
+        }
     }
 }
 
@@ -112,8 +132,36 @@ extension ResultViewController {
 }
 
 // MARK: - CustomButtonDelegate
-extension ResultViewController {
+extension ResultViewController: CustomButtonDelegate{
     func buttonTapped(_ button: CustomButton) {
         coordinator?.backToRoot()
+    }
+}
+
+//MARK: - GADFullScreenContentDelegate
+extension ResultViewController: GADFullScreenContentDelegate{
+    func loadInterstitialAd() {
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: Constants.adUnitId, request: request) { (ad, error) in
+            if let error = error {
+                print("Failed to load interstitial ad: \(error.localizedDescription)")
+                return
+            }
+            self.interstitial = ad
+            self.interstitial?.fullScreenContentDelegate = self
+            self.showInterstitialAd()
+        }
+    }
+    
+    func showInterstitialAd() {
+        if let ad = interstitial {
+            ad.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        
     }
 }

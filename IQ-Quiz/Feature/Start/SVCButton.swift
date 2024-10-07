@@ -5,9 +5,6 @@
 //  Created by mert alp on 4.10.2024.
 //
 //
-//  ButtonComponent.swift
-//
-
 import UIKit
 import SnapKit
 
@@ -20,7 +17,7 @@ enum SVCButtonType {
     case share
     case lastTest
     case feedBack
-    case noAds
+    case settings
     
     var icon: UIImage? {
         switch self {
@@ -32,10 +29,9 @@ enum SVCButtonType {
             return UIImage(systemName: "list.bullet.clipboard.fill")
         case .feedBack:
             return UIImage(systemName: "apple.logo")
-        case .noAds:
-            return UIImage(systemName: "video.slash.fill")
+        case .settings:
+            return UIImage(systemName: "gearshape")
         }
-    
     }
 }
 

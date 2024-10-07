@@ -14,12 +14,18 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
     //MARK: - UI Elements
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
-    private var logo: UIImageView = {
+    private let logo: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
+    }()
+    
+    private let welcomeLabel : UILabel = {
+        let label = UILabel()
+        label.text = "Hoşgeldin"
+        return label
     }()
     
     private let playButton: SVCButton = {
@@ -42,8 +48,8 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
         return button
     }()
     
-    private let noAds : SVCButton = {
-        let button = SVCButton(type: .noAds)
+    private let settingsButton : SVCButton = {
+        let button = SVCButton(type: .settings)
         return button
     }()
     
@@ -67,17 +73,19 @@ extension StartViewController {
         
         view.addSubview(logo)
         
+        view.addSubview(welcomeLabel)
+        
         view.addSubview(playButton)
         view.addSubview(lastTestButton)
         view.addSubview(shareButton)
         view.addSubview(feedBackButton)
-        view.addSubview(noAds)
+        view.addSubview(settingsButton)
         
         playButton.delegate = self
         lastTestButton.delegate = self
         shareButton.delegate = self
         feedBackButton.delegate = self
-        noAds.delegate = self
+        settingsButton.delegate = self
     }
     
     //Setup Layout
@@ -91,6 +99,11 @@ extension StartViewController {
         logo.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
             make.width.height.equalTo(70)
+            make.centerX.equalTo(view.snp.centerX)
+        }
+        
+        welcomeLabel.snp.makeConstraints { make in
+            make.top.equalTo(logo.snp.bottom)
             make.centerX.equalTo(view.snp.centerX)
         }
         
@@ -117,35 +130,11 @@ extension StartViewController {
             make.width.height.equalTo(80)
         }
         
-        noAds.snp.makeConstraints { make in
+        settingsButton.snp.makeConstraints { make in
             make.top.equalTo(playButton.snp.bottom).offset(30)
             make.leading.equalTo(view.snp.leading).offset(50)
             make.width.height.equalTo(80)
         }
-        
-    }
-}
-
-// MARK: - MFMailComposeViewControllerDelegate
-extension StartViewController: MFMailComposeViewControllerDelegate {
-    
-    @objc func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mailComposeVC = MFMailComposeViewController()
-            mailComposeVC.mailComposeDelegate = self
-            
-            mailComposeVC.setToRecipients(["mertalp010@gmail.com"])
-            
-            mailComposeVC.setSubject("İletişim")
-    
-            present(mailComposeVC, animated: true, completion: nil)
-        } else {
-            print("Mail gönderilemez, mail servisine erişilemiyor.")
-        }
-    }
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -160,16 +149,45 @@ extension StartViewController: SVCButtonDelegate {
             let appStoreLink = Constants.appStoreLink
             let activityVC = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
             present(activityVC, animated: true, completion: nil)
-            
         }
         else if senderType == .lastTest {
             coordinator?.showLastTests()
         }
         else if senderType == .feedBack {
-            sendEmail()
+            viewModel.sendEmail(from: self)
         }
-        else if senderType == .noAds {
-            print("Go to payment")
+        else if senderType == .settings {
+            showSettingsBottomSheet()
         }
+    }
+    
+    // Settings Bottom Sheet
+    private func showSettingsBottomSheet() {
+        let settingsActionSheet = UIAlertController(title: "Settings", message: "Change Language", preferredStyle: .actionSheet)
+        
+        let accountAction = UIAlertAction(title: "Türkçe", style: .default) { _ in
+            print("Türkçe tapped")
+            
+        }
+        
+        let notificationsAction = UIAlertAction(title: "English", style: .default) { _ in
+            print("English tapped")
+            
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        settingsActionSheet.addAction(accountAction)
+        settingsActionSheet.addAction(notificationsAction)
+        settingsActionSheet.addAction(cancelAction)
+        
+        // iPad'de action sheet'in çökmesini önlemek için gerekli (iPad için zorunlu)
+        if let popoverController = settingsActionSheet.popoverPresentationController {
+            popoverController.sourceView = self.view
+            popoverController.sourceRect = CGRect(x: self.view.bounds.midX, y: self.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
+        
+        present(settingsActionSheet, animated: true, completion: nil)
     }
 }

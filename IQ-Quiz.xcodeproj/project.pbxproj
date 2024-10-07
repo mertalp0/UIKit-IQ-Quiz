@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 94447DE02CB2F8B600A5252F /* GoogleMobileAds */; };
 		9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */; };
 		9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EAD32C7E01BA003D7295 /* CustomButton.swift */; };
 		9463EADC2C7E0ED5003D7295 /* AnimateLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */; };
@@ -52,12 +53,13 @@
 		94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */; };
 		94BB3B7A2C7A52560016CF33 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B792C7A52560016CF33 /* CoreDataService.swift */; };
 		94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B7E2C7B52240016CF33 /* IQCalculator.swift */; };
+		94D1603A2CB31594003CB949 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */; };
+		94D1609B2CB3C940003CB949 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1609A2CB3C940003CB949 /* MailService.swift */; };
 		94D209532C7E392200855278 /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D209522C7E392200855278 /* AppBar.swift */; };
 		94D2095B2C7F5A1D00855278 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2095A2C7F5A1D00855278 /* Constants.swift */; };
 		94F7681C2C8CD6CE000E9180 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681B2C8CD6CE000E9180 /* FirebaseAnalytics */; };
 		94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681D2C8CD6CE000E9180 /* FirebaseCrashlytics */; };
 		94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681F2C8CD6CE000E9180 /* FirebaseFirestore */; };
-		94F768222C8CD6F4000E9180 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +92,6 @@
 		94873BA52C738FE600620B4A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		94873BAC2C738FE800620B4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		94873BAF2C738FE800620B4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		94873BB12C738FE800620B4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94873BB62C738FE800620B4A /* IQ-QuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IQ-QuizTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94873BBA2C738FE800620B4A /* IQ_QuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQ_QuizTests.swift; sourceTree = "<group>"; };
 		94873BC02C738FE800620B4A /* IQ-QuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IQ-QuizUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +126,8 @@
 		94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatetsTestCell.swift; sourceTree = "<group>"; };
 		94BB3B792C7A52560016CF33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 		94BB3B7E2C7B52240016CF33 /* IQCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IQCalculator.swift; sourceTree = "<group>"; };
+		94D15FDE2CB3107A003CB949 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94D1609A2CB3C940003CB949 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		94D209522C7E392200855278 /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		94D2095A2C7F5A1D00855278 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -137,6 +140,7 @@
 			files = (
 				94F7681C2C8CD6CE000E9180 /* FirebaseAnalytics in Frameworks */,
 				946AEAE32CB0430A00B16F05 /* SnapKit in Frameworks */,
+				94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */,
 				94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */,
 				94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */,
 			);
@@ -159,6 +163,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94447DE22CB2F8E400A5252F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9463EAD22C7E017E003D7295 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +222,7 @@
 				94873BA22C738FE600620B4A /* IQ-Quiz */,
 				94873BB92C738FE800620B4A /* IQ-QuizTests */,
 				94873BC32C738FE800620B4A /* IQ-QuizUITests */,
+				94447DE22CB2F8E400A5252F /* Frameworks */,
 				94873BA12C738FE600620B4A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -238,6 +250,8 @@
 				94873BD92C73917500620B4A /* Coordinator */,
 				94873BD82C73917000620B4A /* Base */,
 				94873BD72C73916A00620B4A /* App */,
+				94D15FDE2CB3107A003CB949 /* Info.plist */,
+				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
 			);
 			path = "IQ-Quiz";
 			sourceTree = "<group>";
@@ -302,9 +316,7 @@
 		94873BEE2C73999100620B4A /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
-				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
 				94873BAC2C738FE800620B4A /* Assets.xcassets */,
-				94873BB12C738FE800620B4A /* Info.plist */,
 				94873BAE2C738FE800620B4A /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
@@ -539,6 +551,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				94D1609A2CB3C940003CB949 /* MailService.swift */,
 				94BB3B792C7A52560016CF33 /* CoreDataService.swift */,
 			);
 			path = Service;
@@ -597,6 +610,7 @@
 				94F7681D2C8CD6CE000E9180 /* FirebaseCrashlytics */,
 				94F7681F2C8CD6CE000E9180 /* FirebaseFirestore */,
 				946AEAE22CB0430A00B16F05 /* SnapKit */,
+				94447DE02CB2F8B600A5252F /* GoogleMobileAds */,
 			);
 			productName = "IQ-Quiz";
 			productReference = 94873BA02C738FE600620B4A /* IQ-Quiz.app */;
@@ -673,6 +687,7 @@
 			packageReferences = (
 				94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 94873BA12C738FE600620B4A /* Products */;
 			projectDirPath = "";
@@ -690,8 +705,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94D1603A2CB31594003CB949 /* GoogleService-Info.plist in Resources */,
 				94BB3B702C7A12300016CF33 /* questions.json in Resources */,
-				94F768222C8CD6F4000E9180 /* GoogleService-Info.plist in Resources */,
 				94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */,
 				94873BB02C738FE800620B4A /* Base in Resources */,
 			);
@@ -738,6 +753,7 @@
 				94D209532C7E392200855278 /* AppBar.swift in Sources */,
 				94873C032C739E7000620B4A /* TabBarFactory.swift in Sources */,
 				94873BEA2C73988500620B4A /* BaseCoordinator.swift in Sources */,
+				94D1609B2CB3C940003CB949 /* MailService.swift in Sources */,
 				94873C1B2C73A14C00620B4A /* LatestTestsController.swift in Sources */,
 				94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */,
 				94873C152C73A01500620B4A /* ProfileViewModelProtocol.swift in Sources */,
@@ -938,7 +954,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "IQ-Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -974,7 +989,6 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "IQ-Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1110,6 +1124,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.10.0;
+			};
+		};
 		946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -1129,6 +1151,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		94447DE02CB2F8B600A5252F /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 		946AEAE22CB0430A00B16F05 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */;
