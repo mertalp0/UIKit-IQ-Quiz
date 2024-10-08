@@ -11,7 +11,9 @@ import MessageUI
 
 final class StartViewController: BaseViewController<StartCoordinator, StartViewModel> {
     
-    //MARK: - UI Elements
+    //MARK: - Properties
+   
+    // MARK: - UI Elements
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
     private let logo: UIImageView = {
@@ -21,10 +23,10 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
         imageView.clipsToBounds = true
         return imageView
     }()
-    
-    private let welcomeLabel : UILabel = {
+
+    private let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hoşgeldin"
+        label.text = NSLocalizedString("welcome_message", comment: "")
         return label
     }()
     
@@ -43,38 +45,34 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
         return button
     }()
     
-    private let feedBackButton : SVCButton = {
+    private let feedBackButton: SVCButton = {
         let button = SVCButton(type: .feedBack)
         return button
     }()
     
-    private let settingsButton : SVCButton = {
+    private let settingsButton: SVCButton = {
         let button = SVCButton(type: .settings)
         return button
     }()
     
-    //MARK: - LifeCycle
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupLayout()
-        
     }
 }
 
-//MARK: - UI Setup and Layout
+// MARK: - UI Setup and Layout
 extension StartViewController {
     
-    //Setup UI
+    // Setup UI
     private func setupUI() {
         self.setupGradientLayer()
         
         view.addSubview(titleLabel)
-        
         view.addSubview(logo)
-        
         view.addSubview(welcomeLabel)
-        
         view.addSubview(playButton)
         view.addSubview(lastTestButton)
         view.addSubview(shareButton)
@@ -88,9 +86,8 @@ extension StartViewController {
         settingsButton.delegate = self
     }
     
-    //Setup Layout
+    // Setup Layout
     private func setupLayout() {
-        
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
             make.centerX.equalToSuperview()
@@ -144,41 +141,37 @@ extension StartViewController: SVCButtonDelegate {
     func didTapButton(_ senderType: SVCButtonType) {
         if senderType == .start {
             coordinator?.showQuiz()
-        }
-        else if senderType == .share {
+        } else if senderType == .share {
             let appStoreLink = Constants.appStoreLink
             let activityVC = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
             present(activityVC, animated: true, completion: nil)
-        }
-        else if senderType == .lastTest {
+        } else if senderType == .lastTest {
             coordinator?.showLastTests()
-        }
-        else if senderType == .feedBack {
+        } else if senderType == .feedBack {
             viewModel.sendEmail(from: self)
-        }
-        else if senderType == .settings {
+        } else if senderType == .settings {
             showSettingsBottomSheet()
         }
     }
     
     // Settings Bottom Sheet
     private func showSettingsBottomSheet() {
+      
         let settingsActionSheet = UIAlertController(title: "Settings", message: "Change Language", preferredStyle: .actionSheet)
         
-        let accountAction = UIAlertAction(title: "Türkçe", style: .default) { _ in
-            print("Türkçe tapped")
-            
+        let turkishAction = UIAlertAction(title: "Türkçe", style: .default) { _ in
+ 
         }
         
-        let notificationsAction = UIAlertAction(title: "English", style: .default) { _ in
-            print("English tapped")
-            
+        let englishAction = UIAlertAction(title: "English", style: .default) { _ in
+           
+          
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-        settingsActionSheet.addAction(accountAction)
-        settingsActionSheet.addAction(notificationsAction)
+        settingsActionSheet.addAction(turkishAction)
+        settingsActionSheet.addAction(englishAction)
         settingsActionSheet.addAction(cancelAction)
         
         // iPad'de action sheet'in çökmesini önlemek için gerekli (iPad için zorunlu)
@@ -189,5 +182,9 @@ extension StartViewController: SVCButtonDelegate {
         }
         
         present(settingsActionSheet, animated: true, completion: nil)
+    }
+    
+    func updateUI(){
+        
     }
 }

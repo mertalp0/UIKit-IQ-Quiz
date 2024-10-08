@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9425300E2CB4333300122794 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9425300C2CB4333300122794 /* Localizable.strings */; };
+		942530122CB4408D00122794 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942530112CB4408D00122794 /* LanguageService.swift */; };
 		94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 94447DE02CB2F8B600A5252F /* GoogleMobileAds */; };
 		9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */; };
 		9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EAD32C7E01BA003D7295 /* CustomButton.swift */; };
@@ -80,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9425300D2CB4333300122794 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9425300F2CB4335400122794 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		942530112CB4408D00122794 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelProtocol.swift; sourceTree = "<group>"; };
 		9463EAD32C7E01BA003D7295 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLogo.swift; sourceTree = "<group>"; };
@@ -163,6 +168,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9425300B2CB4332100122794 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				9425300C2CB4333300122794 /* Localizable.strings */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		942530102CB4346900122794 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94873BEE2C73999100620B4A /* SupportingFiles */,
+				9425300B2CB4332100122794 /* Localizable */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		94447DE22CB2F8E400A5252F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,12 +262,12 @@
 		94873BA22C738FE600620B4A /* IQ-Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				942530102CB4346900122794 /* Resources */,
 				9463EAD22C7E017E003D7295 /* Components */,
 				94BB3B772C7A52380016CF33 /* Service */,
 				94873C252C73AD2F00620B4A /* Data */,
 				94873C392C746CCB00620B4A /* Helpers */,
 				94873C222C73A89A00620B4A /* Model */,
-				94873BEE2C73999100620B4A /* SupportingFiles */,
 				94873BE12C73922400620B4A /* Feature */,
 				94873BD92C73917500620B4A /* Coordinator */,
 				94873BD82C73917000620B4A /* Base */,
@@ -551,6 +573,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				942530112CB4408D00122794 /* LanguageService.swift */,
 				94D1609A2CB3C940003CB949 /* MailService.swift */,
 				94BB3B792C7A52560016CF33 /* CoreDataService.swift */,
 			);
@@ -682,6 +705,7 @@
 			knownRegions = (
 				en,
 				Base,
+				tr,
 			);
 			mainGroup = 94873B972C738FE600620B4A;
 			packageReferences = (
@@ -705,6 +729,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9425300E2CB4333300122794 /* Localizable.strings in Resources */,
 				94D1603A2CB31594003CB949 /* GoogleService-Info.plist in Resources */,
 				94BB3B702C7A12300016CF33 /* questions.json in Resources */,
 				94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */,
@@ -764,6 +789,7 @@
 				9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */,
 				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,
 				94873BA62C738FE600620B4A /* SceneDelegate.swift in Sources */,
+				942530122CB4408D00122794 /* LanguageService.swift in Sources */,
 				94873BF82C739B1500620B4A /* StartCoordinator.swift in Sources */,
 				94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */,
 				94873C242C73A8B900620B4A /* Question.swift in Sources */,
@@ -810,6 +836,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9425300C2CB4333300122794 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9425300D2CB4333300122794 /* en */,
+				9425300F2CB4335400122794 /* tr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		94873BAE2C738FE800620B4A /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -826,6 +861,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -889,6 +925,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
