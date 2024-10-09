@@ -5,6 +5,6 @@
 //  Created by mert alp on 19.08.2024.
 //
 
-import Foundation
-
-protocol ProfileViewModelProtocol {}
+//import Foundation
+//
+//protocol ProfileViewModelProtocol {}

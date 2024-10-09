@@ -11,6 +11,8 @@ import Combine
 
 class BaseViewController <CoordinatorType: BaseCoordinator, ViewModelType: BaseViewModel>: UIViewController {
     // MARK: - Properties
+    var stringManager = LocalizationManager.shared
+    
     private var gradientLayer: CAGradientLayer!
     var coordinator: CoordinatorType?
     var viewModel: ViewModelType

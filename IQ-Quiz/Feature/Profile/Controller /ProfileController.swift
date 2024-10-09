@@ -6,13 +6,13 @@
 //
 
 
-import UIKit
-
-class ProfileViewController : BaseViewController<ProfileCoordinator, ProfileViewModel> {
-    //MARK: - Proterties
-    
-    override func viewDidLoad() {
-    
-    }
-}
-
+//import UIKit
+//
+//class ProfileViewController : BaseViewController<ProfileCoordinator, ProfileViewModel> {
+//    //MARK: - Proterties
+//    
+//    override func viewDidLoad() {
+//    
+//    }
+//}
+//

@@ -95,8 +95,8 @@ extension LatestTestCell {
 //MARK: - Configure Cell
 extension LatestTestCell {
     func configure(with quizResult: QuizResult) {
-        iqLabel.text = "IQ: \(quizResult.iqScore)"
-        correctAnswersLabel.text = "Doğru Cevaplar: \(quizResult.correctAnswers)"
+        iqLabel.text = LocalizationManager.shared.iqLabel(withScore: Int(quizResult.iqScore))
+        correctAnswersLabel.text = LocalizationManager.shared.correctAnswersLabel(withCount: Int(quizResult.correctAnswers))
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .medium
@@ -105,7 +105,7 @@ extension LatestTestCell {
             let dateString = dateFormatter.string(from: date)
             dateLabel.text = dateString
         } else {
-            dateLabel.text = "Tarih mevcut değil"
+            dateLabel.text = LocalizationManager.shared.noDateAvailable()
         }
     }
 }

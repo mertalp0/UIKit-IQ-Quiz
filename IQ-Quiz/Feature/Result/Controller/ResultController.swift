@@ -20,7 +20,6 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     
     private var resultLabel: UILabel = {
         let label = UILabel()
-        label.text = "Result"
         label.backgroundColor = .primaryColor
         label.font = .systemFont(ofSize: 24, weight: .medium)
         label.textAlignment = .center
@@ -33,7 +32,6 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     
     private var iqLabel: UILabel = {
         let label = UILabel()
-        label.text = "iq label"
         label.backgroundColor = .secondaryColor
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
@@ -45,7 +43,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     }()
     
     private var homeButton: CustomButton = {
-        let button = CustomButton(title: "Ana Sayfa")
+        let button = CustomButton(title: LocalizationManager.shared.homeButtonTitle())
         return button
     }()
     
@@ -124,8 +122,8 @@ extension ResultViewController {
 //MARK: - ConfigureUI
 extension ResultViewController {
     private func configureUI() {
-        let scoreText = "Tebrikler!!\n15 Sorudan \(correctAnswers) doğru yaptınız.."
-        let iqScoreText = "IQ Test Sonucunuz: \(iqScore ?? 0) IQ"
+        let scoreText = stringManager.correctAnswersLabel(withCount: correctAnswers)
+        let iqScoreText =  stringManager.iqScoreLabel(withIQScore: iqScore)
         iqLabel.text = iqScoreText
         resultLabel.text = scoreText
     }

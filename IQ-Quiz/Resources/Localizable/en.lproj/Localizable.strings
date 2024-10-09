@@ -1,8 +1,26 @@
-/* 
+/*
   Localizable.strings
   IQ-Quiz
 
   Created by mert alp on 7.10.2024.
   
 */
-"welcome_message" = "welcome!";
+"welcome_message" = "Welcome.."; // English welcome message
+"settings_title" = "Settings"; // Settings title
+"change_language_message" = "Change Language"; // Change language message
+"turkish" = "Turkish"; // Turkish language option
+"english" = "English"; // English language option
+"cancel" = "Cancel"; // Cancel button
+"latest_test_label" = "Latest Tests"; // Latest tests label
+"iq_label" = "IQ: %@"; // Dynamic IQ value placeholder
+"correct_answers_label" = "Correct Answers: %@"; // Dynamic correct answers count
+"no_date_available" = "No date available"; // No date available message
+
+"home_button_title" = "Home"; // Home button title
+"score_label" = "Congratulations!!\nYou got %@ correct out of 15."; // Dynamic correct answer count
+"iq_score_label" = "Your IQ Test Result: %@ IQ"; // Dynamic IQ result
+"next_button_label" = "Next";
+"alert_title" = "Warning";
+"alert_select_option_message" = "Please select an option"; // İngilizce versiyon
+"finish_button_label" = "Finish";
+"iq_tesd_communication" = "IQ Test Communication";

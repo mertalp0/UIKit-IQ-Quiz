@@ -5,7 +5,7 @@
 //  Created by mert alp on 19.08.2024.
 //
 
-import Foundation
-
-class ProfileViewModel : BaseViewModel ,ProfileViewModelProtocol  {}
-
+//import Foundation
+//
+//class ProfileViewModel : BaseViewModel ,ProfileViewModelProtocol  {}
+//

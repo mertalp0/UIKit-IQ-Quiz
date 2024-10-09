@@ -9,15 +9,25 @@ import Foundation
 
 class QuizViewModel: BaseViewModel, QuizViewModelProtocol {
     @Published var questions: [Question] = []
-    
+    var currentJsonFile : String = "questions_tr"
     override init() {
         super.init()
+        fetchLanguages()
         fetchQuestions()
+        
+    }
+    private func fetchLanguages(){
+        let currentLanguage = LanguageService.currentLanguage
+        if currentLanguage == "en"{
+            currentJsonFile = "questions_en"
+        }else{
+            currentJsonFile = "questions_tr"
+        }
     }
     
     func fetchQuestions() {
         startLoading()
-        if let url = Bundle.main.url(forResource: "questions", withExtension: "json") {
+        if let url = Bundle.main.url(forResource: currentJsonFile, withExtension: "json") {
             do {
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()

@@ -14,4 +14,6 @@ struct Constants {
     static let appStoreLink : String = "https://apps.apple.com/tr/app/iq-test/id6670162878?l=tr"
     
     static let adUnitId : String = "ca-app-pub-3940256099942544/4411468910"
+    static let bannerAdUnitId : String = "ca-app-pub-3940256099942544/2435281174"
+    
 }

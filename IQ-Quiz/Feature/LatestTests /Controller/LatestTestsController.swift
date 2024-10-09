@@ -17,10 +17,9 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
     
     private let backButton: UIButton = {
         let button = UIButton()
-        let icon = UIImage(systemName: "chevron.backward")
+        let icon = UIImage(systemName: "chevron.backward")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 24)) // İkonun boyutunu artır
         button.setImage(icon, for: .normal)
         button.tintColor = .white
-        button.backgroundColor = .red
         return button
     }()
     
@@ -34,7 +33,6 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
     
     private let latestTestLabel: UILabel = {
         let label = UILabel()
-        label.text = "Son Testler"
         label.textColor = .white
         label.font = .systemFont(ofSize: 16, weight: .bold)
         return label
@@ -65,6 +63,7 @@ extension LatestTestsController {
     
     // Setup UI
     private func setupUI() {
+        latestTestLabel.text = stringManager.latestTestLabel()
         setupGradientLayer()
     }
     
@@ -84,12 +83,13 @@ extension LatestTestsController {
         backButton.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
             make.leading.equalToSuperview().offset(16)
-            make.size.equalTo(CGSize(width: 30, height: 30))
+            make.width.height.equalTo(44) // Butonun genişliği ve yüksekliği
         }
         
         latestTestLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.leading.equalToSuperview().offset(20)
+            
         }
         
         tableView.snp.makeConstraints { make in

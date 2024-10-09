@@ -1,29 +1,23 @@
-////
-////  LanguageService.swift
-////  IQ-Quiz
-////
-////  Created by mert alp on 7.10.2024.
-////
 //
+//  LanguageService.swift
+//  IQ-Quiz
 //
-//import Foundation
+//  Created by mert alp on 7.10.2024.
 //
-//final class LanguageService {
-//
-//    // Mevcut dili döndür
-//    static var currentLanguage: String {
-//        return UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? Locale.preferredLanguages.first ?? "en"
-//    }
-//
-//    // Dili değiştir
-//    static func changeLanguage(to languageCode: String) {
-//        UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
-//        UserDefaults.standard.synchronize()
-//        NotificationCenter.default.post(name: .languageDidChange, object: nil)
-//    }
-//}
-//
-//extension Notification.Name {
-//    static let languageDidChange = Notification.Name("languageDidChange")
-//    
-//}
+
+
+import Foundation
+final class LanguageService {
+  // Return the current language
+  static var currentLanguage: String {
+    return UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? Locale.preferredLanguages.first ?? "en"
+  }
+    
+  // Change the language
+    static func changeLanguage(to languageCode: String) {
+          UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
+          UserDefaults.standard.synchronize()
+          Bundle.setLanguage(languageCode)
+    }
+}
+

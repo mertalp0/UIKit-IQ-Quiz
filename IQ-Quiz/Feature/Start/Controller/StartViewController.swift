@@ -26,7 +26,13 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
 
     private let welcomeLabel: UILabel = {
         let label = UILabel()
-        label.text = NSLocalizedString("welcome_message", comment: "")
+        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOpacity = 0.3
+        label.layer.shadowOffset = CGSize(width: 2, height: 2)
+        label.layer.shadowRadius = 4
         return label
     }()
     
@@ -69,6 +75,8 @@ extension StartViewController {
     // Setup UI
     private func setupUI() {
         self.setupGradientLayer()
+        
+        welcomeLabel.text = stringManager.welcomeMessage()
         
         view.addSubview(titleLabel)
         view.addSubview(logo)
@@ -139,36 +147,44 @@ extension StartViewController {
 extension StartViewController: SVCButtonDelegate {
     
     func didTapButton(_ senderType: SVCButtonType) {
-        if senderType == .start {
+        switch senderType {
+        case .start:
             coordinator?.showQuiz()
-        } else if senderType == .share {
-            let appStoreLink = Constants.appStoreLink
-            let activityVC = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
-            present(activityVC, animated: true, completion: nil)
-        } else if senderType == .lastTest {
-            coordinator?.showLastTests()
-        } else if senderType == .feedBack {
-            viewModel.sendEmail(from: self)
-        } else if senderType == .settings {
+        case .share:
+            shareAppLink()
+        case .settings:
             showSettingsBottomSheet()
+        case .feedBack:
+            viewModel.sendEmail(from: self)
+        case .lastTest:
+            coordinator?.showLastTests()
         }
     }
-    
-    // Settings Bottom Sheet
+    private func shareAppLink() {
+          let appStoreLink = Constants.appStoreLink
+          let activityVC = UIActivityViewController(activityItems: [appStoreLink], applicationActivities: nil)
+          present(activityVC, animated: true, completion: nil)
+      }
+}
+
+// MARK: - Settings Bottom Sheet
+extension StartViewController {
+   
     private func showSettingsBottomSheet() {
       
-        let settingsActionSheet = UIAlertController(title: "Settings", message: "Change Language", preferredStyle: .actionSheet)
+        let settingsActionSheet = UIAlertController(title: stringManager.settingsTitle(), message: stringManager.changeLanguageMessage(), preferredStyle: .actionSheet)
         
-        let turkishAction = UIAlertAction(title: "Türkçe", style: .default) { _ in
- 
+        let turkishAction = UIAlertAction(title: stringManager.turkishLanguage(), style: .default) { _ in
+            LanguageService.changeLanguage(to: "tr")
+            self.updateUI()
         }
         
-        let englishAction = UIAlertAction(title: "English", style: .default) { _ in
-           
-          
+        let englishAction = UIAlertAction(title: stringManager.englishLanguage(), style: .default) { _ in
+            LanguageService.changeLanguage(to: "en")
+            self.updateUI()
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: stringManager.cancelButton(), style: .cancel, handler: nil)
         
         settingsActionSheet.addAction(turkishAction)
         settingsActionSheet.addAction(englishAction)
@@ -184,7 +200,7 @@ extension StartViewController: SVCButtonDelegate {
         present(settingsActionSheet, animated: true, completion: nil)
     }
     
-    func updateUI(){
-        
+    private func updateUI(){
+        welcomeLabel.text = stringManager.welcomeMessage()
     }
 }

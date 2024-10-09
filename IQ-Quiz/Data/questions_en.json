@@ -1,0 +1,140 @@
+
+[
+    {
+        "id": "1",
+        "type": "imageAnswer",
+        "questionText": "Which is the closed version of this pattern?",
+        "questionImage": "1",
+        "options": ["1a", "1b", "1c", "1d"],
+        "correctAnswer": "1d"
+    },
+    {
+        "id": "2",
+        "type": "textAnswer",
+        "questionText": "A child has a series of numbers: 2, 5, 10, 17, ... What is the next number in this series?",
+        "options": ["24", "26", "30", "34"],
+        "correctAnswer": "26"
+    },
+    {
+        "id": "3",
+        "type": "imageAnswer",
+        "questionText": "Which is the missing piece in the image?",
+        "questionImage": "3-question",
+        "options": ["3a", "3b", "3c", "3d"],
+        "correctAnswer": "3a"
+    },
+    {
+        "id": "4",
+        "type": "textAnswer",
+        "questionText": "The hour and minute hands of a clock are perfectly aligned at midnight. How many times will they overlap by 6 a.m.?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": "1"
+    },
+    {
+        "id": "5",
+        "type": "imageAnswer",
+        "questionText": "Which shape is missing?",
+        "questionImage": "5-question",
+        "options": ["5a", "5b", "5c", "5d"],
+        "correctAnswer": "5a"
+    },
+    {
+        "id": "6",
+        "type": "textAnswer",
+        "questionText": "There are chickens and sheep on a farm. The farm has 30 heads and 100 legs in total. How many sheep are there on the farm?",
+        "options": ["10", "15", "20", "25"],
+        "correctAnswer": "20"
+    },
+    {
+        "id": "7",
+        "type": "imageAnswer",
+        "questionText": "What should be placed in the place of the question mark?",
+        "questionImage": "7-question",
+        "options": ["7a", "7b", "7c", "7d"],
+        "correctAnswer": "7d"
+    },
+    {
+        "id": "8",
+        "type": "textAnswer",
+        "questionText": "A man creates a series of numbers: 2, 6, 12, 20, ... What is the next number in this series?",
+        "options": ["30", "32", "34", "36"],
+        "correctAnswer": "30"
+    },
+    {
+        "id": "9",
+        "type": "imageAnswer",
+        "questionText": "How many squares are there in the image?",
+        "questionImage": "9-question",
+        "options": ["9a", "9b", "9c", "9d"],
+        "correctAnswer": "9a"
+    },
+    {
+        "id": "10",
+        "type": "textAnswer",
+        "questionText": "At the end of a meeting, 10 people shook hands with each other. How many handshakes took place in total?",
+        "options": [
+            "35",
+            "40",
+            "45",
+            "50"
+        ],
+        "correctAnswer": "45"
+    },
+    
+    {
+        "id": "11",
+        "type": "textAnswer",
+        "questionText": "A bottle and cap together cost 1.10 TL. The bottle is 1 TL more expensive than the cap. How much is the cap?",
+        "options": [
+            "0.05 TL",
+            "0.10 TL",
+            "0.15 TL",
+            "0.20 TL"
+        ],
+        "correctAnswer": "0.05 TL"
+    },
+    {
+        "id": "12",
+        "type": "textAnswer",
+        "questionText": "A man has 5 daughters, and each daughter has 1 brother. How many children does the man have in total?",
+        "options": [
+            "5",
+            "6",
+            "10",
+            "11"
+        ],
+        "correctAnswer": "6"
+    },
+    {
+        "id": "13",
+        "type": "textAnswer",
+        "questionText": "In a village, there are 5 houses, each painted a different color. Each house has a garden behind it. The red house is to the left of the blue house, the green house is to the right of the yellow house, and the white house is to the left of the red house. Behind which color is the white house located?",
+        "options": [
+            "Green",
+            "Blue",
+            "Red",
+            "Yellow"
+        ],
+        "correctAnswer": "Blue"
+    },
+    {
+        "id": "14",
+        "type": "imageAnswer",
+        "questionText": "How many triangles are there in the image?",
+        "questionImage": "14-question",
+        "options": ["14a", "14b", "14c", "14d"],
+        "correctAnswer": "14d"
+    },
+    {
+        "id": "15",
+        "type": "textAnswer",
+        "questionText": "A bus travels at 30 km/h and completes the entire journey in 2 hours. If the bus increases its speed to 40 km/h after half the distance, how long will the total journey take?",
+        "options": [
+            "1 hour 45 minutes",
+            "1 hour 30 minutes",
+            "2 hours",
+            "2 hours 15 minutes"
+        ],
+        "correctAnswer": "1 hour 30 minutes"
+    }
+]

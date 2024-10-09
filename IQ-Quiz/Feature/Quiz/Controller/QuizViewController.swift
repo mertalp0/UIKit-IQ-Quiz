@@ -19,12 +19,12 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     var remainingTime: Int = 0
     
     //MARK: - UI Elements
-    var bannerView: GADBannerView!
+    private var bannerView: GADBannerView!
 
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
     private lazy var nextButton: CustomButton = {
-        let button = CustomButton(title: "İleri")
+        let button = CustomButton(title: LocalizationManager.shared.nextButtonLabel())
         button.tintColor = .black
         button.backgroundColor = .secondaryColor
         button.delegate = self
@@ -82,7 +82,7 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
         let viewWidth = view.frame.inset(by: view.safeAreaInsets).width
         let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
         bannerView = GADBannerView(adSize: adaptiveSize)
-        bannerView.adUnitID = "ca-app-pub-3940256099942544/2435281174"
+        bannerView.adUnitID = Constants.bannerAdUnitId
         addBannerViewToView(bannerView)
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
@@ -97,8 +97,6 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
         super.viewWillDisappear(animated)
         timer?.invalidate()
     }
-
-
 }
 
 //MARK: - Selectors
@@ -126,7 +124,7 @@ extension QuizViewController {
     
     func buttonTapped(_ button: CustomButton) {
         guard let selectedOptionButton = selectedOptionButton else {
-            showAlert(title:  "Uyarı", message: "Lütfen bir seçenek seçin")
+            showAlert(title:  stringManager.alertTitle(), message: stringManager.alertMessage())
             return
         }
         var selectedOption = selectedOptionButton.title(for: .normal)
@@ -141,7 +139,7 @@ extension QuizViewController {
         if currentQuestionIndex < viewModel.questions.count {
             configureUI()
         } else {
-            nextButton.setTitle("Finish", for: .normal)
+            nextButton.setTitle(stringManager.finishButtonLabel(), for: .normal)
             showResult()
         }
         self.selectedOptionButton = nil
