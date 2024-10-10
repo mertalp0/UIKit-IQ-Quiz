@@ -5,29 +5,24 @@
 //  Created by mert alp on 8.10.2024.
 //
 import Foundation
-
 extension Bundle {
-    private static var bundleKey: UInt8 = 0
-
+    private static var onLanguageDispatchOnce: () = {
+        object_setClass(Bundle.main, LanguageBundle.self)
+    }()
     static func setLanguage(_ language: String) {
-        defer {
-            object_setClass(Bundle.main, type(of: Bundle.main))
-        }
-
-        objc_setAssociatedObject(Bundle.main, &bundleKey, language, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
-        let originalMethod = class_getInstanceMethod(Bundle.self, #selector(localizedString(forKey:value:table:)))
-        let swizzledMethod = class_getInstanceMethod(Bundle.self, #selector(swizzled_localizedString(forKey:value:table:)))
-        method_exchangeImplementations(originalMethod!, swizzledMethod!)
+        Bundle.onLanguageDispatchOnce
+        UserDefaults.standard.set([language], forKey: "AppleLanguages")
+        UserDefaults.standard.synchronize()
     }
+}
 
-    @objc private func swizzled_localizedString(forKey key: String, value: String?, table: String?) -> String {
-        guard let language = objc_getAssociatedObject(self, &Bundle.bundleKey) as? String,
-              let path = Bundle.main.path(forResource: language, ofType: "lproj"),
-              let bundle = Bundle(path: path) else {
-            return self.swizzled_localizedString(forKey: key, value: value, table: table)
+class LanguageBundle: Bundle {
+    override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
+        let currentLanguage = UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? "en"
+        var bundle = Bundle.main
+        if let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj") {
+            bundle = Bundle(path: path) ?? Bundle.main
         }
-
-        return bundle.swizzled_localizedString(forKey: key, value: value, table: table)
+        return bundle.localizedString(forKey: key, value: value, table: tableName)
     }
 }

@@ -17,7 +17,7 @@ class QuizViewModel: BaseViewModel, QuizViewModelProtocol {
         
     }
     private func fetchLanguages(){
-        let currentLanguage = LanguageService.shared.currentLanguage
+        let currentLanguage = LanguageService.currentLanguage
         if currentLanguage == "en"{
             currentJsonFile = "questions_en"
         }else{
