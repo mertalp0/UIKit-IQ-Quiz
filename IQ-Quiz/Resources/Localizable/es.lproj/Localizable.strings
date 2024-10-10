@@ -1,0 +1,29 @@
+/*
+  Localizable.strings
+  IQ-Quiz
+
+  Created by mert alp on 7.10.2024.
+*/
+
+"welcome_message" = "Bienvenido.."; // İspanyolca hoş geldin mesajı
+"settings_title" = "Configuraciones"; // Ayarlar başlığı
+"change_language_message" = "Cambiar idioma"; // Dil değiştir mesajı
+"turkish" = "Turco"; // Türkçe dil seçeneği
+"english" = "Inglés"; // İngilizce dil seçeneği
+"cancel" = "Cancelar"; // İptal butonu
+"latest_test_label" = "Últimas pruebas"; // Son testler başlığı
+"iq_label" = "CI: %@"; // Dinamik IQ değeri yer tutucusu
+"correct_answers_label" = "Respuestas correctas: %@"; // Dinamik doğru cevap sayısı
+"no_date_available" = "Fecha no disponible"; // Tarih yok mesajı
+
+"home_button_title" = "Inicio"; // Ana sayfa buton başlığı
+"score_label" = "¡Felicidades!!\nHas acertado %@ de 15 preguntas."; // Dinamik doğru cevap sayısı
+"iq_score_label" = "Resultado de la prueba de CI: %@ CI"; // Dinamik IQ sonucu
+"next_button_label" = "Siguiente"; // İleri butonu
+"alert_title" = "Advertencia"; // Uyarı başlığı
+"alert_select_option_message" = "Por favor, selecciona una opción"; // Bir seçenek seçin uyarısı
+"finish_button_label" = "Terminar"; // Bitir butonu
+"iq_tesd_communication" = "Comunicación de prueba de CI"; // IQ test iletişimi
+
+"iq_notification_title" = "Es hora de la prueba de CI"; // Bildirim başlığı
+"iq_notification_body" = "¡Mide tu CI y descubre tu nivel de inteligencia diario!"; // Bildirim içeriği

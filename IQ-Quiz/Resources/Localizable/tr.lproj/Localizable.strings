@@ -21,6 +21,9 @@
 "iq_score_label" = "IQ Test Sonucunuz: %@ IQ"; // Dinamik IQ sonucu
 "next_button_label" = "İleri";
 "alert_title" = "Uyarı";
-"alert_select_option_message_tr" = "Lütfen bir seçenek seçin"; // Türkçe versiyon
+"alert_select_option_message" = "Lütfen bir seçenek seçin"; // Türkçe versiyon
 "finish_button_label" = "Bitir";
 "iq_tesd_communication" = "IQ Test İletişim";
+
+"iq_notification_title" = "IQ Testi Zamanı";
+"iq_notification_body" = "Hadi IQ'nu ölç ve günlük zekâ seviyeni keşfet!";

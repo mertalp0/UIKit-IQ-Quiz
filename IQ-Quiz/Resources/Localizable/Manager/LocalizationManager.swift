@@ -32,6 +32,9 @@ final class LocalizationManager {
         static let alertMessage = "alert_select_option_message"
         static let finishButtonLabel = "finish_button_label"
         static let iqTestCommunication = "iq_tesd_communication"
+        
+        static let iqNotificationTitle = "iq_notification_title"
+        static let iqNotificationBody = "iq_notification_body"
 
     }
     
@@ -43,7 +46,6 @@ final class LocalizationManager {
         return NSLocalizedString(key, comment: "")
     }
     
-    // MARK: - Common Localization Functions
     
     func welcomeMessage() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.welcomeMessage)
@@ -72,8 +74,6 @@ final class LocalizationManager {
     func latestTestLabel() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.latestTestLabel)
     }
-    
-    // MARK: - Dynamic Localization Functions
     
     func iqLabel(withScore score: Int) -> String {
         let format = LocalizationManager.localizedString(forKey: LocalizationKeys.iqLabel)
@@ -120,8 +120,17 @@ final class LocalizationManager {
     func finishButtonLabel() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.finishButtonLabel)
     }
-    func IQTestCommunication() -> String {
+    
+    func iqTestCommunication() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.iqTestCommunication)
-
     }
+    
+    func iqNotificationTitle() -> String {
+        return LocalizationManager.localizedString(forKey: LocalizationKeys.iqNotificationTitle)
+    }
+    
+    func iqNotificationBody() -> String {
+        return LocalizationManager.localizedString(forKey: LocalizationKeys.iqNotificationBody)
+    }
+    
 }

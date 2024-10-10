@@ -24,3 +24,7 @@
 "alert_select_option_message" = "Please select an option"; // İngilizce versiyon
 "finish_button_label" = "Finish";
 "iq_tesd_communication" = "IQ Test Communication";
+
+"iq_notification_title" = "Time for an IQ Test";
+"iq_notification_body" = "Measure your IQ and discover your daily intelligence level!";
+

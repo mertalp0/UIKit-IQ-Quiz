@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940FB46A2CB678D000A47E74 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940FB4692CB678D000A47E74 /* NotificationService.swift */; };
 		9425300E2CB4333300122794 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9425300C2CB4333300122794 /* Localizable.strings */; };
 		942530122CB4408D00122794 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942530112CB4408D00122794 /* LanguageService.swift */; };
 		94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 94447DE02CB2F8B600A5252F /* GoogleMobileAds */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940FB4692CB678D000A47E74 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		9425300D2CB4333300122794 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9425300F2CB4335400122794 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		942530112CB4408D00122794 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
@@ -209,10 +211,17 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		9473C63D2CB6720E00988EFE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9476C7A92C78B40C002648A0 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				94D209562C7E4A3E00855278 /* View */,
+				9473C63D2CB6720E00988EFE /* View */,
 				9476C7AC2C78B452002648A0 /* ViewModel */,
 				9476C7AB2C78B432002648A0 /* Coordinator */,
 				9476C7AA2C78B42B002648A0 /* Controller */,
@@ -582,6 +591,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				940FB4692CB678D000A47E74 /* NotificationService.swift */,
 				942530112CB4408D00122794 /* LanguageService.swift */,
 				94D1609A2CB3C940003CB949 /* MailService.swift */,
 				94BB3B792C7A52560016CF33 /* CoreDataService.swift */,
@@ -604,13 +614,6 @@
 			);
 			name = View;
 			path = "VİEW";
-			sourceTree = "<group>";
-		};
-		94D209562C7E4A3E00855278 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		94D209592C7F5A0700855278 /* Constants */ = {
@@ -781,6 +784,7 @@
 				9474F3482CB08CB200D5540A /* SVCButton.swift in Sources */,
 				94873C112C739FE400620B4A /* ProfileController.swift in Sources */,
 				94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */,
+				940FB46A2CB678D000A47E74 /* NotificationService.swift in Sources */,
 				94873C212C73A1D400620B4A /* LatestTestsViewModelProtocol.swift in Sources */,
 				94873C1D2C73A1A200620B4A /* LatestTestsCoordinator.swift in Sources */,
 				94873C132C73A00A00620B4A /* ProfileViewModel.swift in Sources */,

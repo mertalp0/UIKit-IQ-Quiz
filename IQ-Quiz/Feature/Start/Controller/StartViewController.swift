@@ -175,19 +175,25 @@ extension StartViewController {
         let settingsActionSheet = UIAlertController(title: stringManager.settingsTitle(), message: stringManager.changeLanguageMessage(), preferredStyle: .actionSheet)
         
         let turkishAction = UIAlertAction(title: stringManager.turkishLanguage(), style: .default) { _ in
-            LanguageService.changeLanguage(to: "tr")
+            LanguageService.shared.changeLanguage(to: "tr")
             self.updateUI()
         }
         
         let englishAction = UIAlertAction(title: stringManager.englishLanguage(), style: .default) { _ in
-            LanguageService.changeLanguage(to: "en")
+            LanguageService.shared.changeLanguage(to: "en")
             self.updateUI()
         }
+        
+//        let spanishAction =  UIAlertAction(title: "ispanyol", style: .default) { _ in
+//            LanguageService.shared.changeLanguage(to: "es")
+//            self.updateUI()
+//        }
         
         let cancelAction = UIAlertAction(title: stringManager.cancelButton(), style: .cancel, handler: nil)
         
         settingsActionSheet.addAction(turkishAction)
         settingsActionSheet.addAction(englishAction)
+//        settingsActionSheet.addAction(spanishAction)
         settingsActionSheet.addAction(cancelAction)
         
         // iPad'de action sheet'in çökmesini önlemek için gerekli (iPad için zorunlu)

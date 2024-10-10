@@ -8,16 +8,20 @@
 
 import Foundation
 final class LanguageService {
+    
+    static  let shared = LanguageService()
+    
   // Return the current language
-  static var currentLanguage: String {
+   var currentLanguage: String {
     return UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? Locale.preferredLanguages.first ?? "en"
   }
     
   // Change the language
-    static func changeLanguage(to languageCode: String) {
+     func changeLanguage(to languageCode: String) {
           UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
           UserDefaults.standard.synchronize()
           Bundle.setLanguage(languageCode)
+          print(currentLanguage)
     }
 }
 

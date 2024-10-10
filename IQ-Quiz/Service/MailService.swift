@@ -13,7 +13,7 @@ final class MailService: NSObject, MFMailComposeViewControllerDelegate {
     static let shared = MailService()
     
     private let recipients = ["mertalp010@gmail.com"]
-    private let subject = LocalizationManager.shared.IQTestCommunication()
+    private let subject = LocalizationManager.shared.iqTestCommunication()
     private let body = ""
     
     private override init() {
