@@ -1,0 +1,138 @@
+    [
+        {
+            "id": "1",
+            "type": "imageAnswer",
+            "questionText": "¿Cuál es la versión cerrada de este patrón?",
+            "questionImage": "1",
+            "options": ["1a", "1b", "1c", "1d"],
+            "correctAnswer": "1d"
+        },
+        {
+            "id": "2",
+            "type": "textAnswer",
+            "questionText": "Un niño tiene una serie de números: 2, 5, 10, 17, ... ¿Cuál es el siguiente número en esta serie?",
+            "options": ["24", "26", "30", "34"],
+            "correctAnswer": "26"
+        },
+        {
+            "id": "3",
+            "type": "imageAnswer",
+            "questionText": "¿Cuál es la pieza que falta en la imagen?",
+            "questionImage": "3-question",
+            "options": ["3a", "3b", "3c", "3d"],
+            "correctAnswer": "3a"
+        },
+        {
+            "id": "4",
+            "type": "textAnswer",
+            "questionText": "Las manecillas de las horas y los minutos de un reloj están perfectamente alineadas a la medianoche. ¿Cuántas veces se superpondrán hasta las 6 a.m.?",
+            "options": ["1", "2", "3", "4"],
+            "correctAnswer": "1"
+        },
+        {
+            "id": "5",
+            "type": "imageAnswer",
+            "questionText": "¿Qué forma falta?",
+            "questionImage": "5-question",
+            "options": ["5a", "5b", "5c", "5d"],
+            "correctAnswer": "5a"
+        },
+        {
+            "id": "6",
+            "type": "textAnswer",
+            "questionText": "En una granja hay gallinas y ovejas. La granja tiene 30 cabezas y 100 patas en total. ¿Cuántas ovejas hay en la granja?",
+            "options": ["10", "15", "20", "25"],
+            "correctAnswer": "20"
+        },
+        {
+            "id": "7",
+            "type": "imageAnswer",
+            "questionText": "¿Qué debe colocarse en el lugar del signo de interrogación?",
+            "questionImage": "7-question",
+            "options": ["7a", "7b", "7c", "7d"],
+            "correctAnswer": "7d"
+        },
+        {
+            "id": "8",
+            "type": "textAnswer",
+            "questionText": "Un hombre crea una serie de números: 2, 6, 12, 20, ... ¿Cuál es el siguiente número en esta serie?",
+            "options": ["30", "32", "34", "36"],
+            "correctAnswer": "30"
+        },
+        {
+            "id": "9",
+            "type": "imageAnswer",
+            "questionText": "¿Cuántos cuadrados hay en la imagen?",
+            "questionImage": "9-question",
+            "options": ["9a", "9b", "9c", "9d"],
+            "correctAnswer": "9a"
+        },
+        {
+            "id": "10",
+            "type": "textAnswer",
+            "questionText": "Al final de una reunión, 10 personas se dieron la mano entre sí. ¿Cuántos apretones de manos hubo en total?",
+            "options": [
+                "35",
+                "40",
+                "45",
+                "50"
+            ],
+            "correctAnswer": "45"
+        },
+        {
+            "id": "11",
+            "type": "textAnswer",
+            "questionText": "Una botella y una tapa juntas cuestan 1.10 TL. La botella cuesta 1 TL más que la tapa. ¿Cuánto cuesta la tapa?",
+            "options": [
+                "0.05 TL",
+                "0.10 TL",
+                "0.15 TL",
+                "0.20 TL"
+            ],
+            "correctAnswer": "0.05 TL"
+        },
+        {
+            "id": "12",
+            "type": "textAnswer",
+            "questionText": "Un hombre tiene 5 hijas, y cada hija tiene 1 hermano. ¿Cuántos hijos tiene en total?",
+            "options": [
+                "5",
+                "6",
+                "10",
+                "11"
+            ],
+            "correctAnswer": "6"
+        },
+        {
+            "id": "13",
+            "type": "textAnswer",
+            "questionText": "En un pueblo, hay 5 casas, cada una pintada de un color diferente. Cada casa tiene un jardín detrás. La casa roja está a la izquierda de la casa azul, la casa verde está a la derecha de la casa amarilla y la casa blanca está a la izquierda de la casa roja. ¿Detrás de qué color está la casa blanca?",
+            "options": [
+                "Verde",
+                "Azul",
+                "Rojo",
+                "Amarillo"
+            ],
+            "correctAnswer": "Azul"
+        },
+        {
+            "id": "14",
+            "type": "imageAnswer",
+            "questionText": "¿Cuántos triángulos hay en la imagen?",
+            "questionImage": "14-question",
+            "options": ["14a", "14b", "14c", "14d"],
+            "correctAnswer": "14d"
+        },
+        {
+            "id": "15",
+            "type": "textAnswer",
+            "questionText": "Un autobús viaja a 30 km/h y completa todo el viaje en 2 horas. Si el autobús aumenta su velocidad a 40 km/h después de la mitad del trayecto, ¿cuánto durará el viaje total?",
+            "options": [
+                "1 hora 45 minutos",
+                "1 hora 30 minutos",
+                "2 horas",
+                "2 horas 15 minutos"
+            ],
+            "correctAnswer": "1 hora 30 minutos"
+        }
+    ]

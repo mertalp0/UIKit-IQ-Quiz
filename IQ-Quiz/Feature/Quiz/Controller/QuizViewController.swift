@@ -154,7 +154,7 @@ extension QuizViewController {
 //MARK: - Helpers
 extension QuizViewController{
     func style() {
-        self.setupGradientLayer()
+        self.setupBackgroundImage(a: "bg2")
     }
     
     func layout() {

@@ -18,6 +18,7 @@ final class LocalizationManager {
         static let changeLanguageMessage = "change_language_message"
         static let turkish = "turkish"
         static let english = "english"
+        static let spanish = "spanish"
         static let cancel = "cancel"
         static let latestTestLabel = "latest_test_label"
         static let iqLabel = "iq_label"
@@ -66,6 +67,11 @@ final class LocalizationManager {
     func englishLanguage() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.english)
     }
+    
+    func spanishLanguage() -> String {
+        return LocalizationManager.localizedString(forKey: LocalizationKeys.spanish)
+    }
+    
     
     func cancelButton() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.cancel)

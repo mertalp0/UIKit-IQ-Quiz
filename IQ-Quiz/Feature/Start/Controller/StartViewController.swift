@@ -74,7 +74,8 @@ extension StartViewController {
     
     // Setup UI
     private func setupUI() {
-        self.setupGradientLayer()
+        self.setupBackgroundImage(a: "bg1")
+
         
         welcomeLabel.text = stringManager.welcomeMessage()
         
@@ -175,17 +176,17 @@ extension StartViewController {
         let settingsActionSheet = UIAlertController(title: stringManager.settingsTitle(), message: stringManager.changeLanguageMessage(), preferredStyle: .actionSheet)
         
         let turkishAction = UIAlertAction(title: stringManager.turkishLanguage(), style: .default) { _ in
-            Bundle.setLanguage("tr")
+            LanguageService.changeLanguage(to: .turkish)
             self.updateUI()
         }
         
         let englishAction = UIAlertAction(title: stringManager.englishLanguage(), style: .default) { _ in
-            Bundle.setLanguage("en")
+            LanguageService.changeLanguage(to: .english)
             self.updateUI()
         }
         
-        let spanishAction =  UIAlertAction(title: "ispanyol", style: .default) { _ in
-            Bundle.setLanguage("es")
+        let spanishAction =  UIAlertAction(title: stringManager.spanishLanguage(), style: .default) { _ in
+            LanguageService.changeLanguage(to: .spanish)
             self.updateUI()
         }
         

@@ -18,17 +18,20 @@ class QuizViewModel: BaseViewModel, QuizViewModelProtocol {
     }
     private func fetchLanguages(){
         let currentLanguage = LanguageService.currentLanguage
+        
         if currentLanguage == "en"{
             currentJsonFile = "questions_en"
-        }else{
+        }else if currentLanguage == "tr-TR"{
             currentJsonFile = "questions_tr"
+        }else if currentLanguage == "es" {
+            currentJsonFile = "questions_es"
         }
     }
     
     func fetchQuestions() {
         startLoading()
         if let url = Bundle.main.url(forResource: currentJsonFile, withExtension: "json") {
-            do {
+            do { 
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
                 questions = try decoder.decode([Question].self, from: data)

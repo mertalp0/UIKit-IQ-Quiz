@@ -5,23 +5,24 @@
   Created by mert alp on 7.10.2024.
   
 */
-"welcome_message" = "Hoş geldiniz.."; // Türkçe hoş geldin mesajı
-"settings_title" = "Ayarlar"; // Ayarlar başlığı
-"change_language_message" = "Dil Değiştir"; // Dil değiştir mesajı
-"turkish" = "Türkçe"; // Türkçe dil seçeneği
-"english" = "İngilizce"; // İngilizce dil seçeneği
-"cancel" = "İptal"; // İptal butonu
-"latest_test_label" = "Son testler"; // Son testler başlığı
-"iq_label" = "IQ: %@"; // Dinamik IQ değeri yer tutucusu
-"correct_answers_label" = "Doğru Cevaplar: %@"; // Dinamik doğru cevap sayısı
-"no_date_available" = "Tarih mevcut değil"; // Tarih yok mesajı
+"welcome_message" = "Hoş geldiniz.."; 
+"settings_title" = "Ayarlar";
+"change_language_message" = "Dil Değiştir";
+"turkish" = "Türkçe";
+"english" = "İngilizce";
+"spanish" = "İspanyolca";
+"cancel" = "İptal";
+"latest_test_label" = "Son testler";
+"iq_label" = "IQ: %@";
+"correct_answers_label" = "Doğru Cevaplar: %@";
+"no_date_available" = "Tarih mevcut değil";
 
-"home_button_title" = "Ana Sayfa"; // Ana sayfa buton başlığı
-"score_label" = "Tebrikler!!\n15 Sorudan %@ doğru yaptınız.."; // Dinamik doğru cevap sayısı
-"iq_score_label" = "IQ Test Sonucunuz: %@ IQ"; // Dinamik IQ sonucu
+"home_button_title" = "Ana Sayfa";
+"score_label" = "Tebrikler!!\n15 Sorudan %@ doğru yaptınız..";
+"iq_score_label" = "IQ Test Sonucunuz: %@ IQ";
 "next_button_label" = "İleri";
 "alert_title" = "Uyarı";
-"alert_select_option_message" = "Lütfen bir seçenek seçin"; // Türkçe versiyon
+"alert_select_option_message" = "Lütfen bir seçenek seçin";
 "finish_button_label" = "Bitir";
 "iq_tesd_communication" = "IQ Test İletişim";
 

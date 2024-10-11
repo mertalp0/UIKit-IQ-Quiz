@@ -78,6 +78,20 @@ extension BaseViewController {
        
     }
    
+    func setupBackgroundImage(a : String) {
+        let backgroundImage = UIImageView()
+        backgroundImage.image = UIImage(named: a)
+        backgroundImage.contentMode = .scaleAspectFill
+        backgroundImage.clipsToBounds = true
+        
+        view.addSubview(backgroundImage)
+        view.sendSubviewToBack(backgroundImage)
+        
+        // Layout for background image
+        backgroundImage.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 //MARK: -  Loading

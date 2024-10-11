@@ -59,16 +59,16 @@ final class SVCButton: UIView {
     }
     
     private func setupView() {
-        button.backgroundColor = UIColor(hex: "#48BFE3")
+        button.backgroundColor = .primaryColor
         button.layer.cornerRadius = 50
         button.layer.masksToBounds = true
         
         button.layer.borderColor = UIColor(red: 36/255, green: 76/255, blue: 121/255, alpha: 1.0).cgColor
         button.layer.borderWidth = 8
         
-        button.layer.shadowColor = UIColor(red: 36/255, green: 76/255, blue: 121/255, alpha: 1.0).cgColor
+        button.layer.shadowColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5).cgColor
         button.layer.shadowOffset = CGSize(width: 2, height: 3)
-        button.layer.shadowOpacity = 0.7
+        button.layer.shadowOpacity = 0.3
         button.layer.shadowRadius = 5
         
         iconImageView.contentMode = .scaleAspectFit

@@ -63,8 +63,8 @@ extension LatestTestsController {
     
     // Setup UI
     private func setupUI() {
+        self.setupBackgroundImage(a: "bg1")
         latestTestLabel.text = stringManager.latestTestLabel()
-        setupGradientLayer()
     }
     
     // Setup Layout

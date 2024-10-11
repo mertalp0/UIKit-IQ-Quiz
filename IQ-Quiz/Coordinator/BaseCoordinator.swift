@@ -26,15 +26,16 @@ class BaseCoordinator: Coordinator {
         // This should be overridden by subclasses
     }
 
-    func addChild(_ coordinator: Coordinator) {
-        print("childCoordinators")
-        print(childCoordinators)
-        childCoordinators.append(coordinator)
-    }
-
-    func removeChild(_ coordinator: Coordinator) {
-        childCoordinators = childCoordinators.filter { $0 !== coordinator}
-    }  
+//    func addChild(_ coordinator: Coordinator) {
+//        print("childCoordinators")
+//        print(childCoordinators)
+//        childCoordinators.append(coordinator)
+//    }
+//
+//    func removeChild(_ coordinator: Coordinator) {
+//        childCoordinators = childCoordinators.filter { $0 !== coordinator}
+//    }
+    
     func hideBackButton(for viewController: UIViewController) {
         viewController.navigationItem.hidesBackButton = true
     }

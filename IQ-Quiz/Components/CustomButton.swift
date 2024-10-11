@@ -20,7 +20,7 @@ class CustomButton : UIButton {
         self.title = title
         super.init(frame: .zero)
         setupUI()
-        addTarget(self, action: #selector(handleTap), for: .touchUpInside)  // Selector eklendi
+        addTarget(self, action: #selector(handleTap), for: .touchUpInside)  
 
     }
     required init?(coder: NSCoder) {

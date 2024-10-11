@@ -9,6 +9,11 @@
 import Foundation
 final class LanguageService {
     
+    enum LanguageCode : String {
+        case english = "en"
+        case turkish = "tr"
+        case spanish = "es"
+    }
     
   // Return the current language
     static  var currentLanguage: String {
@@ -16,11 +21,8 @@ final class LanguageService {
   }
     
   // Change the language
-    static func changeLanguage(to languageCode: String) {
-          UserDefaults.standard.set([languageCode], forKey: "AppleLanguages")
-          UserDefaults.standard.synchronize()
-          Bundle.setLanguage(languageCode)
-          print(currentLanguage)
+    static func changeLanguage(to language: LanguageCode) {
+        Bundle.setLanguage(language.rawValue)
     }
 }
 
