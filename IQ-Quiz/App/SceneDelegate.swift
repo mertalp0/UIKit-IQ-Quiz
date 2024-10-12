@@ -67,7 +67,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func navigateToQuizVC(){
-
         appCoordinator = AppCoordinator(navigationController: navigationController)
         appCoordinator?.startQuiz()
     }

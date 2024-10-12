@@ -56,6 +56,10 @@
 		94873C352C73B65200620B4A /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C342C73B65200620B4A /* QuizViewModel.swift */; };
 		94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C362C73B66B00620B4A /* QuizViewModelProtocol.swift */; };
 		94873C3B2C746CE900620B4A /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873C3A2C746CE900620B4A /* UIColor+Hex.swift */; };
+		948E36D12CBA6A9300858F13 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D02CBA6A8A00858F13 /* OnboardingCoordinator.swift */; };
+		948E36D32CBA6AA000858F13 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D22CBA6A9C00858F13 /* OnboardingViewModel.swift */; };
+		948E36D52CBAAD4800858F13 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */; };
+		948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */; };
 		94BB3B702C7A12300016CF33 /* questions_tr.json in Resources */ = {isa = PBXBuildFile; fileRef = 94873C262C73AEC700620B4A /* questions_tr.json */; };
 		94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */; };
 		94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */; };
@@ -139,6 +143,10 @@
 		94873C342C73B65200620B4A /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		94873C362C73B66B00620B4A /* QuizViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModelProtocol.swift; sourceTree = "<group>"; };
 		94873C3A2C746CE900620B4A /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		948E36D02CBA6A8A00858F13 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		948E36D22CBA6A9C00858F13 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Result.xcdatamodel; sourceTree = "<group>"; };
 		94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatetsTestCell.swift; sourceTree = "<group>"; };
 		94BB3B792C7A52560016CF33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -361,6 +369,7 @@
 		94873BE12C73922400620B4A /* Feature */ = {
 			isa = PBXGroup;
 			children = (
+				948E36A32CB9AAB600858F13 /* Onboarding */,
 				9476C7A92C78B40C002648A0 /* Result */,
 				94873C282C73B5C700620B4A /* Quiz */,
 				94873C092C739F5E00620B4A /* LatestTests  */,
@@ -593,6 +602,49 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		948E36A32CB9AAB600858F13 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				948E36A72CB9AAF800858F13 /* Coordinator */,
+				948E36A62CB9AAEC00858F13 /* ViewModel */,
+				948E36A52CB9AAE400858F13 /* View */,
+				948E36A42CB9AADD00858F13 /* ViewController */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		948E36A42CB9AADD00858F13 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */,
+				948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		948E36A52CB9AAE400858F13 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		948E36A62CB9AAEC00858F13 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				948E36D22CBA6A9C00858F13 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		948E36A72CB9AAF800858F13 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				948E36D02CBA6A8A00858F13 /* OnboardingCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,14 +826,17 @@
 				94873C312C73B62C00620B4A /* QuizCoordinator.swift in Sources */,
 				94873BFA2C739B2800620B4A /* StartViewModel.swift in Sources */,
 				94873C352C73B65200620B4A /* QuizViewModel.swift in Sources */,
+				948E36D32CBA6AA000858F13 /* OnboardingViewModel.swift in Sources */,
 				9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */,
 				94873BFC2C739B3500620B4A /* StartViewController.swift in Sources */,
 				94873C192C73A05D00620B4A /* StartViewModelProtocol.swift in Sources */,
 				94873BED2C7398A700620B4A /* BaseController.swift in Sources */,
+				948E36D52CBAAD4800858F13 /* OnboardingViewController.swift in Sources */,
 				94873C0F2C739FD600620B4A /* ProfileCoordinator.swift in Sources */,
 				9474F3482CB08CB200D5540A /* SVCButton.swift in Sources */,
 				94873C112C739FE400620B4A /* ProfileController.swift in Sources */,
 				94BB3B7F2C7B52240016CF33 /* IQCalculator.swift in Sources */,
+				948E36D12CBA6A9300858F13 /* OnboardingCoordinator.swift in Sources */,
 				940FB46A2CB678D000A47E74 /* NotificationService.swift in Sources */,
 				94873C212C73A1D400620B4A /* LatestTestsViewModelProtocol.swift in Sources */,
 				94873C1D2C73A1A200620B4A /* LatestTestsCoordinator.swift in Sources */,
@@ -798,6 +853,7 @@
 				9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */,
 				94BB3B7A2C7A52560016CF33 /* CoreDataService.swift in Sources */,
 				94873C3B2C746CE900620B4A /* UIColor+Hex.swift in Sources */,
+				948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */,
 				94873C1F2C73A1AD00620B4A /* LatestTestsViewModel.swift in Sources */,
 				9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */,
 				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,
