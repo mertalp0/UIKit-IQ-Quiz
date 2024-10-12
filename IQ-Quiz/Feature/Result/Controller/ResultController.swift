@@ -57,7 +57,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInterstitialAd()
+        showAds()
         iqScore = IQCalculator.calculateIQ(fromCorrectAnswers: correctAnswers)
         
         setupUI()
@@ -65,6 +65,21 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         
         configureUI()
         viewModel.saveResult(correctAnswers: correctAnswers, iqScore: iqScore)
+    }
+    private func showAds() {
+        RemoteConfigManager.shared.fetchRemoteConfig { (showAds, error) in
+                   if let error = error {
+                       print("Remote Config Fetch Error: \(error.localizedDescription)")
+                       return
+                   }
+
+                   if showAds {
+                       print( "reklamlar gösteriliyor")
+                       self.loadInterstitialAd()
+                   } else {
+                       print( "reklamlar gösterilmiyor")
+                   }
+               }
     }
 }
 

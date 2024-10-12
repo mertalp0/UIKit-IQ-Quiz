@@ -20,7 +20,7 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     
     //MARK: - UI Elements
     private var bannerView: GADBannerView!
-
+    
     private var titleLabel: UILabel = UILabel.makeAppBarLabel()
     
     private lazy var nextButton: CustomButton = {
@@ -30,7 +30,7 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
         button.delegate = self
         return button
     }()
-
+    
     private var quesitonContainerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -79,14 +79,7 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let viewWidth = view.frame.inset(by: view.safeAreaInsets).width
-        let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
-        bannerView = GADBannerView(adSize: adaptiveSize)
-        bannerView.adUnitID = Constants.bannerAdUnitId
-        addBannerViewToView(bannerView)
-        bannerView.rootViewController = self
-        bannerView.load(GADRequest())
-
+        showAds()
         style()
         layout()
         configureUI()
@@ -96,6 +89,37 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         timer?.invalidate()
+    }
+    
+    private func showAds(){
+
+        RemoteConfigManager.shared.fetchRemoteConfig { (showAds, error) in
+                   if let error = error {
+                       print("Remote Config Fetch Error: \(error.localizedDescription)")
+                       return
+                   }
+
+                   if showAds {
+                       print( "reklamlar gösteriliyor")
+                       let viewWidth = self.view.frame.inset(by: self.view.safeAreaInsets).width
+                       let adaptiveSize = GADCurrentOrientationAnchoredAdaptiveBannerAdSizeWithWidth(viewWidth)
+                       self.bannerView = GADBannerView(adSize: adaptiveSize)
+                       self.bannerView.adUnitID = Constants.bannerAdUnitId
+                       self.addBannerViewToView(self.bannerView)
+                       self.bannerView.rootViewController = self
+                       self.bannerView.load(GADRequest())
+                       self.view.addSubview(self.bannerView)
+                       self.bannerView.translatesAutoresizingMaskIntoConstraints = false
+                       NSLayoutConstraint.activate([
+                        self.bannerView.heightAnchor.constraint(equalTo:                        self.view.heightAnchor, multiplier: 0.08),
+                        self.bannerView.bottomAnchor.constraint(equalTo:                        self.view.bottomAnchor),
+                        self.bannerView.leadingAnchor.constraint(equalTo:                        self.view.leadingAnchor),
+                        self.bannerView.trailingAnchor.constraint(equalTo:                        self.view.trailingAnchor),
+                       ]);
+                   } else {
+                       print( "reklamlar gösterilmiyor")
+                   }
+               }
     }
 }
 
@@ -163,7 +187,7 @@ extension QuizViewController{
         view.addSubview(quesitonContainerView)
         view.addSubview(answerView)
         view.addSubview(nextButton)
-        view.addSubview(bannerView)
+       
         quesitonContainerView.addSubview(quesitonStackView)
      
         
@@ -172,7 +196,7 @@ extension QuizViewController{
         quesitonContainerView.translatesAutoresizingMaskIntoConstraints = false
         answerView.translatesAutoresizingMaskIntoConstraints = false
         nextButton.translatesAutoresizingMaskIntoConstraints = false
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
+       
         quesitonStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -200,14 +224,11 @@ extension QuizViewController{
             answerView.bottomAnchor.constraint(equalTo: nextButton.topAnchor,constant: 5),
             
             nextButton.heightAnchor.constraint(equalToConstant: 40),
-            nextButton.bottomAnchor.constraint(equalTo: bannerView.topAnchor, constant: -23),
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
             
-            bannerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.08),
-            bannerView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            bannerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            bannerView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+           
         ])
     }
 }

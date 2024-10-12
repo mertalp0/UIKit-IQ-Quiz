@@ -61,6 +61,8 @@
 		948E36D52CBAAD4800858F13 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */; };
 		948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */; };
 		948E36DB2CBADA1100858F13 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */; };
+		948E36DD2CBAE4EC00858F13 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = 948E36DC2CBAE4EC00858F13 /* FirebaseRemoteConfig */; };
+		948E36DF2CBAE59000858F13 /* RemoteConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */; };
 		94BB3B702C7A12300016CF33 /* questions_tr.json in Resources */ = {isa = PBXBuildFile; fileRef = 94873C262C73AEC700620B4A /* questions_tr.json */; };
 		94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */; };
 		94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */; };
@@ -149,6 +151,7 @@
 		948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
 		948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigManager.swift; sourceTree = "<group>"; };
 		94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Result.xcdatamodel; sourceTree = "<group>"; };
 		94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatetsTestCell.swift; sourceTree = "<group>"; };
 		94BB3B792C7A52560016CF33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -168,6 +171,7 @@
 				94F7681C2C8CD6CE000E9180 /* FirebaseAnalytics in Frameworks */,
 				946AEAE32CB0430A00B16F05 /* SnapKit in Frameworks */,
 				94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */,
+				948E36DD2CBAE4EC00858F13 /* FirebaseRemoteConfig in Frameworks */,
 				94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */,
 				94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */,
 			);
@@ -650,6 +654,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */,
 				948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */,
 				940FB4692CB678D000A47E74 /* NotificationService.swift */,
 				942530112CB4408D00122794 /* LanguageService.swift */,
@@ -697,6 +702,7 @@
 				94F7681F2C8CD6CE000E9180 /* FirebaseFirestore */,
 				946AEAE22CB0430A00B16F05 /* SnapKit */,
 				94447DE02CB2F8B600A5252F /* GoogleMobileAds */,
+				948E36DC2CBAE4EC00858F13 /* FirebaseRemoteConfig */,
 			);
 			productName = "IQ-Quiz";
 			productReference = 94873BA02C738FE600620B4A /* IQ-Quiz.app */;
@@ -829,6 +835,7 @@
 				948E36DB2CBADA1100858F13 /* UserDefaultsManager.swift in Sources */,
 				94873C312C73B62C00620B4A /* QuizCoordinator.swift in Sources */,
 				94873BFA2C739B2800620B4A /* StartViewModel.swift in Sources */,
+				948E36DF2CBAE59000858F13 /* RemoteConfigManager.swift in Sources */,
 				94873C352C73B65200620B4A /* QuizViewModel.swift in Sources */,
 				948E36D32CBA6AA000858F13 /* OnboardingViewModel.swift in Sources */,
 				9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */,
@@ -1273,6 +1280,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		948E36DC2CBAE4EC00858F13 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
 		};
 		94F7681B2C8CD6CE000E9180 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

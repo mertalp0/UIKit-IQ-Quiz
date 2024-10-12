@@ -5,7 +5,7 @@
 //  Created by mert alp on 27.08.2024.
 //
 import UIKit
-
+import FirebaseRemoteConfig
 protocol CustomButtonDelegate : AnyObject {
     func buttonTapped(_ button : CustomButton )
 }
