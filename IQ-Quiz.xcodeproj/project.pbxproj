@@ -60,6 +60,7 @@
 		948E36D32CBA6AA000858F13 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D22CBA6A9C00858F13 /* OnboardingViewModel.swift */; };
 		948E36D52CBAAD4800858F13 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */; };
 		948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */; };
+		948E36DB2CBADA1100858F13 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */; };
 		94BB3B702C7A12300016CF33 /* questions_tr.json in Resources */ = {isa = PBXBuildFile; fileRef = 94873C262C73AEC700620B4A /* questions_tr.json */; };
 		94BB3B732C7A3FAF0016CF33 /* QuizResult.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */; };
 		94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */; };
@@ -147,6 +148,7 @@
 		948E36D22CBA6A9C00858F13 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		948E36D42CBAAD3800858F13 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		948E36D62CBAAEFB00858F13 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		94BB3B722C7A3FAF0016CF33 /* Result.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Result.xcdatamodel; sourceTree = "<group>"; };
 		94BB3B742C7A502C0016CF33 /* LatetsTestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatetsTestCell.swift; sourceTree = "<group>"; };
 		94BB3B792C7A52560016CF33 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
@@ -648,6 +650,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */,
 				940FB4692CB678D000A47E74 /* NotificationService.swift */,
 				942530112CB4408D00122794 /* LanguageService.swift */,
 				94D1609A2CB3C940003CB949 /* MailService.swift */,
@@ -823,6 +826,7 @@
 			files = (
 				94873BE02C7391F900620B4A /* AppCoordinator.swift in Sources */,
 				94D2095B2C7F5A1D00855278 /* Constants.swift in Sources */,
+				948E36DB2CBADA1100858F13 /* UserDefaultsManager.swift in Sources */,
 				94873C312C73B62C00620B4A /* QuizCoordinator.swift in Sources */,
 				94873BFA2C739B2800620B4A /* StartViewModel.swift in Sources */,
 				94873C352C73B65200620B4A /* QuizViewModel.swift in Sources */,

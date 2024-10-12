@@ -9,7 +9,6 @@ import UIKit
 class OnboardingViewModel : BaseViewModel {
     
     func onboardingTrue(){
-        UserDefaults.standard.set(true, forKey: "hasSeenOnboarding")
-        UserDefaults.standard.synchronize()
+        UserDefaultsManager.shared.setOnboardingComplete()
     }
 }

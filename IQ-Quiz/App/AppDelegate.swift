@@ -48,14 +48,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationService.shared.requestNotificationAuthorization { granted in
             if granted {
                 // Check if this is the first app launch
-                let hasLaunchedBefore = UserDefaults.standard.bool(forKey: "hasLaunchedBefore")
+                let hasLaunchedBefore = UserDefaultsManager.shared.hasLaunchedBefore()
                 
                 if !hasLaunchedBefore {
                     // First launch, schedule notification
                     NotificationService.shared.scheduleDailyNotification()
                     
                     // Set first launch flag
-                    UserDefaults.standard.set(true, forKey: "hasLaunchedBefore")
+                    UserDefaultsManager.shared.setHasLaunchedBefore()
                 } else {
                     print("App has been launched before.")
                 }

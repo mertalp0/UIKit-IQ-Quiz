@@ -5,8 +5,8 @@
 //  Created by mert alp on 7.10.2024.
 //
 
-
 import Foundation
+
 final class LanguageService {
     
     enum LanguageCode : String {
@@ -15,14 +15,16 @@ final class LanguageService {
         case spanish = "es"
     }
     
-  // Return the current language
-    static  var currentLanguage: String {
-    return UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? Locale.preferredLanguages.first ?? "en"
-  }
+    // Return the current language
+    static  func currentLanguage() -> String {
+        let currentLanguage = UserDefaultsManager.shared.getCurrentLanguage()
+        return currentLanguage
+    }
     
-  // Change the language
+    // Change the language
     static func changeLanguage(to language: LanguageCode) {
         Bundle.setLanguage(language.rawValue)
     }
 }
+
 

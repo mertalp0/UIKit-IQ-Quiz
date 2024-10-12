@@ -9,16 +9,16 @@ extension Bundle {
     private static var onLanguageDispatchOnce: () = {
         object_setClass(Bundle.main, LanguageBundle.self)
     }()
+    
     static func setLanguage(_ language: String) {
         Bundle.onLanguageDispatchOnce
-        UserDefaults.standard.set([language], forKey: "AppleLanguages")
-        UserDefaults.standard.synchronize()
+        UserDefaultsManager.shared.setLanguage(language)
     }
 }
 
 class LanguageBundle: Bundle {
     override func localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
-        let currentLanguage = UserDefaults.standard.stringArray(forKey: "AppleLanguages")?.first ?? "en"
+        let currentLanguage =  UserDefaultsManager.shared.getCurrentLanguage()
         var bundle = Bundle.main
         if let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj") {
             bundle = Bundle(path: path) ?? Bundle.main

@@ -111,12 +111,10 @@ final class LocalizationManager {
     
     func nextButtonLabel() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.nextButtonLabel)
-        
     }
     
     func alertTitle() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.alertTitle)
-        
     }
     
     func alertMessage() -> String {

@@ -7,22 +7,25 @@
 
 import UIKit
 class AppCoordinator : BaseCoordinator {
-   
+    
     override func start() {
-           if !hasSeenOnboarding() {
-               let onboardingCoordinator = OnboardingCoordinator(navigationController: self.navigationController)
-                    onboardingCoordinator.start()
-           } else {
-               let startCoordinator = StartCoordinator(navigationController: self.navigationController)
-                   startCoordinator.start()
-           }
-       }
+        if hasSeenOnboarding() {
+            let startCoordinator = StartCoordinator(navigationController: self.navigationController)
+            startCoordinator.start()
+            
+        } else {
+            let onboardingCoordinator = OnboardingCoordinator(navigationController: self.navigationController)
+            onboardingCoordinator.start()
+        }
+    }
     func startQuiz() {
-       let quizCoordinator = QuizCoordinator(navigationController : navigationController)
+        let quizCoordinator = QuizCoordinator(navigationController : navigationController)
         quizCoordinator.start()
-   }
-
+    }
+    
     private func hasSeenOnboarding() -> Bool {
-           return UserDefaults.standard.bool(forKey: "hasSeenOnboarding")
-       }
+        let hasSeenOnBoarding =  UserDefaultsManager.shared.hasSeenOnboarding()
+        return hasSeenOnBoarding
+        
+    }
 }

@@ -59,7 +59,7 @@ extension CustomButton {
 
 //MARK: - Selectors
 extension CustomButton {
-   @objc func handleTap(){
+   @objc func handleTap()  {
         animateButton()
         delegate?.buttonTapped(self)
     }
