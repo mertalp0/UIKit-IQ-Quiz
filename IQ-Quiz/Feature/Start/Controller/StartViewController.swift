@@ -74,9 +74,7 @@ extension StartViewController {
     
     // Setup UI
     private func setupUI() {
-        self.setupBackgroundImage(a: "bg1")
-
-        
+        self.setupBackgroundImage(a: "bg4")
         welcomeLabel.text = stringManager.welcomeMessage()
         
         view.addSubview(titleLabel)
@@ -150,7 +148,8 @@ extension StartViewController: SVCButtonDelegate {
     func didTapButton(_ senderType: SVCButtonType) {
         switch senderType {
         case .start:
-            coordinator?.showQuiz()
+            let dizi = [1]
+            print(dizi[1])
         case .share:
             shareAppLink()
         case .settings:

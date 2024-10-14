@@ -63,7 +63,7 @@ final class SVCButton: UIView {
         button.layer.cornerRadius = 50
         button.layer.masksToBounds = true
         
-        button.layer.borderColor = UIColor(red: 36/255, green: 76/255, blue: 121/255, alpha: 1.0).cgColor
+        button.layer.borderColor = UIColor(red: 36/255, green: 76/255, blue: 121/255, alpha: 0.5).cgColor
         button.layer.borderWidth = 8
         
         button.layer.shadowColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5).cgColor

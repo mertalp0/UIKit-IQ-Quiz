@@ -86,7 +86,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
 // MARK: - Setup IU , Setup Layout
 extension ResultViewController {
     private func setupUI() {
-        self.setupBackgroundImage(a: "bg1")
+        self.setupBackgroundImage(a: "bg4")
         homeButton.delegate = self
     }
     
