@@ -74,7 +74,7 @@ extension StartViewController {
     
     // Setup UI
     private func setupUI() {
-        self.setupBackgroundImage(withImage: "background_three")
+        self.setupBackgroundImage(withImage: .backgroundThree )
         welcomeLabel.text = stringManager.welcomeMessage()
         
         view.addSubview(titleLabel)

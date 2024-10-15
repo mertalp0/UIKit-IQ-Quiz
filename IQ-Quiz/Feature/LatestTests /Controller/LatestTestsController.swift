@@ -72,7 +72,7 @@ extension LatestTestsController {
     
     // Setup UI
     private func setupUI() {
-        self.setupBackgroundImage(withImage: "background_three" )
+        self.setupBackgroundImage(withImage: .backgroundThree  )
         latestTestLabel.text = stringManager.latestTestLabel()
         emptyStateLabel.text = stringManager.emptyStateLabel()
     }

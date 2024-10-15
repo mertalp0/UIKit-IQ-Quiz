@@ -35,7 +35,7 @@ final class OnboardingPageViewController: BaseViewController<OnboardingCoordinat
     override func viewDidLoad() {
         self.view.backgroundColor = .white
         setupLayout()
-        self.setupBackgroundImage(withImage: "background_three" )
+        self.setupBackgroundImage(withImage: .backgroundThree )
     }
     
     private func setupLayout() {

@@ -177,7 +177,7 @@ extension QuizViewController {
 //MARK: - Helpers
 extension QuizViewController{
     func style() {
-        self.setupBackgroundImage(withImage: "background_two" )
+        self.setupBackgroundImage(withImage: .backgroundTwo  )
     }
     
     func layout() {
