@@ -24,7 +24,10 @@
 		9476C7AE2C78B467002648A0 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7AD2C78B467002648A0 /* ResultController.swift */; };
 		9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */; };
 		9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */; };
-		9481D24F2CBE83F000343ACB /* m.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D24E2CBE83F000343ACB /* m.json */; };
+		9481D24F2CBE83F000343ACB /* confetti_animaiton.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D24E2CBE83F000343ACB /* confetti_animaiton.json */; };
+		9481D2522CBE938700343ACB /* questions_de.json in Sources */ = {isa = PBXBuildFile; fileRef = 9481D2512CBE938700343ACB /* questions_de.json */; };
+		9481D2532CBE938700343ACB /* questions_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D2512CBE938700343ACB /* questions_de.json */; };
+		9481D25B2CBE96CD00343ACB /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9481D25A2CBE96C200343ACB /* JsonManager.swift */; };
 		9484AFD02CB552B5009DEBCB /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */; };
 		9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */; };
 		94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873BA32C738FE600620B4A /* AppDelegate.swift */; };
@@ -113,7 +116,10 @@
 		9476C7AD2C78B467002648A0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
-		9481D24E2CBE83F000343ACB /* m.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = m.json; sourceTree = "<group>"; };
+		9481D24E2CBE83F000343ACB /* confetti_animaiton.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti_animaiton.json; sourceTree = "<group>"; };
+		9481D2512CBE938700343ACB /* questions_de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions_de.json; sourceTree = "<group>"; };
+		9481D2542CBE93B800343ACB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9481D25A2CBE96C200343ACB /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+SetLanguage.swift"; sourceTree = "<group>"; };
 		94873BA02C738FE600620B4A /* IQ-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IQ-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +220,7 @@
 		942530102CB4346900122794 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9481D2572CBE964100343ACB /* LottieAnimation */,
 				94E446002CBD9408006D3001 /* ImageManager */,
 				94873BEE2C73999100620B4A /* SupportingFiles */,
 				9425300B2CB4332100122794 /* Localizable */,
@@ -289,6 +296,33 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		9481D2502CBE92EA00343ACB /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				9473C63B2CB599D300988EFE /* questions_en.json */,
+				94873C262C73AEC700620B4A /* questions_tr.json */,
+				9481D2512CBE938700343ACB /* questions_de.json */,
+				944C514E2CB802E900996194 /* questions_es.json */,
+			);
+			path = Questions;
+			sourceTree = "<group>";
+		};
+		9481D2572CBE964100343ACB /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				9481D24E2CBE83F000343ACB /* confetti_animaiton.json */,
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
+		9481D2582CBE967500343ACB /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9484AFCE2CB552AE009DEBCB /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -333,7 +367,6 @@
 				94873BD72C73916A00620B4A /* App */,
 				94D15FDE2CB3107A003CB949 /* Info.plist */,
 				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
-				9481D24E2CBE83F000343ACB /* m.json */,
 			);
 			path = "IQ-Quiz";
 			sourceTree = "<group>";
@@ -556,10 +589,8 @@
 		94873C252C73AD2F00620B4A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				944C514E2CB802E900996194 /* questions_es.json */,
-				9473C63B2CB599D300988EFE /* questions_en.json */,
-				94873C262C73AEC700620B4A /* questions_tr.json */,
-				94BB3B712C7A3FAF0016CF33 /* QuizResult.xcdatamodeld */,
+				9481D2582CBE967500343ACB /* CoreData */,
+				9481D2502CBE92EA00343ACB /* Questions */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -664,6 +695,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9481D25A2CBE96C200343ACB /* JsonManager.swift */,
 				948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */,
 				948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */,
 				940FB4692CB678D000A47E74 /* NotificationService.swift */,
@@ -797,6 +829,7 @@
 				Base,
 				tr,
 				es,
+				de,
 			);
 			mainGroup = 94873B972C738FE600620B4A;
 			packageReferences = (
@@ -823,13 +856,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				944C51502CB807EE00996194 /* questions_es.json in Resources */,
+				9481D2532CBE938700343ACB /* questions_de.json in Resources */,
 				9425300E2CB4333300122794 /* Localizable.strings in Resources */,
 				9473C63C2CB599D800988EFE /* questions_en.json in Resources */,
 				94D1603A2CB31594003CB949 /* GoogleService-Info.plist in Resources */,
 				94BB3B702C7A12300016CF33 /* questions_tr.json in Resources */,
 				94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */,
 				94873BB02C738FE800620B4A /* Base in Resources */,
-				9481D24F2CBE83F000343ACB /* m.json in Resources */,
+				9481D24F2CBE83F000343ACB /* confetti_animaiton.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -916,6 +950,7 @@
 				948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */,
 				94E446022CBD9417006D3001 /* ImageManager.swift in Sources */,
 				94873C1F2C73A1AD00620B4A /* LatestTestsViewModel.swift in Sources */,
+				9481D2522CBE938700343ACB /* questions_de.json in Sources */,
 				9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */,
 				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,
 				94873BA62C738FE600620B4A /* SceneDelegate.swift in Sources */,
@@ -930,6 +965,7 @@
 				94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */,
 				9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */,
 				94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */,
+				9481D25B2CBE96CD00343ACB /* JsonManager.swift in Sources */,
 				94873BF62C739AA200620B4A /* BaseViewModel.swift in Sources */,
 				94873C272C73AEC700620B4A /* questions_tr.json in Sources */,
 			);
@@ -974,6 +1010,7 @@
 				9425300D2CB4333300122794 /* en */,
 				9425300F2CB4335400122794 /* tr */,
 				944C514D2CB8023300996194 /* es */,
+				9481D2542CBE93B800343ACB /* de */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

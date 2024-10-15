@@ -11,6 +11,7 @@
 "turkish" = "Turco";
 "english" = "Inglés";
 "spanish" = "Español";
+"german" = "Alemán";
 "cancel" = "Cancelar";
 "latest_test_label" = "Últimas pruebas";
 "iq_label" = "CI: %@";

@@ -1,0 +1,46 @@
+/*
+  Localizable.strings
+  IQ-Quiz
+
+  Created by mert alp on 7.10.2024.
+  
+*/
+"welcome_message" = "Willkommen.."; // Almanca karşılama mesajı
+"settings_title" = "Einstellungen"; // Ayarlar başlığı
+"change_language_message" = "Sprache ändern"; // Dil değiştirme mesajı
+"turkish" = "Türkisch"; // Türkçe dil seçeneği
+"english" = "Englisch"; // İngilizce dil seçeneği
+"spanish" = "Spanisch";
+"german" = "Deutsch";
+"cancel" = "Abbrechen"; // İptal butonu
+"latest_test_label" = "Letzte Tests"; // Son testler etiketi
+"iq_label" = "IQ: %@"; // Dinamik IQ değeri yer tutucu
+"correct_answers_label" = "Richtige Antworten: %@"; // Dinamik doğru cevap sayısı
+"no_date_available" = "Kein Datum verfügbar"; // Tarih yok mesajı
+
+"home_button_title" = "Startseite"; // Ana sayfa buton başlığı
+"score_label" = "Herzlichen Glückwunsch!!\nSie haben %@ von 15 richtig."; // Dinamik doğru cevap sayısı
+"iq_score_label" = "Ihr IQ-Test Ergebnis: %@ IQ"; // Dinamik IQ sonucu
+"next_button_label" = "Weiter";
+"alert_title" = "Warnung";
+"alert_select_option_message" = "Bitte wählen Sie eine Option"; // Almanca versiyon
+"finish_button_label" = "Fertig";
+"iq_tesd_communication" = "IQ-Test Kommunikation";
+
+"iq_notification_title" = "Zeit für einen IQ-Test";
+"iq_notification_body" = "Messen Sie Ihren IQ und entdecken Sie Ihr tägliches Intelligenzniveau!";
+
+"onboarding_title_one" = "Willkommen!";
+"onboarding_body_one" = "Willkommen zu unserem IQ-Test. Beantworten Sie die 15 Fragen in 5 Minuten, um Ihren IQ-Wert herauszufinden. Sind Sie bereit, Ihre geistigen Fähigkeiten herauszufordern?";
+
+"onboarding_title_two" = "Sprachauswahl";
+"onboarding_body_two" = "Sie können den Test in Ihrer bevorzugten Sprache machen. Wählen Sie einfach die Sprache aus, in der Sie sich am wohlsten fühlen.";
+
+"onboarding_title_three" = "Bereitmachen";
+"onboarding_body_three" = "Nachdem Sie den Test abgeschlossen haben, sehen Sie Ihren IQ-Wert und die Ergebnisse. Lassen Sie uns anfangen, viel Glück!";
+
+"onboarding_button_title_one" = "Weiter";
+"onboarding_button_title_two" = "Weiter";
+"onboarding_button_title_three" = "Fertig";
+
+"empty_state_label" = "Sie haben keine Testergebnisse";

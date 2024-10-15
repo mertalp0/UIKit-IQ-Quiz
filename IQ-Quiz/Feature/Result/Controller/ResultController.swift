@@ -56,14 +56,14 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     
   
     
-    let applauseIcon :  LottieAnimationView = {
+    let confettiAnimation :  LottieAnimationView = {
         let animaiton = LottieAnimationView()
-        animaiton.animation = LottieAnimation.named("m")
+        animaiton.animation = LottieAnimation.named("confetti_animaiton")
         animaiton.loopMode = .playOnce
         return animaiton
     }()
     
-    let a : UIImageView = {
+    let applauseImage : UIImageView = {
         let image = UIImageView()
         image.image = ImageManager.shared.getImage(for: .applause)
         return image
@@ -81,11 +81,11 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         
         configureUI()
         viewModel.saveResult(correctAnswers: correctAnswers, iqScore: iqScore)
-        applauseIcon.play()
+        confettiAnimation.play()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        applauseIcon.play()
+        confettiAnimation.play()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -121,8 +121,8 @@ extension ResultViewController {
         view.addSubview(titleLabel)
         view.addSubview(iqLabel)
         view.addSubview(homeButton)
-        view.addSubview(applauseIcon)
-        view.addSubview(a)
+        view.addSubview(confettiAnimation)
+        view.addSubview(applauseImage)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
@@ -138,7 +138,7 @@ extension ResultViewController {
             make.trailing.equalTo(view.snp.trailing).offset(-20)
         }
         
-        applauseIcon.snp.makeConstraints { make in
+        confettiAnimation.snp.makeConstraints { make in
             make.height.width.equalTo(600)
             make.center.equalToSuperview()
         }
@@ -158,7 +158,7 @@ extension ResultViewController {
             make.trailing.equalTo(view.snp.trailing).offset(-20)
             make.height.equalTo(50)
         }
-        a.snp.makeConstraints { make in
+        applauseImage.snp.makeConstraints { make in
             make.height.width.equalTo(300)
             make.center.equalToSuperview()
         }

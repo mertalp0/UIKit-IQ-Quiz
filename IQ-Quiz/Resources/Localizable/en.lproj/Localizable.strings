@@ -11,6 +11,7 @@
 "turkish" = "Turkish"; // Turkish language option
 "english" = "English"; // English language option
 "spanish" = "Spanish";
+"german" = "German";
 "cancel" = "Cancel"; // Cancel button
 "latest_test_label" = "Latest Tests"; // Latest tests label
 "iq_label" = "IQ: %@"; // Dynamic IQ value placeholder

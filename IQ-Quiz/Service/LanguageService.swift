@@ -13,15 +13,31 @@ final class LanguageService {
         case english = "en"
         case turkish = "tr"
         case spanish = "es"
+        case german = "de"
+        
+        
+        var jsonFileName: String {
+            switch self {
+            case .english:
+                return "questions_en"
+            case .turkish:
+                return "questions_tr"
+            case .spanish:
+                return "questions_es"
+            case .german:
+                return "questions_de"
+            }
+        }
     }
     
-    // Return the current language
-    static  func currentLanguage() -> String {
+    static func currentLanguage() -> String {
+        
         let currentLanguage = UserDefaultsManager.shared.getCurrentLanguage()
-        return currentLanguage
+        let languageCode = LanguageCode(rawValue: currentLanguage) ?? .english
+
+        return languageCode.jsonFileName
     }
     
-    // Change the language
     static func changeLanguage(to language: LanguageCode) {
         Bundle.setLanguage(language.rawValue)
     }

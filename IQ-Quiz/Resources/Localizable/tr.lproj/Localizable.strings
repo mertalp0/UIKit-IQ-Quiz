@@ -12,6 +12,7 @@
 "english" = "İngilizce";
 "spanish" = "İspanyolca";
 "cancel" = "İptal";
+"german" = "Almanca";
 "latest_test_label" = "Son testler";
 "iq_label" = "IQ: %@";
 "correct_answers_label" = "Doğru Cevaplar: %@";

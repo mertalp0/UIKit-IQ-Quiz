@@ -1,0 +1,138 @@
+[
+    {
+        "id": "1",
+        "type": "imageAnswer",
+        "questionText": "Welches ist die geschlossene Version dieses Musters?",
+        "questionImage": "1",
+        "options": ["1a", "1b", "1c", "1d"],
+        "correctAnswer": "1d"
+    },
+    {
+        "id": "2",
+        "type": "textAnswer",
+        "questionText": "Ein Junge hat eine Zahlenreihe: 2, 5, 10, 17, ... Was ist die nächste Zahl in dieser Reihe?",
+        "options": ["24", "26", "30", "34"],
+        "correctAnswer": "26"
+    },
+    {
+        "id": "3",
+        "type": "imageAnswer",
+        "questionText": "Welches Teil fehlt im Bild?",
+        "questionImage": "3-question",
+        "options": ["3a", "3b", "3c", "3d"],
+        "correctAnswer": "3a"
+    },
+    {
+        "id": "4",
+        "type": "textAnswer",
+        "questionText": "Die Stunden- und Minutenzeiger einer Uhr sind um Mitternacht perfekt ausgerichtet. Wie oft werden sie sich bis 6 Uhr morgens überlappen?",
+        "options": ["1", "2", "3", "4"],
+        "correctAnswer": "1"
+    },
+    {
+        "id": "5",
+        "type": "imageAnswer",
+        "questionText": "Welche Form fehlt?",
+        "questionImage": "5-question",
+        "options": ["5a", "5b", "5c", "5d"],
+        "correctAnswer": "5a"
+    },
+    {
+        "id": "6",
+        "type": "textAnswer",
+        "questionText": "Auf einem Bauernhof gibt es Hühner und Schafe. Der Bauernhof hat insgesamt 30 Köpfe und 100 Beine. Wie viele Schafe gibt es auf dem Bauernhof?",
+        "options": ["10", "15", "20", "25"],
+        "correctAnswer": "20"
+    },
+    {
+        "id": "7",
+        "type": "imageAnswer",
+        "questionText": "Was sollte an die Stelle des Fragezeichens gesetzt werden?",
+        "questionImage": "7-question",
+        "options": ["7a", "7b", "7c", "7d"],
+        "correctAnswer": "7d"
+    },
+    {
+        "id": "8",
+        "type": "textAnswer",
+        "questionText": "Ein Mann erstellt eine Zahlenreihe: 2, 6, 12, 20, ... Was ist die nächste Zahl in dieser Reihe?",
+        "options": ["30", "32", "34", "36"],
+        "correctAnswer": "30"
+    },
+    {
+        "id": "9",
+        "type": "imageAnswer",
+        "questionText": "Wie viele Quadrate gibt es im Bild?",
+        "questionImage": "9-question",
+        "options": ["9a", "9b", "9c", "9d"],
+        "correctAnswer": "9a"
+    },
+    {
+        "id": "10",
+        "type": "textAnswer",
+        "questionText": "Am Ende eines Treffens gaben sich 10 Personen die Hand. Wie viele Händedrücke gab es insgesamt?",
+        "options": [
+            "35",
+            "40",
+            "45",
+            "50"
+        ],
+        "correctAnswer": "45"
+    },
+    {
+        "id": "11",
+        "type": "textAnswer",
+        "questionText": "Eine Flasche und ein Deckel kosten zusammen 1,10 TL. Die Flasche kostet 1 TL mehr als der Deckel. Wie viel kostet der Deckel?",
+        "options": [
+            "0,05 TL",
+            "0,10 TL",
+            "0,15 TL",
+            "0,20 TL"
+        ],
+        "correctAnswer": "0,05 TL"
+    },
+    {
+        "id": "12",
+        "type": "textAnswer",
+        "questionText": "Ein Mann hat 5 Töchter, und jede Tochter hat 1 Bruder. Wie viele Kinder hat er insgesamt?",
+        "options": [
+            "5",
+            "6",
+            "10",
+            "11"
+        ],
+        "correctAnswer": "6"
+    },
+    {
+        "id": "13",
+        "type": "textAnswer",
+        "questionText": "In einem Dorf gibt es 5 Häuser, jedes in einer anderen Farbe gestrichen. Jedes Haus hat einen Garten dahinter. Das rote Haus steht links vom blauen Haus, das grüne Haus steht rechts vom gelben Haus und das weiße Haus steht links vom roten Haus. Hinter welcher Farbe steht das weiße Haus?",
+        "options": [
+            "Grün",
+            "Blau",
+            "Rot",
+            "Gelb"
+        ],
+        "correctAnswer": "Blau"
+    },
+    {
+        "id": "14",
+        "type": "imageAnswer",
+        "questionText": "Wie viele Dreiecke gibt es im Bild?",
+        "questionImage": "14-question",
+        "options": ["14a", "14b", "14c", "14d"],
+        "correctAnswer": "14d"
+    },
+    {
+        "id": "15",
+        "type": "textAnswer",
+        "questionText": "Ein Bus fährt 30 km/h und legt die gesamte Strecke in 2 Stunden zurück. Wenn der Bus seine Geschwindigkeit nach der Hälfte der Strecke auf 40 km/h erhöht, wie lange dauert die gesamte Fahrt?",
+        "options": [
+            "1 Stunde 45 Minuten",
+            "1 Stunde 30 Minuten",
+            "2 Stunden",
+            "2 Stunden 15 Minuten"
+        ],
+        "correctAnswer": "1 Stunde 30 Minuten"
+    }
+]
