@@ -363,8 +363,6 @@
 				94873BD92C73917500620B4A /* Coordinator */,
 				94873BD82C73917000620B4A /* Base */,
 				94873BD72C73916A00620B4A /* App */,
-				94D15FDE2CB3107A003CB949 /* Info.plist */,
-				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
 			);
 			path = "IQ-Quiz";
 			sourceTree = "<group>";
@@ -432,6 +430,8 @@
 			children = (
 				94873BAC2C738FE800620B4A /* Assets.xcassets */,
 				94873BAE2C738FE800620B4A /* LaunchScreen.storyboard */,
+				94D15FDE2CB3107A003CB949 /* Info.plist */,
+				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -1153,7 +1153,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J584WC8XJ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IQ-Quiz/Info.plist";
+				INFOPLIST_FILE = "IQ-Quiz/Resources/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "IQ-Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -1188,7 +1188,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J584WC8XJ5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "IQ-Quiz/Info.plist";
+				INFOPLIST_FILE = "IQ-Quiz/Resources/SupportingFiles/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "IQ-Test";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;

@@ -15,16 +15,19 @@
 	<key>STORAGE_BUCKET</key>
 	<string>iqtest-f0e8f.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:253422561868:ios:5999b352c97cd81ea922e9</string>
+	<key>CFBundleIdentifier</key>
+	<string>added language support to startup
+</string>
 </dict>
 </plist>
