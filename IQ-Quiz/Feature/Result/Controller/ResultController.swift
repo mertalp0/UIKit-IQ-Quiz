@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMobileAds
+import Lottie
 
 final class ResultViewController: BaseViewController<ResultCoordinator, ResultViewModel>  {
     
@@ -53,12 +54,21 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         return button
     }()
     
-    private let applauseIcon: UIImageView = {
-        let imageView = UIImageView()
-        let image = ImageManager.shared.getImage(for: .applause)
-        imageView.image = image
-        return imageView
+  
+    
+    let applauseIcon :  LottieAnimationView = {
+        let animaiton = LottieAnimationView()
+        animaiton.animation = LottieAnimation.named("m")
+        animaiton.loopMode = .playOnce
+        return animaiton
     }()
+    
+    let a : UIImageView = {
+        let image = UIImageView()
+        image.image = ImageManager.shared.getImage(for: .applause)
+        return image
+    }()
+  
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
@@ -71,7 +81,17 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         
         configureUI()
         viewModel.saveResult(correctAnswers: correctAnswers, iqScore: iqScore)
+        applauseIcon.play()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        applauseIcon.play()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        //applauseIcon.stop()
+    }
+    
     private func showAds() {
         RemoteConfigManager.shared.fetchRemoteConfig { (showAds, error) in
                    if let error = error {
@@ -102,6 +122,7 @@ extension ResultViewController {
         view.addSubview(iqLabel)
         view.addSubview(homeButton)
         view.addSubview(applauseIcon)
+        view.addSubview(a)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
@@ -118,7 +139,7 @@ extension ResultViewController {
         }
         
         applauseIcon.snp.makeConstraints { make in
-            make.height.width.equalTo(350)
+            make.height.width.equalTo(600)
             make.center.equalToSuperview()
         }
         
@@ -136,6 +157,10 @@ extension ResultViewController {
             make.leading.equalTo(view.snp.leading).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-20)
             make.height.equalTo(50)
+        }
+        a.snp.makeConstraints { make in
+            make.height.width.equalTo(300)
+            make.center.equalToSuperview()
         }
     }
 }

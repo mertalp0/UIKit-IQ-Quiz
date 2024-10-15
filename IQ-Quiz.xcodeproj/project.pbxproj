@@ -10,6 +10,8 @@
 		940FB46A2CB678D000A47E74 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940FB4692CB678D000A47E74 /* NotificationService.swift */; };
 		9425300E2CB4333300122794 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9425300C2CB4333300122794 /* Localizable.strings */; };
 		942530122CB4408D00122794 /* LanguageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942530112CB4408D00122794 /* LanguageService.swift */; };
+		943FBAF02CBE5CF200AE58DB /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = 943FBAEF2CBE5CF200AE58DB /* Hero */; };
+		943FBAF32CBE772600AE58DB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 943FBAF22CBE772600AE58DB /* Lottie */; };
 		94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 94447DE02CB2F8B600A5252F /* GoogleMobileAds */; };
 		944C514F2CB802F600996194 /* questions_es.json in Sources */ = {isa = PBXBuildFile; fileRef = 944C514E2CB802E900996194 /* questions_es.json */; };
 		944C51502CB807EE00996194 /* questions_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 944C514E2CB802E900996194 /* questions_es.json */; };
@@ -22,6 +24,7 @@
 		9476C7AE2C78B467002648A0 /* ResultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7AD2C78B467002648A0 /* ResultController.swift */; };
 		9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */; };
 		9476C7B32C78B4C4002648A0 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */; };
+		9481D24F2CBE83F000343ACB /* m.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D24E2CBE83F000343ACB /* m.json */; };
 		9484AFD02CB552B5009DEBCB /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */; };
 		9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */; };
 		94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873BA32C738FE600620B4A /* AppDelegate.swift */; };
@@ -110,6 +113,7 @@
 		9476C7AD2C78B467002648A0 /* ResultController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultController.swift; sourceTree = "<group>"; };
 		9476C7B02C78B4AA002648A0 /* ResultCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCoordinator.swift; sourceTree = "<group>"; };
 		9476C7B22C78B4C4002648A0 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		9481D24E2CBE83F000343ACB /* m.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = m.json; sourceTree = "<group>"; };
 		9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+SetLanguage.swift"; sourceTree = "<group>"; };
 		94873BA02C738FE600620B4A /* IQ-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IQ-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +179,9 @@
 				94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */,
 				948E36DD2CBAE4EC00858F13 /* FirebaseRemoteConfig in Frameworks */,
 				94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */,
+				943FBAF02CBE5CF200AE58DB /* Hero in Frameworks */,
 				94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */,
+				943FBAF32CBE772600AE58DB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,8 +321,8 @@
 		94873BA22C738FE600620B4A /* IQ-Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				942530102CB4346900122794 /* Resources */,
 				9463EAD22C7E017E003D7295 /* Components */,
+				942530102CB4346900122794 /* Resources */,
 				94BB3B772C7A52380016CF33 /* Service */,
 				94873C252C73AD2F00620B4A /* Data */,
 				94873C392C746CCB00620B4A /* Helpers */,
@@ -327,6 +333,7 @@
 				94873BD72C73916A00620B4A /* App */,
 				94D15FDE2CB3107A003CB949 /* Info.plist */,
 				94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */,
+				9481D24E2CBE83F000343ACB /* m.json */,
 			);
 			path = "IQ-Quiz";
 			sourceTree = "<group>";
@@ -715,6 +722,8 @@
 				946AEAE22CB0430A00B16F05 /* SnapKit */,
 				94447DE02CB2F8B600A5252F /* GoogleMobileAds */,
 				948E36DC2CBAE4EC00858F13 /* FirebaseRemoteConfig */,
+				943FBAEF2CBE5CF200AE58DB /* Hero */,
+				943FBAF22CBE772600AE58DB /* Lottie */,
 			);
 			productName = "IQ-Quiz";
 			productReference = 94873BA02C738FE600620B4A /* IQ-Quiz.app */;
@@ -794,6 +803,8 @@
 				94F7681A2C8CD6CD000E9180 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				946AEAE12CB0430A00B16F05 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				943FBAEE2CBE5CF200AE58DB /* XCRemoteSwiftPackageReference "Hero" */,
+				943FBAF12CBE772600AE58DB /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 94873BA12C738FE600620B4A /* Products */;
 			projectDirPath = "";
@@ -818,6 +829,7 @@
 				94BB3B702C7A12300016CF33 /* questions_tr.json in Resources */,
 				94873BAD2C738FE800620B4A /* Assets.xcassets in Resources */,
 				94873BB02C738FE800620B4A /* Base in Resources */,
+				9481D24F2CBE83F000343ACB /* m.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1282,6 +1294,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		943FBAEE2CBE5CF200AE58DB /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.6.3;
+			};
+		};
+		943FBAF12CBE772600AE58DB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
@@ -1309,6 +1337,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		943FBAEF2CBE5CF200AE58DB /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 943FBAEE2CBE5CF200AE58DB /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
+		943FBAF22CBE772600AE58DB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 943FBAF12CBE772600AE58DB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		94447DE02CB2F8B600A5252F /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 94447DDF2CB2F8B600A5252F /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
