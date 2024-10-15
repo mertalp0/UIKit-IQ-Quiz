@@ -31,15 +31,19 @@ final class LanguageService {
     }
     
     static func currentLanguage() -> String {
-        
-        let currentLanguage = UserDefaultsManager.shared.getCurrentLanguage()
-        let languageCode = LanguageCode(rawValue: currentLanguage) ?? .english
-
+        let languageCode = currentLanguageCode()
         return languageCode.jsonFileName
     }
     
+    static func currentLanguageCode() -> LanguageCode{
+        let currentLanguage = UserDefaultsManager.shared.getCurrentLanguage()
+        let languageCode = LanguageCode(rawValue: currentLanguage) ?? .english
+        return languageCode
+    }
+
     static func changeLanguage(to language: LanguageCode) {
         Bundle.setLanguage(language.rawValue)
+        UserDefaultsManager.shared.setLanguage(language.rawValue)
     }
 }
 

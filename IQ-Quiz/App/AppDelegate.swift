@@ -17,11 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Core Data Stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "QuizResult")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+        container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
-        })
+        }
         return container
     }()
 
@@ -38,49 +38,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
-         return .portrait
-     }
-    
     // MARK: - Application Lifecycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Firebase and Google Ads configuration
-        GADMobileAds.sharedInstance().start(completionHandler: nil)
-        FirebaseApp.configure()
+        configureFirebaseAndAds()
+        requestNotificationAuthorization()
+        configureLanguage()
         
-        // Request notification permission and schedule notification
-        NotificationService.shared.requestNotificationAuthorization { granted in
-            if granted {
-                // Check if this is the first app launch
-                let hasLaunchedBefore = UserDefaultsManager.shared.hasLaunchedBefore()
-                
-                if !hasLaunchedBefore {
-                    // First launch, schedule notification
-                    NotificationService.shared.scheduleDailyNotification()
-                    
-                    // Set first launch flag
-                    UserDefaultsManager.shared.setHasLaunchedBefore()
-                } else {
-                    print("App has been launched before.")
-                }
-            } else {
-                print("Notification permission not granted.")
-            }
-        }
-
         // 1 second delay for splash screen
         Thread.sleep(forTimeInterval: 1)
-
+        
         return true
     }
 
     // MARK: - UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
+        // No action needed on scene discard
+    }
+
+    // MARK: - Private Methods
+    private func configureFirebaseAndAds() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        FirebaseApp.configure()
+        configureCrashlytics()
+    }
+
+    private func requestNotificationAuthorization() {
+        NotificationService.shared.requestNotificationAuthorization { granted in
+            if granted {
+                let hasLaunchedBefore = UserDefaultsManager.shared.hasLaunchedBefore()
+                if !hasLaunchedBefore {
+                    NotificationService.shared.scheduleDailyNotification()
+                    UserDefaultsManager.shared.setHasLaunchedBefore()
+                }
+            }
+        }
+    }
+
+    private func configureCrashlytics() {
+        Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
+        Crashlytics.crashlytics().log("App launched - Crashlytics initialized.")
+        
+        // Example of recording a test error (non-fatal)
+        let testError = NSError(domain: "com.example.IQ-Quiz", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test error for Crashlytics"])
+        Crashlytics.crashlytics().record(error: testError)
+    }
+    
+    private func configureLanguage(){
+        let languageCode = LanguageService.currentLanguageCode()
+        LanguageService.changeLanguage(to: languageCode)
     }
 }

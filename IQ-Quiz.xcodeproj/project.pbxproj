@@ -27,7 +27,6 @@
 		9481D24F2CBE83F000343ACB /* confetti_animaiton.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D24E2CBE83F000343ACB /* confetti_animaiton.json */; };
 		9481D2522CBE938700343ACB /* questions_de.json in Sources */ = {isa = PBXBuildFile; fileRef = 9481D2512CBE938700343ACB /* questions_de.json */; };
 		9481D2532CBE938700343ACB /* questions_de.json in Resources */ = {isa = PBXBuildFile; fileRef = 9481D2512CBE938700343ACB /* questions_de.json */; };
-		9481D25B2CBE96CD00343ACB /* JsonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9481D25A2CBE96C200343ACB /* JsonManager.swift */; };
 		9484AFD02CB552B5009DEBCB /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */; };
 		9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */; };
 		94873BA42C738FE600620B4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94873BA32C738FE600620B4A /* AppDelegate.swift */; };
@@ -119,7 +118,6 @@
 		9481D24E2CBE83F000343ACB /* confetti_animaiton.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = confetti_animaiton.json; sourceTree = "<group>"; };
 		9481D2512CBE938700343ACB /* questions_de.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions_de.json; sourceTree = "<group>"; };
 		9481D2542CBE93B800343ACB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		9481D25A2CBE96C200343ACB /* JsonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonManager.swift; sourceTree = "<group>"; };
 		9484AFCF2CB552B5009DEBCB /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		9484AFD12CB552D0009DEBCB /* Bundle+SetLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+SetLanguage.swift"; sourceTree = "<group>"; };
 		94873BA02C738FE600620B4A /* IQ-Quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IQ-Quiz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -695,7 +693,6 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				9481D25A2CBE96C200343ACB /* JsonManager.swift */,
 				948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */,
 				948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */,
 				940FB4692CB678D000A47E74 /* NotificationService.swift */,
@@ -965,7 +962,6 @@
 				94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */,
 				9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */,
 				94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */,
-				9481D25B2CBE96CD00343ACB /* JsonManager.swift in Sources */,
 				94873BF62C739AA200620B4A /* BaseViewModel.swift in Sources */,
 				94873C272C73AEC700620B4A /* questions_tr.json in Sources */,
 			);
