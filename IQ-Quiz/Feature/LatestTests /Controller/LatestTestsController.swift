@@ -23,6 +23,15 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
         return button
     }()
     
+    private let emptyStateLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 18, weight: .medium)
+        label.isHidden = true // Başlangıçta gizli olmalı
+        return label
+    }()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -63,8 +72,9 @@ extension LatestTestsController {
     
     // Setup UI
     private func setupUI() {
-        self.setupBackgroundImage(a: "bg4")
+        self.setupBackgroundImage(withImage: "background_three" )
         latestTestLabel.text = stringManager.latestTestLabel()
+        emptyStateLabel.text = stringManager.emptyStateLabel()
     }
     
     // Setup Layout
@@ -73,6 +83,7 @@ extension LatestTestsController {
         view.addSubview(latestTestLabel)
         view.addSubview(tableView)
         view.addSubview(backButton)
+        view.addSubview(emptyStateLabel)
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
@@ -97,6 +108,10 @@ extension LatestTestsController {
             make.leading.trailing.equalToSuperview().inset(16)
             make.bottom.equalToSuperview()
         }
+        
+        emptyStateLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
     }
 }
 
@@ -114,7 +129,12 @@ extension LatestTestsController {
 // MARK: - UITableViewDelegate , UITableViewDataSource
 extension LatestTestsController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.latestTests.count
+        let count = viewModel.latestTests.count
+        
+        emptyStateLabel.isHidden = count != 0
+        tableView.isHidden = count == 0
+        
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

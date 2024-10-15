@@ -58,7 +58,6 @@ class QuizViewController: BaseViewController<QuizCoordinator, QuizViewModel>,Cus
     
     private var textQuestion: UILabel = {
         let label = UILabel()
-        label.text = "question"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 18, weight: .medium)
         label.textAlignment = .center
@@ -178,7 +177,7 @@ extension QuizViewController {
 //MARK: - Helpers
 extension QuizViewController{
     func style() {
-        self.setupBackgroundImage(a: "bg2")
+        self.setupBackgroundImage(withImage: "background_two" )
     }
     
     func layout() {

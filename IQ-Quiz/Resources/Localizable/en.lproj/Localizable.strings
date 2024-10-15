@@ -29,3 +29,17 @@
 "iq_notification_title" = "Time for an IQ Test";
 "iq_notification_body" = "Measure your IQ and discover your daily intelligence level!";
 
+"onboarding_title_one" = "Welcome!";
+"onboarding_body_one" = "Welcome to our IQ test. Complete the 15-question test in 5 minutes to find out your IQ level. Are you ready to challenge your mental abilities?";
+
+"onboarding_title_two" = "Language Selection";
+"onboarding_body_two" = "You can take the test in your preferred language. Feel free to choose the language you are most comfortable with.";
+
+"onboarding_title_three" = "Get Ready";
+"onboarding_body_three" = "Once you complete the test, you will see your IQ level and results. Let's get started, good luck!";
+
+"onboarding_button_title_one" = "Next";
+"onboarding_button_title_two" = "Next";
+"onboarding_button_title_three" = "Finish";
+
+"empty_state_label" = "You Have No Test Results";

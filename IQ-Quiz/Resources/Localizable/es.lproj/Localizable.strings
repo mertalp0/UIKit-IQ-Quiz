@@ -28,3 +28,18 @@
 
 "iq_notification_title" = "Hora de la prueba de CI";
 "iq_notification_body" = "¡Vamos, mide tu CI y descubre tu nivel diario de inteligencia!";
+
+"onboarding_title_one" = "¡Bienvenido!";
+"onboarding_body_one" = "Bienvenido a nuestra prueba de coeficiente intelectual. Completa la prueba de 15 preguntas en 5 minutos para descubrir tu nivel de CI. ¿Estás listo para desafiar tus habilidades mentales?";
+
+"onboarding_title_two" = "Selección de Idioma";
+"onboarding_body_two" = "Puedes realizar la prueba en el idioma de tu preferencia. Siéntete libre de elegir el idioma en el que te sientas más cómodo.";
+
+"onboarding_title_three" = "Prepárate";
+"onboarding_body_three" = "Una vez que completes la prueba, verás tu nivel de CI y los resultados. ¡Comencemos, buena suerte!";
+
+"onboarding_button_title_one" = "Siguiente";
+"onboarding_button_title_two" = "Siguiente";
+"onboarding_button_title_three" = "Finalizar";
+
+"empty_state_label" = "No Tienes Resultados de Pruebas";

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "Leonardo_Phoenix_A_stunning_digital_illustration_featuring_a_b_1.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

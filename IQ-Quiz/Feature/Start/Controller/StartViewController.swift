@@ -18,7 +18,7 @@ final class StartViewController: BaseViewController<StartCoordinator, StartViewM
     
     private let logo: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
+        imageView.image = ImageManager.shared.getImage(for: .logo)
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -74,7 +74,7 @@ extension StartViewController {
     
     // Setup UI
     private func setupUI() {
-        self.setupBackgroundImage(a: "bg4")
+        self.setupBackgroundImage(withImage: "background_three")
         welcomeLabel.text = stringManager.welcomeMessage()
         
         view.addSubview(titleLabel)
@@ -148,8 +148,7 @@ extension StartViewController: SVCButtonDelegate {
     func didTapButton(_ senderType: SVCButtonType) {
         switch senderType {
         case .start:
-            let dizi = [1]
-            print(dizi[1])
+            coordinator?.showQuiz()
         case .share:
             shareAppLink()
         case .settings:

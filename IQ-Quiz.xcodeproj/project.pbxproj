@@ -72,6 +72,7 @@
 		94D1609B2CB3C940003CB949 /* MailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1609A2CB3C940003CB949 /* MailService.swift */; };
 		94D209532C7E392200855278 /* AppBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D209522C7E392200855278 /* AppBar.swift */; };
 		94D2095B2C7F5A1D00855278 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2095A2C7F5A1D00855278 /* Constants.swift */; };
+		94E446022CBD9417006D3001 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E446012CBD9417006D3001 /* ImageManager.swift */; };
 		94F7681C2C8CD6CE000E9180 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681B2C8CD6CE000E9180 /* FirebaseAnalytics */; };
 		94F7681E2C8CD6CE000E9180 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681D2C8CD6CE000E9180 /* FirebaseCrashlytics */; };
 		94F768202C8CD6CE000E9180 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 94F7681F2C8CD6CE000E9180 /* FirebaseFirestore */; };
@@ -160,6 +161,7 @@
 		94D1609A2CB3C940003CB949 /* MailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailService.swift; sourceTree = "<group>"; };
 		94D209522C7E392200855278 /* AppBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBar.swift; sourceTree = "<group>"; };
 		94D2095A2C7F5A1D00855278 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		94E446012CBD9417006D3001 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		94F768212C8CD6F4000E9180 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,6 +208,7 @@
 		942530102CB4346900122794 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				94E446002CBD9408006D3001 /* ImageManager */,
 				94873BEE2C73999100620B4A /* SupportingFiles */,
 				9425300B2CB4332100122794 /* Localizable */,
 			);
@@ -680,6 +683,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		94E446002CBD9408006D3001 /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				94E446012CBD9417006D3001 /* ImageManager.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -891,6 +902,7 @@
 				94BB3B7A2C7A52560016CF33 /* CoreDataService.swift in Sources */,
 				94873C3B2C746CE900620B4A /* UIColor+Hex.swift in Sources */,
 				948E36D72CBAAEFD00858F13 /* OnboardingPageViewController.swift in Sources */,
+				94E446022CBD9417006D3001 /* ImageManager.swift in Sources */,
 				94873C1F2C73A1AD00620B4A /* LatestTestsViewModel.swift in Sources */,
 				9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */,
 				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,

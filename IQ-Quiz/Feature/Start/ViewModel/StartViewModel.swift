@@ -21,6 +21,4 @@ class StartViewModel : BaseViewModel, StartViewModelProtocol {
         func sendEmail(from viewController: UIViewController) {
             mailService.sendEmail(from: viewController)
         }
-        
-    
 }

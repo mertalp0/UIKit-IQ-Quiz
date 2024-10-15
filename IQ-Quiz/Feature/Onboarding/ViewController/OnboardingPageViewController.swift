@@ -11,9 +11,8 @@ protocol OnboardingPageDelegate: AnyObject {
     func didTapNextButton(on page: OnboardingPageViewController)
 }
 
-class OnboardingPageViewController: UIViewController {
+final class OnboardingPageViewController: BaseViewController<OnboardingCoordinator,OnboardingViewModel> {
     
-    // UI bileşenleri
     private let imageView = UIImageView()
     private let titleLabel = UILabel()
     private let descriptionLabel = UILabel()
@@ -21,18 +20,22 @@ class OnboardingPageViewController: UIViewController {
     
     weak var delegate: OnboardingPageDelegate?
     
-    init(imageName: String, title: String, text: String, buttonTitle: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.imageView.image = UIImage(named: imageName)
+    init(imageName: ImageManager.AppImages, title: String, text: String, buttonTitle: String) {
+        self.imageView.image = ImageManager.shared.getImage(for: imageName)
         self.titleLabel.text = title
         self.descriptionLabel.text = text
         self.button.setTitle(buttonTitle, for: .normal)
-        self.view.backgroundColor = .white
-        setupLayout()
+        super.init(viewModel: OnboardingViewModel())
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+          super.init(coder: coder)
+    }
+    
+    override func viewDidLoad() {
+        self.view.backgroundColor = .white
+        setupLayout()
+        self.setupBackgroundImage(withImage: "background_three" )
     }
     
     private func setupLayout() {
@@ -42,19 +45,25 @@ class OnboardingPageViewController: UIViewController {
         view.addSubview(button)
         
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 20
+        imageView.layer.borderColor = UIColor.white.cgColor
+        imageView.layer.borderWidth = 2
         
-        titleLabel.textColor = .black
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 28)
         titleLabel.textAlignment = .center
-        descriptionLabel.textColor = .black
-        descriptionLabel.font = UIFont.systemFont(ofSize: 16)
+        
+        descriptionLabel.textColor = .white
+        descriptionLabel.font = UIFont.boldSystemFont(ofSize: 20)
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
       
-        button.setTitleColor(.black, for: .normal)
-        button.layer.borderColor = UIColor.black.cgColor
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .purple
+        button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 2
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 10
         
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
@@ -65,7 +74,7 @@ class OnboardingPageViewController: UIViewController {
         }
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom)
+            make.top.equalTo(imageView.snp.bottom).offset(10)
             make.height.equalTo(40)
             make.leading.trailing.equalToSuperview().inset(20)
         }

@@ -28,3 +28,18 @@
 
 "iq_notification_title" = "IQ Testi Zamanı";
 "iq_notification_body" = "Hadi IQ'nu ölç ve günlük zekâ seviyeni keşfet!";
+
+"onboarding_title_one" = "Hoş Geldiniz!";
+"onboarding_body_one" = " IQ Testine hoş geldiniz. 5 dakikada 15 soruluk testi tamamlayarak IQ seviyenizi öğrenebilirsiniz. Zihinsel becerilerinizi sınamaya hazır mısınız?";
+
+"onboarding_title_two" = "Dil Seçeneği";
+"onboarding_body_two" = " Testi dil tercihinize göre çözebilirsiniz. Dilerseniz ana dilinizde testi çözebilir, kendinizi en rahat hissettiğiniz dilde performans gösterebilirsiniz.";
+
+"onboarding_title_three" = "Hazır Olun";
+"onboarding_body_three"  = "Testi tamamladığınızda IQ seviyenizi ve sonuçlarınızı görebileceksiniz. Hadi başlayalım, başarılar!";
+
+"onboarding_button_title_one" = "İleri";
+"onboarding_button_title_two" = "İleri";
+"onboarding_button_title_three" = "Bitir";
+
+"empty_state_label" = "Bir Test Sonucunuz Yok";

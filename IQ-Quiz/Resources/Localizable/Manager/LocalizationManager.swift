@@ -36,7 +36,28 @@ final class LocalizationManager {
         
         static let iqNotificationTitle = "iq_notification_title"
         static let iqNotificationBody = "iq_notification_body"
+        
+        static let onboardingTitleOne = "onboarding_title_one"
+        static let onboardingBodyOne = "onboarding_body_one"
+        
+        static let onboardingTitleTwo = "onboarding_title_two"
+        static let onboardingBodyTwo = "onboarding_body_two"
+        
+        static let onboardingTitleThree = "onboarding_title_three"
+        static let onboardingBodyThree = "onboarding_body_three"
+        
+        static let onboardingButtonTitleOne = "onboarding_button_title_one"
+        static let onboardingButtonTitleTwo = "onboarding_button_title_two"
+        static let onboardingButtonTitleThree = "onboarding_button_title_three"
+        
+        static let emptyStateLabel = "empty_state_label"
 
+    }
+    
+    enum OnboaringPage {
+        case one
+        case two
+        case three
     }
     
     // Private initializer to prevent external instantiation
@@ -135,6 +156,68 @@ final class LocalizationManager {
     
     func iqNotificationBody() -> String {
         return LocalizationManager.localizedString(forKey: LocalizationKeys.iqNotificationBody)
+    }
+    
+    func iqNotificationTitle(withPage page:OnboaringPage) -> String {
+        return LocalizationManager.localizedString(forKey: LocalizationKeys.iqNotificationBody)
+    }
+    
+    func onboardingTitle(withPage page:OnboaringPage) -> String {
+        let title : String
+        
+        switch page {
+            
+        case .one:
+            title = LocalizationKeys.onboardingTitleOne
+        
+        case .two:
+            title = LocalizationKeys.onboardingTitleTwo
+            
+        case .three:
+            title = LocalizationKeys.onboardingTitleThree
+        }
+        
+        return LocalizationManager.localizedString(forKey: title)
+    }
+    
+    func onboardingBody(withPage page:OnboaringPage) -> String {
+        let body : String
+        
+        switch page {
+            
+        case .one:
+            body = LocalizationKeys.onboardingBodyOne
+        
+        case .two:
+            body = LocalizationKeys.onboardingBodyTwo
+            
+        case .three:
+            body = LocalizationKeys.onboardingBodyThree
+        }
+        
+        return LocalizationManager.localizedString(forKey: body)
+    }
+    
+    func onboardingButtonTitle(withPage page:OnboaringPage) -> String {
+        let buttonTitle : String
+        
+        switch page {
+            
+        case .one:
+            buttonTitle = LocalizationKeys.onboardingButtonTitleOne
+        
+        case .two:
+            buttonTitle = LocalizationKeys.onboardingButtonTitleTwo
+            
+        case .three:
+            buttonTitle = LocalizationKeys.onboardingButtonTitleThree
+        }
+        
+        return LocalizationManager.localizedString(forKey: buttonTitle)
+    }
+    
+    func emptyStateLabel() -> String{
+        return LocalizationManager.localizedString(forKey: LocalizationKeys.emptyStateLabel)
     }
     
 }

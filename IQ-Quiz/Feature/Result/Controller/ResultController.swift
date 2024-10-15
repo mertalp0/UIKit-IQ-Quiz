@@ -27,6 +27,9 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         label.layer.masksToBounds = true
         label.textColor = .white
         label.numberOfLines = 0
+        label.layer.borderColor = UIColor.white.cgColor
+        label.layer.borderWidth = 2.0
+      
         return label
     }()
     
@@ -39,6 +42,9 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         label.layer.masksToBounds = true
         label.textColor = .black
         label.numberOfLines = 0
+        label.layer.borderColor = UIColor.white.cgColor
+        label.layer.borderWidth = 2.0
+        
         return label
     }()
     
@@ -49,7 +55,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
     
     private let applauseIcon: UIImageView = {
         let imageView = UIImageView()
-        let image = UIImage(named: "applause")
+        let image = ImageManager.shared.getImage(for: .applause)
         imageView.image = image
         return imageView
     }()
@@ -86,7 +92,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
 // MARK: - Setup IU , Setup Layout
 extension ResultViewController {
     private func setupUI() {
-        self.setupBackgroundImage(a: "bg4")
+        self.setupBackgroundImage(withImage: "background_three" )
         homeButton.delegate = self
     }
     

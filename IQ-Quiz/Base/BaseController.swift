@@ -78,9 +78,9 @@ extension BaseViewController {
        
     }
    
-    func setupBackgroundImage(a : String) {
+    func setupBackgroundImage(withImage imageName : String) {
         let backgroundImage = UIImageView()
-        backgroundImage.image = UIImage(named: a)
+        backgroundImage.image = UIImage(named: imageName)
         backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.clipsToBounds = true
         

@@ -16,26 +16,26 @@ final class OnboardingViewController: BaseViewController<OnboardingCoordinator,O
     private lazy var pages: [OnboardingPageViewController] = {
        
         let firstPage = OnboardingPageViewController(
-            imageName: "Welcome1",
-            title: "Welcome to the App",
-            text: "Discover the amazing features of our application.",
-            buttonTitle: "Next"
+            imageName: .onboardingOne,
+            title: LocalizationManager.shared.onboardingTitle(withPage: .one),
+            text: LocalizationManager.shared.onboardingBody(withPage: .one),
+            buttonTitle: LocalizationManager.shared.onboardingButtonTitle(withPage: .one)
         )
         firstPage.delegate = self
         
         let secondPage = OnboardingPageViewController(
-            imageName: "Welcome2",
-            title: "Explore Features",
-            text: "Learn how to use the app effectively.",
-            buttonTitle: "Next"
+            imageName: .onboardingTwo,
+            title: LocalizationManager.shared.onboardingTitle(withPage: .two),
+            text: LocalizationManager.shared.onboardingBody(withPage: .two),
+            buttonTitle: LocalizationManager.shared.onboardingButtonTitle(withPage: .two)
         )
         secondPage.delegate = self
         
         let thirdPage = OnboardingPageViewController(
-            imageName: "Welcome3",
-            title: "Get Started",
-            text: "Join us and start your journey!",
-            buttonTitle: "Get Started"
+            imageName: .onboardingThree,
+            title: LocalizationManager.shared.onboardingTitle(withPage: .three),
+            text: LocalizationManager.shared.onboardingBody(withPage: .three),
+            buttonTitle: LocalizationManager.shared.onboardingButtonTitle(withPage: .three)
         )
         thirdPage.delegate = self
 

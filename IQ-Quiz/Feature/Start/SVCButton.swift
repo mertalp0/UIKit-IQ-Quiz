@@ -22,15 +22,15 @@ enum SVCButtonType {
     var icon: UIImage? {
         switch self {
         case .start:
-            return UIImage(systemName: "play.fill")
+            return ImageManager.shared.getImage(named: .play)
         case .share:
-            return UIImage(systemName: "square.and.arrow.up.fill")
+            return ImageManager.shared.getImage(named: .share)
         case .lastTest:
-            return UIImage(systemName: "list.bullet.clipboard.fill")
+            return ImageManager.shared.getImage(named: .list)
         case .feedBack:
-            return UIImage(systemName: "apple.logo")
+            return ImageManager.shared.getImage(named: .mail)
         case .settings:
-            return UIImage(systemName: "gearshape")
+            return ImageManager.shared.getImage(named: .languageSettings)
         }
     }
 }
