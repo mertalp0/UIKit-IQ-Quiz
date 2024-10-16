@@ -41,6 +41,10 @@ class UserDefaultsManager {
         return UserDefaults.standard.stringArray(forKey: UserDefaultsKeys.appleLanguages.rawValue)?.first ?? Locale.preferredLanguages.first ?? "en"
     }
     
+    func getAppleLanguages () -> String? {
+        return UserDefaults.standard.stringArray(forKey: UserDefaultsKeys.appleLanguages.rawValue)?.first
+    }
+    
     func setLanguage(_ languageCode: String) {
         UserDefaults.standard.set([languageCode], forKey: UserDefaultsKeys.appleLanguages.rawValue)
         UserDefaults.standard.synchronize()

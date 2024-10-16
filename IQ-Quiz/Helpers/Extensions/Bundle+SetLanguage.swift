@@ -4,6 +4,7 @@
 //
 //  Created by mert alp on 8.10.2024.
 //
+
 import Foundation
 extension Bundle {
     private static var onLanguageDispatchOnce: () = {

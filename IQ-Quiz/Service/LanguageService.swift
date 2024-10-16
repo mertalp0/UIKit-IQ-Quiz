@@ -45,6 +45,18 @@ final class LanguageService {
         Bundle.setLanguage(language.rawValue)
         UserDefaultsManager.shared.setLanguage(language.rawValue)
     }
+    
+    static func changeLanguage(toString language: String) {
+        var currentLanguage : String
+        if language ==  "tr-TR"{
+            currentLanguage = "tr"
+        }else {
+            currentLanguage = language
+        }
+        
+        Bundle.setLanguage(currentLanguage)
+        UserDefaultsManager.shared.setLanguage(currentLanguage)
+    }
 }
 
 

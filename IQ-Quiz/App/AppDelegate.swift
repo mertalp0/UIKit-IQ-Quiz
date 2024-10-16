@@ -13,7 +13,7 @@ import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     // MARK: - Core Data Stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "QuizResult")
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
     func saveContext() {
         let context = persistentContainer.viewContext
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
     // MARK: - Application Lifecycle
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         configureFirebaseAndAds()
@@ -49,23 +49,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
     // MARK: - UISceneSession Lifecycle
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // No action needed on scene discard
     }
-
+    
     // MARK: - Private Methods
     private func configureFirebaseAndAds() {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         FirebaseApp.configure()
         configureCrashlytics()
     }
-
+    
     private func requestNotificationAuthorization() {
         NotificationService.shared.requestNotificationAuthorization { granted in
             if granted {
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
+    
     private func configureCrashlytics() {
         Crashlytics.crashlytics().setCrashlyticsCollectionEnabled(true)
         Crashlytics.crashlytics().log("App launched - Crashlytics initialized.")
@@ -87,8 +87,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Crashlytics.crashlytics().record(error: testError)
     }
     
-    private func configureLanguage(){
-        let languageCode = LanguageService.currentLanguageCode()
-        LanguageService.changeLanguage(to: languageCode)
+    private func configureLanguage() {
+        
+        if let _ = UserDefaultsManager.shared.getAppleLanguages() {
+            LanguageService.changeLanguage(to: LanguageService.currentLanguageCode())
+        } else {
+            if let preferredLanguageCode = Locale.preferredLanguages.first {
+                LanguageService.changeLanguage(toString: preferredLanguageCode)
+            }
+        }
     }
 }
+
