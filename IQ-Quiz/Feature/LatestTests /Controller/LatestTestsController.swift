@@ -54,14 +54,11 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
         setupLayout()
         setupTableView()
         setupActions()
-        viewModel.fetchLatestTests()
-        tableView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetchLatestTests()
-        tableView.reloadData()
     }
     
     // MARK: - Setup Actions
