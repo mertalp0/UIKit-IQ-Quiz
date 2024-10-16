@@ -199,7 +199,7 @@ extension QuizViewController{
         quesitonStackView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.07),
+            titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.screenHeight * 0.05),
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             
@@ -222,8 +222,8 @@ extension QuizViewController{
             answerView.topAnchor.constraint(equalTo: quesitonContainerView.bottomAnchor, constant: Constants.screenHeight * 0.05),
             answerView.bottomAnchor.constraint(equalTo: nextButton.topAnchor,constant: 5),
             
-            nextButton.heightAnchor.constraint(equalToConstant: 40),
-            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            nextButton.heightAnchor.constraint(equalToConstant: Constants.screenHeight * 0.06),
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 56),
             nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -56),
             

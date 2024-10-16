@@ -55,12 +55,12 @@ final class OnboardingPageViewController: BaseViewController<OnboardingCoordinat
         titleLabel.textAlignment = .center
         
         descriptionLabel.textColor = .white
-        descriptionLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        descriptionLabel.font = UIFont.boldSystemFont(ofSize: 18)
         descriptionLabel.textAlignment = .center
         descriptionLabel.numberOfLines = 0
       
         button.setTitleColor(.white, for: .normal)
-        button.backgroundColor = .purple
+        button.backgroundColor = .primaryColor
         button.layer.borderColor = UIColor.white.cgColor
         button.layer.borderWidth = 2
         button.layer.cornerRadius = 10
@@ -68,7 +68,7 @@ final class OnboardingPageViewController: BaseViewController<OnboardingCoordinat
         button.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         
         imageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(30)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(Constants.screenWidth * 0.1)
             make.centerX.equalToSuperview()
             make.width.height.equalTo(300)
         }
@@ -81,13 +81,14 @@ final class OnboardingPageViewController: BaseViewController<OnboardingCoordinat
         
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
+            make.bottom.equalTo(button.snp.top)
             make.leading.trailing.equalToSuperview().inset(20)
         }
         
         button.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(50)
             make.centerX.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-80)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-70)
             make.width.equalTo(150)
             make.height.equalTo(40)
         }

@@ -24,7 +24,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         label.backgroundColor = .primaryColor
         label.font = .systemFont(ofSize: 24, weight: .medium)
         label.textAlignment = .center
-        label.layer.cornerRadius = 20
+        label.layer.cornerRadius = 14
         label.layer.masksToBounds = true
         label.textColor = .white
         label.numberOfLines = 0
@@ -39,7 +39,7 @@ final class ResultViewController: BaseViewController<ResultCoordinator, ResultVi
         label.backgroundColor = .secondaryColor
         label.font = .systemFont(ofSize: 20, weight: .medium)
         label.textAlignment = .center
-        label.layer.cornerRadius = 20
+        label.layer.cornerRadius = 14
         label.layer.masksToBounds = true
         label.textColor = .black
         label.numberOfLines = 0
@@ -131,7 +131,7 @@ extension ResultViewController {
         }
         
         resultLabel.snp.makeConstraints { make in
-            make.height.equalTo(100)
+            make.height.equalTo(Constants.screenHeight * 0.1)
             make.centerX.equalTo(view.snp.centerX)
             make.top.equalTo(titleLabel.snp.bottom).offset(20)
             make.leading.equalTo(view.snp.leading).offset(20)
@@ -139,27 +139,27 @@ extension ResultViewController {
         }
         
         confettiAnimation.snp.makeConstraints { make in
-            make.height.width.equalTo(600)
+            make.height.equalTo(Constants.screenHeight * 0.7)
             make.center.equalToSuperview()
         }
         
         iqLabel.snp.makeConstraints { make in
-            make.height.equalTo(80)
+            make.height.equalTo(Constants.screenHeight * 0.08)
             make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(homeButton.snp.top).offset(-40)
+            make.bottom.equalTo(homeButton.snp.top).offset(-30)
             make.leading.equalTo(view.snp.leading).offset(30)
             make.trailing.equalTo(view.snp.trailing).offset(-30)
         }
         
         homeButton.snp.makeConstraints { make in
             make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(view.snp.bottom).offset(-70)
+            make.bottom.equalTo(view.snp.bottom).offset(-Constants.screenHeight * 0.03)
             make.leading.equalTo(view.snp.leading).offset(20)
             make.trailing.equalTo(view.snp.trailing).offset(-20)
             make.height.equalTo(50)
         }
         applauseImage.snp.makeConstraints { make in
-            make.height.width.equalTo(300)
+            make.height.width.equalTo(Constants.screenHeight * 0.4)
             make.center.equalToSuperview()
         }
     }
