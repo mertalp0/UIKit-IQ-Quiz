@@ -83,8 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Crashlytics.crashlytics().log("App launched - Crashlytics initialized.")
         
         // Example of recording a test error (non-fatal)
-        let testError = NSError(domain: "com.example.IQ-Quiz", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test error for Crashlytics"])
-        Crashlytics.crashlytics().record(error: testError)
+//        let testError = NSError(domain: "com.example.IQ-Quiz", code: 0, userInfo: [NSLocalizedDescriptionKey: "Test error for Crashlytics"])
+//        Crashlytics.crashlytics().record(error: testError)
     }
     
     private func configureLanguage() {
