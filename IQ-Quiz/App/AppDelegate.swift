@@ -14,6 +14,14 @@ import UserNotifications
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        AppUsageManager.shared.applicationDidBecomeActive()
+    }
+    
+    func applicationWillResignActive(_ application: UIApplication) {
+        AppUsageManager.shared.applicationWillResignActive()
+    }
+    
     // MARK: - Core Data Stack
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "QuizResult")

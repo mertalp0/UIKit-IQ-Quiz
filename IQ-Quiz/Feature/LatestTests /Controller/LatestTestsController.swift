@@ -86,15 +86,15 @@ extension LatestTestsController {
         view.addSubview(emptyStateLabel)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
             make.leading.equalToSuperview().offset(30)
             make.trailing.equalToSuperview().inset(16)
         }
         
         backButton.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
             make.leading.equalToSuperview().offset(16)
-            make.width.height.equalTo(44) // Butonun genişliği ve yüksekliği
+            make.width.height.equalTo(44) 
         }
         
         latestTestLabel.snp.makeConstraints { make in

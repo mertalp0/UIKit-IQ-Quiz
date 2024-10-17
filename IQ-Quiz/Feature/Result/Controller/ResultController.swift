@@ -125,7 +125,7 @@ extension ResultViewController {
         view.addSubview(applauseImage)
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.07)
+            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
             make.leading.equalTo(view.snp.leading).offset(16)
             make.trailing.equalTo(view.snp.trailing).offset(-16)
         }

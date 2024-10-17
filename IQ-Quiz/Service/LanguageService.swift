@@ -7,30 +7,30 @@
 
 import Foundation
 
-final class LanguageService {
+enum LanguageCode : String {
+    case english = "en"
+    case turkish = "tr"
+    case spanish = "es"
+    case german = "de"
     
-    enum LanguageCode : String {
-        case english = "en"
-        case turkish = "tr"
-        case spanish = "es"
-        case german = "de"
-        
-        
-        var jsonFileName: String {
-            switch self {
-            case .english:
-                return "questions_en"
-            case .turkish:
-                return "questions_tr"
-            case .spanish:
-                return "questions_es"
-            case .german:
-                return "questions_de"
-            }
+    
+    var jsonFileName: String {
+        switch self {
+        case .english:
+            return "questions_en"
+        case .turkish:
+            return "questions_tr"
+        case .spanish:
+            return "questions_es"
+        case .german:
+            return "questions_de"
         }
     }
-    
-    static func currentLanguage() -> String {
+}
+
+final class LanguageService {
+
+    static func currentJsonFile() -> String {
         let languageCode = currentLanguageCode()
         return languageCode.jsonFileName
     }
