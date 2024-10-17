@@ -17,7 +17,7 @@ class QuizViewModel: BaseViewModel, QuizViewModelProtocol {
         
     }
     private func fetchLanguages(){
-        currentJsonFile = LanguageService.currentLanguage()
+        currentJsonFile = LanguageService.currentJsonFile()
     }
     
     func fetchQuestions() {

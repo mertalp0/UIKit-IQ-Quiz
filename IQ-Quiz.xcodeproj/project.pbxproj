@@ -15,6 +15,8 @@
 		94447DE12CB2F8B600A5252F /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 94447DE02CB2F8B600A5252F /* GoogleMobileAds */; };
 		944C514F2CB802F600996194 /* questions_es.json in Sources */ = {isa = PBXBuildFile; fileRef = 944C514E2CB802E900996194 /* questions_es.json */; };
 		944C51502CB807EE00996194 /* questions_es.json in Resources */ = {isa = PBXBuildFile; fileRef = 944C514E2CB802E900996194 /* questions_es.json */; };
+		9451A8782CC0E8C80022D28D /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451A8772CC0E8C20022D28D /* AnalyticsManager.swift */; };
+		9451A87C2CC0EA680022D28D /* AppUsageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9451A87B2CC0EA680022D28D /* AppUsageManager.swift */; };
 		9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */; };
 		9463EAD42C7E01BB003D7295 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EAD32C7E01BA003D7295 /* CustomButton.swift */; };
 		9463EADC2C7E0ED5003D7295 /* AnimateLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */; };
@@ -107,6 +109,8 @@
 		942530112CB4408D00122794 /* LanguageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageService.swift; sourceTree = "<group>"; };
 		944C514D2CB8023300996194 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		944C514E2CB802E900996194 /* questions_es.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = questions_es.json; sourceTree = "<group>"; };
+		9451A8772CC0E8C20022D28D /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		9451A87B2CC0EA680022D28D /* AppUsageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUsageManager.swift; sourceTree = "<group>"; };
 		9462FA9F2C820C6E008E4876 /* ResultViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModelProtocol.swift; sourceTree = "<group>"; };
 		9463EAD32C7E01BA003D7295 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		9463EADB2C7E0ED5003D7295 /* AnimateLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateLogo.swift; sourceTree = "<group>"; };
@@ -239,6 +243,15 @@
 				9474F3472CB08CB200D5540A /* SVCButton.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9451A87A2CC0EA600022D28D /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				9451A87B2CC0EA680022D28D /* AppUsageManager.swift */,
+				9451A8772CC0E8C20022D28D /* AnalyticsManager.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		9463EAD22C7E017E003D7295 /* Components */ = {
@@ -693,6 +706,7 @@
 		94BB3B772C7A52380016CF33 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				9451A87A2CC0EA600022D28D /* Analytics */,
 				948E36DE2CBAE59000858F13 /* RemoteConfigManager.swift */,
 				948E36DA2CBADA1100858F13 /* UserDefaultsManager.swift */,
 				940FB4692CB678D000A47E74 /* NotificationService.swift */,
@@ -951,6 +965,7 @@
 				9462FAA02C820C6E008E4876 /* ResultViewModelProtocol.swift in Sources */,
 				9476C7B12C78B4AA002648A0 /* ResultCoordinator.swift in Sources */,
 				94873BA62C738FE600620B4A /* SceneDelegate.swift in Sources */,
+				9451A87C2CC0EA680022D28D /* AppUsageManager.swift in Sources */,
 				942530122CB4408D00122794 /* LanguageService.swift in Sources */,
 				944C514F2CB802F600996194 /* questions_es.json in Sources */,
 				94873BF82C739B1500620B4A /* StartCoordinator.swift in Sources */,
@@ -962,6 +977,7 @@
 				94BB3B752C7A502C0016CF33 /* LatetsTestCell.swift in Sources */,
 				9484AFD22CB552DE009DEBCB /* Bundle+SetLanguage.swift in Sources */,
 				94873C372C73B66B00620B4A /* QuizViewModelProtocol.swift in Sources */,
+				9451A8782CC0E8C80022D28D /* AnalyticsManager.swift in Sources */,
 				94873BF62C739AA200620B4A /* BaseViewModel.swift in Sources */,
 				94873C272C73AEC700620B4A /* questions_tr.json in Sources */,
 			);
