@@ -4,6 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,19 +13,57 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController wantsFullScreenLayout="YES" extendedLayoutIncludesOpaqueBars="YES" definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" modalPresentationStyle="fullScreen" hidesBottomBarWhenPushed="YES" id="01J-lp-oVM" sceneMemberID="viewController">
-                    <imageView key="view" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" id="dqf-vp-vZi">
+                    <view key="view" contentMode="scaleToFill" id="Csm-3z-j0f">
                         <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.20392156862745098" green="0.066666666666666666" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </imageView>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_three" translatesAutoresizingMaskIntoConstraints="NO" id="IrV-yX-z3T">
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFd-pH-1C1">
+                                <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tax-7b-pu5">
+                                        <rect key="frame" x="87" y="257" width="266" height="382"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="382" id="HI5-k6-9nM"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tax-7b-pu5" firstAttribute="centerX" secondItem="FFd-pH-1C1" secondAttribute="centerX" id="Aru-2C-R7x"/>
+                                    <constraint firstItem="tax-7b-pu5" firstAttribute="top" secondItem="FFd-pH-1C1" secondAttribute="top" constant="257" id="CfS-QW-Wrg"/>
+                                    <constraint firstItem="tax-7b-pu5" firstAttribute="leading" secondItem="FFd-pH-1C1" secondAttribute="leading" constant="87" id="JwR-MK-hkb"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="r9b-RS-u3t"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IrV-yX-z3T" firstAttribute="top" secondItem="Csm-3z-j0f" secondAttribute="topMargin" constant="-62" id="Brg-cb-dJH"/>
+                            <constraint firstItem="FFd-pH-1C1" firstAttribute="leading" secondItem="IrV-yX-z3T" secondAttribute="leading" id="CaK-Av-3QA"/>
+                            <constraint firstItem="FFd-pH-1C1" firstAttribute="bottom" secondItem="IrV-yX-z3T" secondAttribute="bottom" id="beh-HO-Rur"/>
+                            <constraint firstItem="IrV-yX-z3T" firstAttribute="centerX" secondItem="Csm-3z-j0f" secondAttribute="centerX" id="cqd-cX-SLQ"/>
+                            <constraint firstItem="FFd-pH-1C1" firstAttribute="centerY" secondItem="Csm-3z-j0f" secondAttribute="centerY" id="m2A-Q4-viX"/>
+                            <constraint firstItem="IrV-yX-z3T" firstAttribute="trailing" secondItem="FFd-pH-1C1" secondAttribute="trailing" id="nbE-PQ-sGJ"/>
+                            <constraint firstItem="FFd-pH-1C1" firstAttribute="top" secondItem="IrV-yX-z3T" secondAttribute="top" id="rhA-LF-SfS"/>
+                            <constraint firstItem="FFd-pH-1C1" firstAttribute="leading" secondItem="r9b-RS-u3t" secondAttribute="leading" id="v9p-Jg-kgE"/>
+                        </constraints>
+                    </view>
                     <value key="contentSizeForViewInPopover" type="size" width="440" height="946"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="51.81818181818182" y="374.05857740585776"/>
         </scene>
     </scenes>
     <resources>
+        <image name="background_three" width="390" height="844"/>
         <image name="logo" width="1024" height="1024"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

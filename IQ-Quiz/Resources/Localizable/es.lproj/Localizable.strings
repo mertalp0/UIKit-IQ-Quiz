@@ -28,7 +28,7 @@
 "iq_tesd_communication" = "Comunicación de prueba de CI";
 
 "iq_notification_title" = "Hora de la prueba de CI";
-"iq_notification_body" = "¡Vamos, mide tu CI y descubre tu nivel diario de inteligencia!";
+"iq_notification_body" = "¡Vamos, mide tu CI y descubre tu nivel de inteligencia!";
 
 "onboarding_title_one" = "¡Bienvenido!";
 "onboarding_body_one" = "Bienvenido a nuestra prueba de coeficiente intelectual. Completa la prueba de 15 preguntas en 5 minutos para descubrir tu nivel de CI. ¿Estás listo para desafiar tus habilidades mentales?";

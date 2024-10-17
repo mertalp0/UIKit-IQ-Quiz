@@ -148,6 +148,8 @@ extension StartViewController: SVCButtonDelegate {
     func didTapButton(_ senderType: SVCButtonType) {
         switch senderType {
         case .start:
+            let languageCode = LanguageService.currentLanguageCode()
+            AnalyticsManager.shared.logExamStarted(languageCode: languageCode )
             coordinator?.showQuiz()
         case .share:
             shareAppLink()
@@ -175,21 +177,28 @@ extension StartViewController {
         
         let turkishAction = UIAlertAction(title: stringManager.turkishLanguage(), style: .default) { _ in
             LanguageService.changeLanguage(to: .turkish)
+            AnalyticsManager.shared.logLanguageSelected(languageCode: .turkish)
             self.updateUI()
         }
         
         let englishAction = UIAlertAction(title: stringManager.englishLanguage(), style: .default) { _ in
             LanguageService.changeLanguage(to: .english)
+            AnalyticsManager.shared.logLanguageSelected(languageCode: .english)
+
             self.updateUI()
         }
         
         let spanishAction =  UIAlertAction(title: stringManager.spanishLanguage(), style: .default) { _ in
             LanguageService.changeLanguage(to: .spanish)
+            AnalyticsManager.shared.logLanguageSelected(languageCode: .spanish)
+
             self.updateUI()
         }
         
         let germanAction =  UIAlertAction(title: stringManager.germanLanguage(), style: .default) { _ in
             LanguageService.changeLanguage(to: .german)
+            AnalyticsManager.shared.logLanguageSelected(languageCode: .german)
+
             self.updateUI()
         }
         let cancelAction = UIAlertAction(title: stringManager.cancelButton(), style: .cancel, handler: nil)
