@@ -94,7 +94,7 @@ extension LatestTestsController {
         backButton.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
             make.leading.equalToSuperview().offset(16)
-            make.width.height.equalTo(44) 
+            make.width.height.equalTo(44)
         }
         
         latestTestLabel.snp.makeConstraints { make in
