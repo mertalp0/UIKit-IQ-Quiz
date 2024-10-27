@@ -31,9 +31,7 @@
 			</array>
 		</dict>
 	</dict>
-    <key>GADApplicationIdentifier</key>
-    <string>ca-app-pub-8569363517810386~6728629332</string>
-    
+  
     <key>NSLocalNotificationUsageDescription</key>
     <string>Bildirime izin verirseniz her gün hatırlatma alabilirsiniz.</string>
     
@@ -41,5 +39,9 @@
         <array>
             <string>UIInterfaceOrientationPortrait</string>
         </array>
+    
+    <key>GADApplicationIdentifier</key>
+    <string>ca-app-pub-2087175666193195~2814703972</string>
+    
 </dict>
 </plist>

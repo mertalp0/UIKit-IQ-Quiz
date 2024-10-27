@@ -48,14 +48,16 @@ final class LanguageService {
     
     static func changeLanguage(toString language: String) {
         var currentLanguage : String
-        if language ==  "tr-TR"{
-            currentLanguage = "tr"
-        }else {
-            currentLanguage = language
-        }
+        
+        currentLanguage = extractLanguageCode(from: language)  // Fonksiyonu kullanarak dil kodunu ayır
+
         
         Bundle.setLanguage(currentLanguage)
         UserDefaultsManager.shared.setLanguage(currentLanguage)
+    }
+    
+    static func extractLanguageCode(from language: String) -> String {
+        return language.components(separatedBy: "-").first ?? language
     }
 }
 

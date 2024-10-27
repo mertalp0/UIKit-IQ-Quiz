@@ -264,17 +264,10 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		9473C63D2CB6720E00988EFE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		9476C7A92C78B40C002648A0 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				9473C63D2CB6720E00988EFE /* View */,
+				94F293D62CCA28230081742D /* View */,
 				9476C7AC2C78B452002648A0 /* ViewModel */,
 				9476C7AB2C78B432002648A0 /* Coordinator */,
 				9476C7AA2C78B42B002648A0 /* Controller */,
@@ -741,6 +734,13 @@
 			path = ImageManager;
 			sourceTree = "<group>";
 		};
+		94F293D62CCA28230081742D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1166,7 +1166,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J584WC8XJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IQ-Quiz/Resources/SupportingFiles/Info.plist";
@@ -1180,7 +1180,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mertalp.IQ-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1201,7 +1201,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = J584WC8XJ5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IQ-Quiz/Resources/SupportingFiles/Info.plist";
@@ -1215,7 +1215,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.mertalp.IQ-Quiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
