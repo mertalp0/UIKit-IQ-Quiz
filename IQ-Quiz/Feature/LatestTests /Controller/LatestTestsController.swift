@@ -17,7 +17,7 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
     
     private let backButton: UIButton = {
         let button = UIButton()
-        let icon = UIImage(systemName: "chevron.backward")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 24)) // İkonun boyutunu artır
+        let icon = UIImage(systemName: "chevron.backward")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 24))
         button.setImage(icon, for: .normal)
         button.tintColor = .white
         return button
@@ -28,7 +28,7 @@ class LatestTestsController: BaseViewController<LatestTestsCoordinator, LatestTe
         label.textColor = .white
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .medium)
-        label.isHidden = true // Başlangıçta gizli olmalı
+        label.isHidden = true
         return label
     }()
     
@@ -87,12 +87,12 @@ extension LatestTestsController {
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
-            make.leading.equalToSuperview().offset(30)
-            make.trailing.equalToSuperview().inset(16)
+            make.width.equalTo(Constants.screenWidth / 2 )
+            make.centerX.equalToSuperview()
         }
         
         backButton.snp.makeConstraints { make in
-            make.top.equalTo(view.snp.top).offset(Constants.screenHeight * 0.06)
+            make.top.equalTo(view.snp.top).inset(Constants.screenHeight * 0.06)
             make.leading.equalToSuperview().offset(16)
             make.width.height.equalTo(44)
         }

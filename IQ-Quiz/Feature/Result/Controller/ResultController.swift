@@ -186,7 +186,7 @@ extension ResultViewController: CustomButtonDelegate{
 extension ResultViewController: GADFullScreenContentDelegate{
     func loadInterstitialAd() {
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: Constants.adUnitId, request: request) { (ad, error) in
+        GADInterstitialAd.load(withAdUnitID: Constants.transitionId, request: request) { (ad, error) in
             if let error = error {
                 print("Failed to load interstitial ad: \(error.localizedDescription)")
                 return
